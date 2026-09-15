@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ficha de producción — Desinformación — Navegar con Otros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    :root {
+      --color-tema: #EF5350;
+      --color-tema-claro: #FFEBEE;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">Navegar <span>con Otros</span></a>
+    <ul class="nav-links"><li><a href="index.html#temas">Temas</a></li><li><a href="recursos.html">Recursos</a></li></ul>
+  </nav>
+  <div class="material-header">
+    <div class="material-header-inner">
+      <div class="material-meta">
+        <div class="material-ruta"><a href="index.html">Inicio</a> → <a href="tema-3-desinformacion.html">Tema 03</a> → Ficha de producción</div>
+        <h1>Ficha de producción</h1>
+        <p>Completá la ficha durante la actividad. Tu progreso se guarda automáticamente.</p>
+        <div class="material-badges">
+          <span class="badge badge-coral">Desinformación</span>
+          <span class="badge badge-violeta">Ciclo básico y bachillerato</span>
+        </div>
+      </div>
+      <div class="material-acciones">
+        <div class="guardado-estado" id="estado-guardado">💾 Sin cambios aún</div>
+        <button class="btn-pdf" id="btn-pdf" onclick="descargarPDF()">⬇️ Descargar PDF</button>
+        <button class="btn-limpiar" onclick="limpiarFicha()">✕ Limpiar</button>
+      </div>
+    </div>
+  </div>
+  <div class="aviso-crea">
+    <div class="aviso-crea-inner">
+      <div style="font-size:1.5rem;flex-shrink:0">📎</div>
+      <div class="aviso-crea-texto"><strong>¿Cómo entregar esta ficha?</strong> Completá los campos, descargá el PDF y subilo a la tarea correspondiente en <strong>CREA</strong>. Tu progreso se guarda en este dispositivo automáticamente.</div>
+    </div>
+  </div>
+  <div class="ficha-contenedor">
+    <div class="ficha" id="ficha-contenido">
+      <div class="ficha-top">
+        <div class="ficha-top-titulo">Real o falso: el desafío de verificar</div>
+        <div class="ficha-top-sub">Tema 03 · Desinformación y pensamiento crítico · Navegar con Otros</div>
+      </div>
+      <div class="ficha-datos">
+        <div class="ficha-dato"><label>Nombre / Grupo</label><input type="text" id="f-nombre" placeholder="Escribí acá..."></div>
+        <div class="ficha-dato"><label>Año / Clase</label><input type="text" id="f-año" placeholder="Ej: 2.º B"></div>
+        <div class="ficha-dato"><label>Fecha</label><input type="text" id="f-fecha" placeholder=""></div>
+      </div>
+      <!-- PARTE 1 -->
+      <div class="ficha-seccion">
+        <div class="ficha-seccion-titulo">
+          <div class="ficha-seccion-icono" style="background:#FFEBEE;">🔍</div>
+          <span style="color:#EF5350;">Parte 1 — Analizamos el caso</span>
+        </div>
+        <p class="ficha-pregunta">Pegá o describí aquí el contenido que analizó tu grupo (noticia, meme, imagen, video, mensaje):</p>
+        <textarea class="ficha-textarea" id="f-caso" style="min-height:60px" placeholder="Describí o pegá el contenido..."></textarea>
+        <p class="ficha-pregunta" style="margin-top:1rem;">¿Es real, falso o engañoso? ¿Cómo llegaste a esa conclusión?</p>
+        <textarea class="ficha-textarea" id="f-conclusion" placeholder="Explicá tu razonamiento..."></textarea>
+        <p class="ficha-pregunta" style="margin-top:1rem;">¿Qué señales de alerta encontraste en el contenido?</p>
+        <textarea class="ficha-textarea" id="f-señales" placeholder="Listá las señales que identificaste..."></textarea>
+        <p class="ficha-pregunta" style="margin-top:1rem;">¿Cómo lo verificaste o intentaste verificarlo?</p>
+        <textarea class="ficha-textarea" id="f-verificacion" placeholder="Describí el proceso de verificación..."></textarea>
+      </div>
+      <!-- PARTE 2 -->
+      <div class="ficha-seccion">
+        <div class="ficha-seccion-titulo">
+          <div class="ficha-seccion-icono" style="background:#FFF3E0;">🛑</div>
+          <span style="color:#F57C00;">Parte 2 — Mis señales de alerta</span>
+        </div>
+        <p style="font-size:0.85rem;color:var(--gris-suave);margin-bottom:1rem;">A partir de la actividad, anotá tus propias señales de alerta: cosas que te harán detenerte a verificar antes de compartir.</p>
+        <div class="acuerdos-lista">
+          <div class="acuerdo-item"><span class="acuerdo-num">1.</span><textarea class="ficha-textarea" id="sa1" style="min-height:45px" placeholder="Primera señal de alerta..."></textarea></div>
+          <div class="acuerdo-item"><span class="acuerdo-num">2.</span><textarea class="ficha-textarea" id="sa2" style="min-height:45px" placeholder="Segunda señal..."></textarea></div>
+          <div class="acuerdo-item"><span class="acuerdo-num">3.</span><textarea class="ficha-textarea" id="sa3" style="min-height:45px" placeholder="Tercera señal..."></textarea></div>
+        </div>
+      </div>
+      <!-- PARTE 3 -->
+      <div class="ficha-seccion">
+        <div class="ficha-seccion-titulo">
+          <div class="ficha-seccion-icono" style="background:#FFF3E0;">💭</div>
+          <span style="color:#F57C00;">Parte 3 — Momento crítico</span>
+        </div>
+        <p style="font-size:0.85rem;color:var(--gris-suave);margin-bottom:0.75rem;">Elegí una y escribí tu posición. No hay respuesta correcta.</p>
+        <div class="caja-critica">¿Es posible verificar todo lo que leemos? ¿Qué hacemos con lo que no podemos verificar?</div>
+        <div class="caja-critica">¿Compartir algo falso sin saberlo es lo mismo que mentir? ¿Tenemos responsabilidad?</div>
+        <div class="caja-critica">Si una IA puede generar imágenes perfectas, ¿podemos seguir confiando en lo que vemos?</div>
+        <p class="ficha-pregunta">Pregunta elegida y mi posición:</p>
+        <textarea class="ficha-textarea" id="f-critico" style="min-height:100px" placeholder="Escribí tu posición y los argumentos que la sostienen..."></textarea>
+      </div>
+      <!-- PARTE 4 -->
+      <div class="ficha-seccion">
+        <div class="ficha-seccion-titulo">
+          <div class="ficha-seccion-icono" style="background:#E0F2F1;">🤝</div>
+          <span style="color:#00897B;">Parte 4 — Acuerdos del grupo</span>
+        </div>
+        <p style="font-size:0.85rem;color:var(--gris-suave);margin-bottom:1rem;">Las ideas más importantes que surgieron en la clase.</p>
+        <div class="acuerdos-lista">
+          <div class="acuerdo-item"><span class="acuerdo-num" style="color:var(--verde)">1.</span><textarea class="ficha-textarea" id="ac1" style="min-height:45px" placeholder="Primera idea..."></textarea></div>
+          <div class="acuerdo-item"><span class="acuerdo-num" style="color:var(--verde)">2.</span><textarea class="ficha-textarea" id="ac2" style="min-height:45px" placeholder="Segunda idea..."></textarea></div>
+          <div class="acuerdo-item"><span class="acuerdo-num" style="color:var(--verde)">3.</span><textarea class="ficha-textarea" id="ac3" style="min-height:45px" placeholder="Tercera idea..."></textarea></div>
+        </div>
+        <p class="ficha-pregunta" style="margin-top:1rem;">¿Qué vas a hacer diferente a partir de hoy cuando recibas una noticia o imagen?</p>
+        <textarea class="ficha-textarea" id="f-compromiso" placeholder="Describí tu compromiso personal..."></textarea>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>Navegar con Otros · Ciudadanía digital para docentes · Uruguay · 2026</p>
+    <p style="margin-top:0.5rem;"><a href="tema-3-desinformacion.html">← Volver al Tema 03</a></p>
+  </footer>
+  <script>
+    const KEY='ficha-tema3-desinformacion';
+    const CAMPOS=['f-nombre','f-año','f-fecha','f-caso','f-conclusion','f-señales','f-verificacion','sa1','sa2','sa3','f-critico','ac1','ac2','ac3','f-compromiso'];
+    let timer;
+    const hoy=new Date();
+    document.getElementById('f-fecha').placeholder=hoy.getDate().toString().padStart(2,'0')+'/'+(hoy.getMonth()+1).toString().padStart(2,'0')+'/'+hoy.getFullYear();
+    function cargar(){
+      const d=JSON.parse(localStorage.getItem(KEY)||'{}');
+      CAMPOS.forEach(id=>{const e=document.getElementById(id);if(e&&d[id])e.value=d[id];});
+      if(Object.keys(d).length>0){mostrar('guardado','✓ Progreso cargado');setTimeout(()=>mostrar('','💾 Guardado automático'),2000);}
+    }
+    function guardar(){
+      mostrar('guardando','⏳ Guardando...');
+      const d={};CAMPOS.forEach(id=>{const e=document.getElementById(id);if(e)d[id]=e.value;});
+      localStorage.setItem(KEY,JSON.stringify(d));
+      setTimeout(()=>mostrar('guardado','✓ Guardado'),500);
+      setTimeout(()=>mostrar('','💾 Guardado automático'),2500);
+    }
+    function mostrar(tipo,texto){const e=document.getElementById('estado-guardado');e.className='guardado-estado'+(tipo?' '+tipo:'');e.textContent=texto;}
+    CAMPOS.forEach(id=>{const e=document.getElementById(id);if(e)e.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(guardar,800);});});
+    function limpiarFicha(){if(confirm('¿Limpiar todos los campos?')){CAMPOS.forEach(id=>{const e=document.getElementById(id);if(e)e.value='';});localStorage.removeItem(KEY);mostrar('','💾 Sin cambios aún');}}
+    function descargarPDF(){
+      const btn=document.getElementById('btn-pdf');btn.disabled=true;btn.textContent='⏳ Generando...';
+      const orig=document.getElementById('ficha-contenido');const clon=orig.cloneNode(true);
+      clon.querySelectorAll('input[type="text"]').forEach(el=>{const s=document.createElement('span');s.textContent=el.value||'___';s.style.cssText='border-bottom:1px solid #ccc;display:inline-block;min-width:80px;font-size:0.9rem;';el.parentNode.replaceChild(s,el);});
+      clon.querySelectorAll('textarea').forEach(el=>{const d=document.createElement('div');d.textContent=el.value||' ';d.style.cssText='border:1px solid #ccc;border-radius:6px;padding:0.5rem;min-height:50px;font-size:0.85rem;line-height:1.5;white-space:pre-wrap;background:#fafafa;';el.parentNode.replaceChild(d,el);});
+      const nombre=document.getElementById('f-nombre').value||'ficha';
+      html2pdf().set({margin:[10,10,10,10],filename:'ficha-desinformacion-'+nombre.replace(/\s+/g,'-').toLowerCase()+'.pdf',image:{type:'jpeg',quality:0.95},html2canvas:{scale:2,useCORS:true},jsPDF:{unit:'mm',format:'a4',orientation:'portrait'}}).from(clon).save().then(()=>{btn.disabled=false;btn.textContent='⬇️ Descargar PDF';});
+    }
+    cargar();
+  </script>
+</body>
+</html>

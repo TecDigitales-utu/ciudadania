@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convivencia digital — Navegar con Otros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    :root {
+      --color-tema: #00897B;
+      --color-tema-claro: #E0F2F1;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Navegar <span>con Otros</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#temas">Temas</a></li>
+      <li><a href="recursos.html">Recursos</a></li>
+      <li><a href="sobre-el-proyecto.html">Sobre el proyecto</a></li>
+    </ul>
+  </nav>
+
+  <div class="nav-temas">
+    <a href="tema-1-identidad.html">01 · Identidad</a>
+    <a href="tema-2-privacidad.html">02 · Privacidad</a>
+    <a href="tema-3-desinformacion.html">03 · Desinformación</a>
+    <a href="tema-4-convivencia.html" class="activo">04 · Convivencia</a>
+    <a href="tema-5-bienestar.html">05 · Bienestar</a>
+    <a href="tema-6-derechos.html">06 · Derechos</a>
+    <a href="tema-7-creacion.html">07 · Creación</a>
+  </div>
+
+  <header class="tema-header">
+    <div class="tema-header-inner">
+      <div class="tema-numero-grande">04</div>
+      <span class="tema-etiqueta">Tema 04</span>
+      <h1>Convivencia digital</h1>
+      <p>Cómo nos relacionamos en entornos digitales, qué formas de violencia pueden ocurrir, y cómo construir una presencia en línea ética y empática.</p>
+      <span class="tema-dimension">Dimensión: Convivencia y prácticas en el entorno digital</span>
+    </div>
+  </header>
+
+  <main class="contenido">
+
+    <!-- MARCO CONCEPTUAL -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn abierto" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#E0F2F1;">🧭</div>
+          <div><div class="acordeon-titulo">Marco conceptual</div><div class="acordeon-subtitulo">Qué es el tema y por qué importa</div></div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido visible">
+        <h3>Convivencia en entornos digitales</h3>
+        <p>Los entornos digitales son espacios sociales. En ellos nos relacionamos, discutimos, colaboramos, jugamos, amamos y también nos hacemos daño. La convivencia digital no es diferente en esencia de la convivencia en cualquier otro espacio: requiere respeto, empatía, y la capacidad de reconocer al otro como persona.</p>
+        <p>Sin embargo, los entornos digitales tienen características que hacen más fácil que ocurran ciertas formas de violencia: el anonimato o la distancia que da la pantalla, la velocidad de difusión, la permanencia del contenido, y la dificultad para captar el impacto emocional de lo que decimos cuando no vemos a quien lo recibe.</p>
+
+        <h3>Tipos de violencia digital</h3>
+        <ul>
+          <li><strong>Ciberbullying</strong>: acoso sistemático y repetido entre pares a través de medios digitales. Incluye insultos, humillaciones, exclusión social y difusión de contenido dañino.</li>
+          <li><strong>Difusión de imágenes íntimas sin consentimiento</strong>: compartir fotos o videos de contenido íntimo de una persona sin su autorización. En Uruguay está tipificado como delito.</li>
+          <li><strong>Grooming</strong>: estrategia de un adulto para ganar la confianza de un menor con el objetivo de abusar de él. Incluye manipulación emocional, pedido de imágenes y aislamiento de su entorno.</li>
+          <li><strong>Violencia de género digital</strong>: formas de violencia basada en género que ocurren o se amplifican en entornos digitales: acoso, amenazas, control, doxing.</li>
+          <li><strong>Odio en línea</strong>: discurso que incita a la violencia o discriminación contra personas por su identidad (raza, género, orientación sexual, religión, etc.).</li>
+        </ul>
+
+        <h3>Empatía y comportamiento ético</h3>
+        <p>Actuar con empatía en entornos digitales implica preguntarse cómo va a recibir el otro lo que estoy a punto de enviar o publicar. No siempre es sencillo: la inmediatez de las redes sociales lleva a actuar antes de pensar. Trabajar la empatía digital es trabajar ese momento de pausa antes de pulsar "enviar".</p>
+
+        <h3>Relación con la Estrategia Nacional</h3>
+        <p>Este tema trabaja las habilidades de "procurar un comportamiento ético y empático" y "gestionar los riesgos (violencias digitales, ciber higiene)", correspondientes a la dimensión 2 de la Estrategia Nacional de Ciudadanía Digital 2024–2028 (Agesic).</p>
+
+        <div class="caja-ia">
+          <div class="caja-ia-titulo">🤖 Inteligencia artificial integrada</div>
+          <p>Los algoritmos de recomendación tienden a amplificar el contenido emotivo y polarizador, incluyendo el discurso de odio, porque genera más interacción. Las burbujas de filtro refuerzan visiones del mundo extremas y reducen la exposición a perspectivas distintas, lo que puede alimentar actitudes de intolerancia y violencia simbólica.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACTIVIDAD -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#E0F2F1;">🎯</div>
+          <div><div class="acordeon-titulo">Actividad participativa</div><div class="acordeon-subtitulo">Para trabajar en el aula con los estudiantes</div></div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido">
+        <div class="caja-actividad">
+          <div class="caja-actividad-titulo">📋 "¿Qué harías vos?"</div>
+          <p><strong>Duración estimada</strong>: 50 minutos</p>
+          <p><strong>Materiales</strong>: tarjetas de casos impresas o proyectadas (incluidas en los materiales de este tema)</p>
+        </div>
+
+        <h3>Desarrollo</h3>
+        <p><strong>Momento 1 — Disparador (10 min)</strong></p>
+        <p>El docente presenta una situación breve: "Tu compañero publica una foto tuya sin pedirte permiso y sus amigos empiezan a hacer comentarios que te molestan. ¿Qué hacés?" Se escuchan respuestas espontáneas. El docente no juzga ni corrige todavía: registra las respuestas en el pizarrón.</p>
+
+        <p><strong>Momento 2 — Análisis de casos en grupos (20 min)</strong></p>
+        <p>En grupos de 3 o 4, cada grupo recibe una tarjeta de caso con una situación de convivencia digital. Su tarea: describir qué ocurre, quiénes están involucrados, qué derechos se ven afectados y qué harían ellos en esa situación.</p>
+
+        <p><strong>Momento 3 — Puesta en común (10 min)</strong></p>
+        <p>Cada grupo presenta su caso. El docente guía la reflexión colectiva: ¿hay consenso? ¿Qué diferencias aparecen entre las respuestas? ¿Qué dice eso sobre cómo entendemos la convivencia?</p>
+
+        <p><strong>Momento 4 — Cierre y reflexión crítica (10 min)</strong></p>
+        <p>El docente introduce el momento crítico a partir de las preguntas de la sección correspondiente.</p>
+
+        <div class="caja-actividad">
+          <div class="caja-actividad-titulo">💡 Variante: acuerdo de convivencia digital</div>
+          <p>Como producto final, el grupo construye un "acuerdo de convivencia digital" para la clase: cinco compromisos concretos sobre cómo van a relacionarse en entornos digitales. Lo firman y lo pegan en el aula.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- GUÍA DOCENTE -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#EDE7F6;">📖</div>
+          <div><div class="acordeon-titulo">Guía docente</div><div class="acordeon-subtitulo">Orientaciones para ciclo básico y bachillerato</div></div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido">
+        <div class="tabs-nivel">
+          <button class="tab-nivel activo" onclick="cambiarNivel(this,'basico')">Ciclo básico</button>
+          <button class="tab-nivel" onclick="cambiarNivel(this,'bachillerato')">Bachillerato</button>
+        </div>
+
+        <div class="panel-nivel visible" id="panel-basico">
+          <div class="caja-nivel">
+            <div class="caja-nivel-titulo">Ciclo básico (1.º – 3.º año)</div>
+            <p>El foco es que los estudiantes identifiquen situaciones de violencia digital, entiendan su impacto en las personas y desarrollen estrategias básicas para actuar: pedir ayuda, no reenviar contenido dañino, saber dónde denunciar.</p>
+          </div>
+          <h3>Preguntas orientadoras</h3>
+          <ul>
+            <li>¿Alguna vez viste o viviste una situación de ciberbullying? ¿Cómo se sintió?</li>
+            <li>¿Por qué creen que la gente dice cosas en internet que no diría en persona?</li>
+            <li>Si ves que alguien está siendo acosado en un grupo de WhatsApp, ¿qué hacés?</li>
+            <li>¿Saben a quién acudir si alguien les hace daño en internet?</li>
+          </ul>
+          <h3>Conceptos clave que emergen</h3>
+          <ul>
+            <li>Ciberbullying: definición y diferencia con el conflicto ocasional</li>
+            <li>El rol del espectador: diferencia entre cómplice, testigo y aliado</li>
+            <li>Rutas de ayuda: docentes, familias, INAU (línea 0800 5050)</li>
+          </ul>
+          <h3>Producto sugerido</h3>
+          <p>Acuerdo de convivencia digital grupal: cinco compromisos concretos escritos por el grupo, firmados y expuestos en el aula.</p>
+        </div>
+
+        <div class="panel-nivel" id="panel-bachillerato">
+          <div class="caja-nivel">
+            <div class="caja-nivel-titulo">Bachillerato (4.º – 6.º año)</div>
+            <p>En bachillerato se puede profundizar en las dimensiones legales (tipificación de delitos en Uruguay), en el rol de los algoritmos en la amplificación de la violencia, y en el análisis crítico de la cultura del odio en línea.</p>
+          </div>
+          <h3>Preguntas orientadoras</h3>
+          <ul>
+            <li>¿Qué dice la ley uruguaya sobre la difusión de imágenes íntimas sin consentimiento?</li>
+            <li>¿Por qué el anonimato facilita la violencia en línea? ¿Debería eliminarse el anonimato en internet?</li>
+            <li>¿Cuándo un comentario ofensivo cruza la línea hacia el discurso de odio?</li>
+            <li>¿Qué responsabilidad tienen las plataformas sobre el contenido violento que circula en ellas?</li>
+          </ul>
+          <h3>Conceptos clave que emergen</h3>
+          <ul>
+            <li>Ley N° 19.580 sobre violencia basada en género (incluye difusión de imágenes íntimas)</li>
+            <li>Grooming: definición, señales y marco legal en Uruguay</li>
+            <li>Discurso de odio vs. libertad de expresión</li>
+            <li>Algoritmos y amplificación de la violencia</li>
+          </ul>
+          <h3>Producto sugerido</h3>
+          <p>Análisis de un caso real de violencia digital: qué ocurrió, qué derechos fueron vulnerados, qué respuesta institucional hubo y qué hubiera sido deseable que ocurriera.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOMENTO CRÍTICO -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#FFEBEE;">💭</div>
+          <div><div class="acordeon-titulo">Momento crítico</div><div class="acordeon-subtitulo">Preguntas para pensar y tomar posición</div></div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido">
+        <div class="caja-critica">
+          <div class="caja-critica-titulo">💭 Preguntas sin respuesta única</div>
+          <ol>
+            <li>¿Es lo mismo hacer daño en internet que hacerlo en persona? ¿Por qué la gente cree que no lo es?</li>
+            <li>Si ves que alguien está siendo acosado en línea y no hacés nada, ¿sos responsable de alguna forma?</li>
+            <li>¿Debería eliminarse el anonimato en internet para reducir la violencia? ¿Qué se perdería con eso?</li>
+            <li>¿Quién tiene más responsabilidad sobre la violencia digital: quien la ejerce, quien la permite o la plataforma que la amplifica?</li>
+            <li>¿Puede un algoritmo ser "violento"? ¿Puede el diseño de una plataforma fomentar la violencia?</li>
+          </ol>
+        </div>
+        <p style="font-size:0.85rem;color:var(--gris-suave);margin-top:0.75rem;">Estas preguntas no tienen respuesta correcta. El objetivo es argumentar y escuchar.</p>
+      </div>
+    </div>
+
+    <!-- ENTRADAS DISCIPLINARES -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#F5F5F5;">🚪</div>
+          <div><div class="acordeon-titulo">Entradas disciplinares</div><div class="acordeon-subtitulo">Cómo abordar este tema según tu asignatura</div></div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido">
+        <p style="font-size:0.9rem;color:var(--gris-suave);margin-bottom:1rem;">La ciudadanía digital es el centro. La asignatura es la puerta de entrada.</p>
+        <div class="entradas-grid">
+          <div class="entrada-card informatica">
+            <h4>💻 Desde Informática</h4>
+            <p>Analizar cómo el diseño de las plataformas (notificaciones, botones de reacción, sistemas de moderación) influye en las formas de relacionarse. Trabajar la configuración de privacidad y los mecanismos de denuncia disponibles en las plataformas más usadas.</p>
+            <p style="margin-top:0.5rem;"><strong>Pregunta guía</strong>: ¿Cómo está diseñada la plataforma para que interactuemos más, incluso cuando eso nos hace daño?</p>
+          </div>
+          <div class="entrada-card ciudadania">
+            <h4>⚖️ Desde Ed. para la Ciudadanía</h4>
+            <p>Trabajar el marco legal uruguayo: Ley N° 19.580 (violencia basada en género, difusión de imágenes íntimas), tipificación del grooming, y rutas de denuncia institucionales (INAU, Ministerio del Interior, fiscalía).</p>
+            <p style="margin-top:0.5rem;"><strong>Pregunta guía</strong>: ¿Qué hace la ley uruguaya frente a la violencia digital? ¿Alcanza?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <div class="nav-entre-temas">
+    <a href="tema-3-desinformacion.html">← Tema 03: Desinformación</a>
+    <a href="tema-5-bienestar.html">Tema 05: Bienestar digital →</a>
+  </div>
+
+  <footer>
+    <p>Navegar con Otros · Recurso web de ciudadanía digital para docentes de Educación Media · Uruguay · 2026</p>
+    <p style="margin-top:0.5rem;"><a href="index.html">← Volver al inicio</a></p>
+  </footer>
+
+  <script>
+    function toggleAcordeon(btn){const c=btn.nextElementSibling,a=btn.classList.contains('abierto');btn.classList.toggle('abierto',!a);c.classList.toggle('visible',!a);}
+    function cambiarNivel(tab,nivel){const tabs=tab.parentElement.querySelectorAll('.tab-nivel'),paneles=tab.closest('.acordeon-contenido').querySelectorAll('.panel-nivel');tabs.forEach(t=>t.classList.remove('activo'));paneles.forEach(p=>p.classList.remove('visible'));tab.classList.add('activo');document.getElementById('panel-'+nivel).classList.add('visible');}
+  </script>
+</body>
+</html>

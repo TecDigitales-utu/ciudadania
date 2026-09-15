@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verdadero o Falso — Derechos digitales — Navegar con Otros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    :root {
+      --color-tema: #EF5350;
+      --color-tema-claro: #FFEBEE;
+    }
+  </style>
+</head>
+<body>
+  <nav><a href="index.html" class="nav-logo">Navegar <span>con Otros</span></a><ul class="nav-links"><li><a href="index.html#temas">Temas</a></li><li><a href="recursos.html">Recursos</a></li></ul></nav>
+  <div class="mh"><div class="mhi">
+    <div class="mm">
+      <div class="mr"><a href="index.html">Inicio</a> → <a href="tema-6-derechos.html">Tema 06</a> → Verdadero o Falso</div>
+      <h1>Verdadero o Falso</h1>
+      <p>Afirmaciones sobre derechos digitales y normativa uruguaya para debatir en clase.</p>
+      <div class="badges"><span class="badge bc">Derechos digitales</span><span class="badge bg">Ciclo básico y bachillerato</span><span class="badge ba">Disparador o cierre</span></div>
+    </div>
+    <div class="ma">
+      <button class="btn-p" onclick="window.print()">🖨️ Imprimir / PDF</button>
+      <button class="btn-r" onclick="reiniciar()">↺ Reiniciar</button>
+    </div>
+  </div></div>
+  <div class="inst"><div class="inst-i">
+    <h3>¿Cómo usar este material?</h3>
+    <div class="inst-g">
+      <div class="ii"><strong>Individual en pantalla</strong>Cada estudiante responde y ve la explicación después de cada afirmación.</div>
+      <div class="ii"><strong>Grupal proyectado</strong>El docente proyecta y la clase vota de mano alzada antes de ver la respuesta.</div>
+      <div class="ii"><strong>Impreso</strong>Los estudiantes marcan V o F y después comparan las respuestas.</div>
+      <div class="ii"><strong>Ojo</strong>Varias afirmaciones tienen matices. El debate importa más que la respuesta.</div>
+    </div>
+  </div></div>
+  <div class="pb"><div class="pt"><span id="pl">Pregunta 1 de 10</span><span id="pp">0 correctas</span></div><div class="ptrack"><div class="pfill" id="pf"></div></div></div>
+  <div class="jc" id="juego"></div>
+  <footer><p>Navegar con Otros · Ciudadanía digital para docentes · Uruguay · 2026</p><p style="margin-top:0.5rem;"><a href="tema-6-derechos.html">← Volver al Tema 06</a></p></footer>
+  <script>
+    const afs=[
+      {t:"En Uruguay, compartir sin consentimiento imágenes íntimas de otra persona es un delito.",r:true,e:"Verdadero. La Ley N° 19.580 de Violencia Basada en Género (2017) tipifica la difusión no consentida de imágenes íntimas como delito penal. La persona afectada puede realizar una denuncia ante el Ministerio del Interior o la Fiscalía.",d:"¿Sabías que esto está tipificado como delito en Uruguay? ¿Conocés casos en que se haya aplicado esta ley?"},
+      {t:"Las empresas pueden usar tus datos personales para cualquier fin si los aceptaste en los términos y condiciones.",r:false,e:"Falso. La Ley N° 18.331 establece que el consentimiento debe ser informado, específico y revocable. Aunque hayas aceptado los términos, las empresas no pueden usar tus datos para fines distintos a los declarados. Tenés derecho a acceder, rectificar y cancelar tus datos.",d:"¿Cuándo fue la última vez que leíste los términos y condiciones de una app antes de aceptar?"},
+      {t:"En Uruguay existe una institución específica a la que podés acudir si una empresa usa tus datos sin autorización.",r:true,e:"Verdadero. La Unidad Reguladora y de Control de Datos Personales (URCDP) recibe denuncias y reclamos sobre uso indebido de datos personales. Su sitio es urcdp.gub.uy.",d:"¿Conocías la URCDP? ¿Cómo te enterarías de que una empresa está usando tus datos indebidamente?"},
+      {t:"El acceso a internet ya es un derecho fundamental garantizado por la Constitución uruguaya.",r:false,e:"Falso. El acceso a internet no está reconocido explícitamente en la Constitución uruguaya como derecho fundamental. Sin embargo, Uruguay ha avanzado significativamente en la cobertura a través del Plan Ceibal y ANTEL. El debate sobre si debe reconocerse como derecho formal está abierto.",d:"¿Debería el acceso a internet estar garantizado como derecho fundamental en la Constitución? ¿Por qué?"},
+      {t:"Si alguien publica una foto tuya sin tu permiso en una red social, tenés derecho a pedir que la saquen.",r:true,e:"Verdadero. El derecho a la imagen está protegido en Uruguay. Podés solicitar directamente a la plataforma que retire el contenido (las plataformas tienen mecanismos de denuncia). Si la vulneración es grave, podés acudir a la URCDP o la Justicia.",d:"¿Sabías cómo reportar una foto tuya publicada sin tu permiso? ¿Lo has hecho alguna vez?"},
+      {t:"Un algoritmo no puede ser discriminatorio porque las máquinas no tienen prejuicios.",r:false,e:"Falso. Los algoritmos aprenden de datos históricos que pueden reflejar discriminaciones del pasado. Un sistema de IA entrenado con datos sesgados puede reproducir y amplificar esos sesgos, tomando decisiones discriminatorias aunque nadie haya programado explícitamente esa discriminación.",d:"¿Quién es responsable cuando un algoritmo discrimina: quien lo programó, quien lo usa, o ambos?"},
+      {t:"El derecho al olvido digital permite que cualquier persona pueda borrar cualquier información sobre sí misma de internet.",r:false,e:"Falso, o al menos incompleto. El derecho al olvido existe en distintas formas en varios países, pero tiene límites: choca con la libertad de prensa, el interés público y el derecho a la información. En Uruguay, la Ley 18.331 contempla el derecho a la cancelación de datos en ciertos casos, pero no es absoluto.",d:"¿Dónde está el límite entre el derecho al olvido y el derecho a la información?"},
+      {t:"Los menores de edad tienen los mismos derechos digitales que los adultos en Uruguay.",r:true,e:"Verdadero, con protecciones adicionales. Los menores tienen todos los derechos digitales que los adultos y además cuentan con protecciones especiales: la Ley 18.331 da tratamiento especial a sus datos, y leyes como la del grooming (18.515) existen precisamente para protegerlos.",d:"¿Qué protecciones especiales debería tener la infancia y adolescencia en entornos digitales?"},
+      {t:"Las plataformas como Instagram o TikTok están obligadas a cumplir las leyes uruguayas aunque sean empresas extranjeras.",r:true,e:"Verdadero en principio, aunque la aplicación práctica es compleja. Las leyes uruguayas aplican a los datos de ciudadanos uruguayos independientemente de dónde esté la empresa. Sin embargo, hacer cumplir la ley a empresas extranjeras presenta dificultades prácticas significativas.",d:"¿Cómo podría Uruguay obligar a una empresa con sede en California a cumplir sus leyes?"},
+      {t:"En Uruguay, una empresa puede despedirte por publicar opiniones políticas en tus redes personales fuera del horario laboral.",r:false,e:"Complejo. La libertad de expresión y el derecho al trabajo están en tensión en este caso. En términos generales, las opiniones expresadas fuera del ámbito laboral y sin mencionar a la empresa están protegidas. Pero hay matices: el contexto, el cargo y el impacto concreto en la empresa son factores que un juicio laboral consideraría.",d:"¿Dónde termina la vida privada y empieza la responsabilidad laboral cuando publicamos en internet?"}
+    ];
+    let correctas=0,respondidas=0;
+    function construir(){
+      const j=document.getElementById('juego');j.innerHTML='';
+      afs.forEach((a,i)=>{
+        const c=document.createElement('div');
+        c.className='ac'+(i===0?' activa':'');c.id='c'+i;
+        c.innerHTML=`<div class="an">Afirmación ${i+1} de ${afs.length}</div><div class="at">${a.t}</div><div class="ab"><button class="bvf bv2" onclick="resp(${i},true)">✓ Verdadero</button><button class="bvf bf" onclick="resp(${i},false)">✗ Falso</button></div><div class="rp" id="r${i}"></div>`;
+        j.appendChild(c);
+      });
+      const f=document.createElement('div');f.className='rf';f.id='fin';j.appendChild(f);
+    }
+    function resp(i,e){
+      const a=afs[i],ok=e===a.r;if(ok)correctas++;respondidas++;
+      document.querySelector(`#c${i} .bv2`).disabled=true;document.querySelector(`#c${i} .bf`).disabled=true;
+      document.querySelector(`#c${i} .bv2`).style.opacity='0.6';document.querySelector(`#c${i} .bf`).style.opacity='0.6';
+      const p=document.getElementById('r'+i);
+      p.innerHTML=`<div class="rr ${ok?'ok':'no'}">${ok?'✓ Correcto':'✗ Incorrecto'} — La afirmación es ${a.r?'verdadera':'falsa'}</div><p class="re">${a.e}</p><div class="rd">💬 Para debatir: ${a.d}</div><button class="bs" onclick="sig(${i})">${i<afs.length-1?'Siguiente →':'Ver resultado final'}</button>`;
+      p.classList.add('visible');actualizar();
+    }
+    function sig(i){document.getElementById('c'+i).classList.remove('activa');if(i<afs.length-1)document.getElementById('c'+(i+1)).classList.add('activa');else final();}
+    function final(){
+      const f=document.getElementById('fin');const p=Math.round(correctas/afs.length*100);
+      let e='🌱',m='Estás empezando a conocer tus derechos digitales. El debate en clase va a ayudarte a profundizar.';
+      if(p>=70){e='⚖️';m='Buen conocimiento del marco legal. Las preguntas para debatir son el siguiente paso.';}
+      if(p>=90){e='🏛️';m='Excelente. Conocés bien tus derechos. Ahora podés ayudar a otros a conocerlos también.';}
+      f.innerHTML=`<div class="re2">${e}</div><h2>Juego completado</h2><div class="rp2">${correctas}/${afs.length}</div><div class="rs">respuestas correctas (${p}%)</div><div class="rm">${m}</div><button class="bs" onclick="reiniciar()">↺ Jugar de nuevo</button>`;
+      f.classList.add('visible');actualizar();
+    }
+    function actualizar(){
+      document.getElementById('pf').style.width=(respondidas/afs.length*100)+'%';
+      document.getElementById('pl').textContent=respondidas<afs.length?`Pregunta ${respondidas+1} de ${afs.length}`:'Completado';
+      document.getElementById('pp').textContent=correctas+' correctas';
+    }
+    function reiniciar(){correctas=0;respondidas=0;document.getElementById('pf').style.width='0%';document.getElementById('pl').textContent='Pregunta 1 de 10';document.getElementById('pp').textContent='0 correctas';construir();}
+    construir();
+  </script>
+</body>
+</html>

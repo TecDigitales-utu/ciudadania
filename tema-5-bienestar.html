@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienestar digital — Navegar con Otros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    :root {
+      --color-tema: #5E35B1;
+      --color-tema-claro: #EDE7F6;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Navegar <span>con Otros</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#temas">Temas</a></li>
+      <li><a href="recursos.html">Recursos</a></li>
+      <li><a href="sobre-el-proyecto.html">Sobre el proyecto</a></li>
+    </ul>
+  </nav>
+
+  <div class="nav-temas">
+    <a href="tema-1-identidad.html">01 · Identidad</a>
+    <a href="tema-2-privacidad.html">02 · Privacidad</a>
+    <a href="tema-3-desinformacion.html">03 · Desinformación</a>
+    <a href="tema-4-convivencia.html">04 · Convivencia</a>
+    <a href="tema-5-bienestar.html" class="activo">05 · Bienestar</a>
+    <a href="tema-6-derechos.html">06 · Derechos</a>
+    <a href="tema-7-creacion.html">07 · Creación</a>
+  </div>
+
+  <header class="tema-header">
+    <div class="tema-header-inner">
+      <div class="tema-numero-grande">05</div>
+      <span class="tema-etiqueta">Tema 05</span>
+      <h1>Bienestar digital</h1>
+      <p>Cómo las plataformas están diseñadas para captar nuestra atención, qué implica eso para nuestro bienestar, y cómo desarrollar una relación más consciente con la tecnología.</p>
+      <span class="tema-dimension">Dimensión: Convivencia y prácticas en el entorno digital</span>
+    </div>
+  </header>
+
+  <main class="contenido">
+
+    <!-- MARCO CONCEPTUAL -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn abierto" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#EDE7F6;">🧭</div>
+          <div><div class="acordeon-titulo">Marco conceptual</div><div class="acordeon-subtitulo">Qué es el tema y por qué importa</div></div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido visible">
+
+        <h3>Economía de la atención</h3>
+        <p>Las plataformas digitales compiten por algo escaso: nuestra atención. Cuanto más tiempo pasamos en una aplicación, más datos generamos y más publicidad consumimos. Por eso están diseñadas deliberadamente para que nos quedemos: notificaciones, scroll infinito, autoplay, likes, racha de días consecutivos. No es accidente; es diseño.</p>
+        <p>Este modelo se conoce como economía de la atención: nuestra atención es el producto que las plataformas venden a los anunciantes. Entender esto no significa dejar de usar las plataformas, sino usarlas con más consciencia.</p>
+
+        <h3>Diseño persuasivo</h3>
+        <p>El diseño persuasivo es el conjunto de técnicas que las aplicaciones usan para influir en nuestro comportamiento. Incluye:</p>
+        <ul>
+          <li><strong>Scroll infinito</strong>: no hay fondo de página, siempre hay más contenido.</li>
+          <li><strong>Notificaciones</strong>: interrupciones frecuentes que nos traen de vuelta a la app.</li>
+          <li><strong>Likes y reacciones</strong>: recompensas sociales variables que generan expectativa.</li>
+          <li><strong>Racha</strong>: el contador de días consecutivos que genera presión para no interrumpir.</li>
+          <li><strong>Autoplay</strong>: el siguiente video empieza solo, sin que lo decidamos.</li>
+        </ul>
+
+        <h3>Bienestar digital</h3>
+        <p>El bienestar digital no significa usar menos tecnología: significa usarla de forma que aporte a nuestra vida en lugar de restarle. Implica desarrollar la capacidad de autorregulación: saber cuándo conectarse, cuándo desconectarse, y tomar esas decisiones de forma consciente en lugar de reactiva.</p>
+
+        <h3>Relación con la Estrategia Nacional</h3>
+        <p>Este tema trabaja la habilidad de "administrar el uso (economía de la atención, autorregulación)", correspondiente a la dimensión 2 de la Estrategia Nacional de Ciudadanía Digital 2024–2028 (Agesic).</p>
+
+        <div class="caja-ia">
+          <div class="caja-ia-titulo">🤖 Inteligencia artificial integrada</div>
+          <p>Los algoritmos de recomendación usan IA para predecir qué contenido nos va a mantener más tiempo en la plataforma. No optimizan para nuestro bienestar, sino para nuestra permanencia. Esto incluye mostrar contenido que genera emociones fuertes —indignación, miedo, comparación social— porque ese tipo de contenido genera más engagement.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACTIVIDAD -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#E0F2F1;">🎯</div>
+          <div><div class="acordeon-titulo">Actividad participativa</div><div class="acordeon-subtitulo">Para trabajar en el aula con los estudiantes</div></div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido">
+        <div class="caja-actividad">
+          <div class="caja-actividad-titulo">📋 "Mi día digital"</div>
+          <p><strong>Duración estimada</strong>: 50 minutos</p>
+          <p><strong>Materiales</strong>: hojas en blanco o ficha de producción impresa</p>
+        </div>
+
+        <h3>Desarrollo</h3>
+        <p><strong>Momento 1 — Registro (10 min)</strong></p>
+        <p>Cada estudiante reconstruye mentalmente su uso de pantallas del día anterior: ¿qué aplicaciones usó?, ¿cuánto tiempo aproximadamente?, ¿en qué momentos del día?, ¿cómo se sintió mientras las usaba y después? Lo anota en la ficha.</p>
+
+        <p><strong>Momento 2 — Análisis en grupos (15 min)</strong></p>
+        <p>En grupos de 3 o 4, comparten sus registros y buscan patrones: ¿qué aplicaciones aparecen más? ¿En qué momentos del día se usa más el celular? ¿Hay situaciones en que el uso genera malestar?</p>
+
+        <p><strong>Momento 3 — El diseño detrás (15 min)</strong></p>
+        <p>El docente presenta brevemente las técnicas de diseño persuasivo: scroll infinito, notificaciones, likes, racha, autoplay. Los grupos identifican cuáles de esas técnicas reconocen en las apps que usan. ¿Cuáles los afectan más?</p>
+
+        <p><strong>Momento 4 — Cierre y reflexión crítica (10 min)</strong></p>
+        <p>El docente introduce el momento crítico a partir de las preguntas de la sección correspondiente.</p>
+
+        <div class="caja-actividad">
+          <div class="caja-actividad-titulo">💡 Variante: auditoría de notificaciones</div>
+          <p>Si hay dispositivos disponibles, los estudiantes revisan cuántas notificaciones reciben por día y de qué apps. ¿Cuáles son realmente necesarias? ¿Cuáles podrían desactivar sin perder nada importante?</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- GUÍA DOCENTE -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#EDE7F6;">📖</div>
+          <div><div class="acordeon-titulo">Guía docente</div><div class="acordeon-subtitulo">Orientaciones para ciclo básico y bachillerato</div></div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido">
+        <div class="tabs-nivel">
+          <button class="tab-nivel activo" onclick="cambiarNivel(this,'basico')">Ciclo básico</button>
+          <button class="tab-nivel" onclick="cambiarNivel(this,'bachillerato')">Bachillerato</button>
+        </div>
+
+        <div class="panel-nivel visible" id="panel-basico">
+          <div class="caja-nivel">
+            <div class="caja-nivel-titulo">Ciclo básico (1.º – 3.º año)</div>
+            <p>El foco es que los estudiantes identifiquen patrones en su propio uso de pantallas y comiencen a preguntarse si ese uso los hace sentir bien o mal. No se trata de imponer restricciones sino de desarrollar la conciencia.</p>
+          </div>
+          <h3>Preguntas orientadoras</h3>
+          <ul>
+            <li>¿Cuándo fue la última vez que usaste el celular sin querer parar?</li>
+            <li>¿Hay momentos del día en que el celular te interrumpe algo importante?</li>
+            <li>¿Cómo te sentís después de pasar mucho tiempo en redes sociales?</li>
+            <li>¿Alguna vez intentaste usar menos el celular y no pudiste? ¿Qué pasó?</li>
+          </ul>
+          <h3>Conceptos clave que emergen</h3>
+          <ul>
+            <li>Uso consciente vs. uso reactivo</li>
+            <li>Notificaciones como interrupciones</li>
+            <li>Diferencia entre conectarse porque quiero y conectarse porque no puedo parar</li>
+          </ul>
+          <h3>Producto sugerido</h3>
+          <p>Lista personal de "mis tres reglas de uso": tres compromisos concretos sobre cómo cada estudiante quiere relacionarse con sus dispositivos.</p>
+        </div>
+
+        <div class="panel-nivel" id="panel-bachillerato">
+          <div class="caja-nivel">
+            <div class="caja-nivel-titulo">Bachillerato (4.º – 6.º año)</div>
+            <p>En bachillerato se puede profundizar en la economía de la atención como modelo de negocio, en el diseño persuasivo como práctica deliberada, y en las implicancias éticas y políticas de que nuestro tiempo y atención sean un producto.</p>
+          </div>
+          <h3>Preguntas orientadoras</h3>
+          <ul>
+            <li>¿Quién se beneficia de que pasemos más tiempo en las plataformas?</li>
+            <li>¿El diseño de las apps respeta nuestra autonomía? ¿O la socava?</li>
+            <li>¿Debería existir regulación sobre el diseño persuasivo, como existe sobre la publicidad engañosa?</li>
+            <li>¿Es posible usar plataformas de forma genuinamente libre si están diseñadas para capturar nuestra atención?</li>
+          </ul>
+          <h3>Conceptos clave que emergen</h3>
+          <ul>
+            <li>Economía de la atención: la atención como mercancía</li>
+            <li>Diseño persuasivo y sus técnicas específicas</li>
+            <li>Algoritmos de recomendación y su optimización para el engagement</li>
+            <li>Autonomía digital y regulación</li>
+          </ul>
+          <h3>Producto sugerido</h3>
+          <p>Análisis crítico de una aplicación: identificar qué técnicas de diseño persuasivo usa, a quién benefician y qué implicancias tienen para el usuario.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOMENTO CRÍTICO -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#FFEBEE;">💭</div>
+          <div><div class="acordeon-titulo">Momento crítico</div><div class="acordeon-subtitulo">Preguntas para pensar y tomar posición</div></div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido">
+        <div class="caja-critica">
+          <div class="caja-critica-titulo">💭 Preguntas sin respuesta única</div>
+          <ol>
+            <li>¿Es posible usar libremente una plataforma que está diseñada para que no podamos parar?</li>
+            <li>¿El diseño persuasivo es una forma de manipulación? ¿O es simplemente marketing?</li>
+            <li>¿Debería existir una ley que prohíba el scroll infinito o las notificaciones agresivas?</li>
+            <li>¿La responsabilidad de cuidar nuestro bienestar digital es individual, o debería ser también de las empresas y el Estado?</li>
+            <li>¿Hay algo que dejaste de hacer porque el tiempo que pasás en pantalla lo ocupó? ¿Lo extrañás?</li>
+          </ol>
+        </div>
+        <p style="font-size:0.85rem;color:var(--gris-suave);margin-top:0.75rem;">Estas preguntas no tienen respuesta correcta. El objetivo es argumentar y escuchar.</p>
+      </div>
+    </div>
+
+    <!-- ENTRADAS DISCIPLINARES -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#F5F5F5;">🚪</div>
+          <div><div class="acordeon-titulo">Entradas disciplinares</div><div class="acordeon-subtitulo">Cómo abordar este tema según tu asignatura</div></div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido">
+        <p style="font-size:0.9rem;color:var(--gris-suave);margin-bottom:1rem;">La ciudadanía digital es el centro. La asignatura es la puerta de entrada.</p>
+        <div class="entradas-grid">
+          <div class="entrada-card informatica">
+            <h4>💻 Desde Informática</h4>
+            <p>Analizar técnicamente cómo funcionan los algoritmos de recomendación y las técnicas de diseño persuasivo: scroll infinito, notificaciones push, sistemas de recompensa variable. Explorar herramientas de control de tiempo de pantalla disponibles en los propios dispositivos.</p>
+            <p style="margin-top:0.5rem;"><strong>Pregunta guía</strong>: ¿Cómo está programada una app para que no queramos cerrarla?</p>
+          </div>
+          <div class="entrada-card ciudadania">
+            <h4>⚖️ Desde Ed. para la Ciudadanía</h4>
+            <p>Trabajar la economía de la atención como problema político y ético: ¿quién regula el diseño de las plataformas?, ¿qué marcos normativos existen?, ¿qué papel tiene el Estado en la protección del bienestar digital de los ciudadanos?</p>
+            <p style="margin-top:0.5rem;"><strong>Pregunta guía</strong>: ¿El Estado tiene alguna responsabilidad sobre cómo las empresas diseñan sus productos digitales?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <div class="nav-entre-temas">
+    <a href="tema-4-convivencia.html">← Tema 04: Convivencia digital</a>
+    <a href="tema-6-derechos.html">Tema 06: Derechos digitales →</a>
+  </div>
+
+  <footer>
+    <p>Navegar con Otros · Recurso web de ciudadanía digital para docentes de Educación Media · Uruguay · 2026</p>
+    <p style="margin-top:0.5rem;"><a href="index.html">← Volver al inicio</a></p>
+  </footer>
+
+  <script>
+    function toggleAcordeon(btn){const c=btn.nextElementSibling,a=btn.classList.contains('abierto');btn.classList.toggle('abierto',!a);c.classList.toggle('visible',!a);}
+    function cambiarNivel(tab,nivel){const tabs=tab.parentElement.querySelectorAll('.tab-nivel'),paneles=tab.closest('.acordeon-contenido').querySelectorAll('.panel-nivel');tabs.forEach(t=>t.classList.remove('activo'));paneles.forEach(p=>p.classList.remove('visible'));tab.classList.add('activo');document.getElementById('panel-'+nivel).classList.add('visible');}
+  </script>
+</body>
+</html>

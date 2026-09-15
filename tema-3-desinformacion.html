@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desinformación y pensamiento crítico — Navegar con Otros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    :root {
+      --color-tema: #EF5350;
+      --color-tema-claro: #FFEBEE;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Navegar <span>con Otros</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#temas">Temas</a></li>
+      <li><a href="recursos.html">Recursos</a></li>
+      <li><a href="sobre-el-proyecto.html">Sobre el proyecto</a></li>
+    </ul>
+  </nav>
+
+  <div class="nav-temas">
+    <a href="tema-1-identidad.html">01 · Identidad</a>
+    <a href="tema-2-privacidad.html">02 · Privacidad</a>
+    <a href="tema-3-desinformacion.html" class="activo">03 · Desinformación</a>
+    <a href="tema-4-convivencia.html">04 · Convivencia</a>
+    <a href="tema-5-bienestar.html">05 · Bienestar</a>
+    <a href="tema-6-derechos.html">06 · Derechos</a>
+    <a href="tema-7-creacion.html">07 · Creación</a>
+  </div>
+
+  <header class="tema-header">
+    <div class="tema-header-inner">
+      <div class="tema-numero-grande">03</div>
+      <span class="tema-etiqueta">Tema 03</span>
+      <h1>Desinformación y pensamiento crítico</h1>
+      <p>Cómo identificar contenido falso o engañoso, evaluar fuentes y desarrollar una mirada crítica sobre la información que circula en entornos digitales.</p>
+      <span class="tema-dimension">Dimensión: Comprensión del entorno digital</span>
+    </div>
+  </header>
+
+  <main class="contenido">
+
+    <!-- 1. MARCO CONCEPTUAL -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn abierto" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#FFEBEE;">🧭</div>
+          <div>
+            <div class="acordeon-titulo">Marco conceptual</div>
+            <div class="acordeon-subtitulo">Qué es el tema y por qué importa</div>
+          </div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido visible">
+
+        <h3>Desinformación, información falsa y contenido engañoso</h3>
+        <p>No todo el contenido falso que circula en internet es lo mismo. Conviene distinguir al menos tres categorías:</p>
+        <ul>
+          <li><strong>Desinformación</strong>: información falsa que se difunde con la intención de engañar o manipular.</li>
+          <li><strong>Misinformación</strong>: información falsa que se comparte sin intención de engañar, pero que igual genera daño.</li>
+          <li><strong>Contenido engañoso</strong>: información que no es técnicamente falsa pero que está presentada de forma que induce a conclusiones incorrectas (titulares sensacionalistas, contextos omitidos, ediciones selectivas).</li>
+        </ul>
+        <p>Esta distinción importa porque cambia cómo respondemos: ante la desinformación intencional hay que entender quién la produce y por qué; ante la misinformación hay que trabajar la responsabilidad de quien comparte; ante el contenido engañoso hay que desarrollar habilidades de lectura crítica.</p>
+
+        <h3>Pensamiento crítico frente a la información</h3>
+        <p>El pensamiento crítico no significa desconfiar de todo. Significa hacer preguntas antes de dar por válida una información: ¿quién la publicó?, ¿cuándo?, ¿qué evidencia presenta?, ¿qué fuentes cita?, ¿qué intereses podría tener quien la difunde?</p>
+        <p>En entornos digitales, estas preguntas son especialmente importantes porque la velocidad de circulación de la información es muy alta, el volumen es enorme, y los mecanismos de verificación no siempre son visibles para el usuario.</p>
+
+        <h3>Verificación de información</h3>
+        <p>Existen herramientas y organizaciones dedicadas a la verificación de hechos (fact-checking). En Uruguay, medios como Chequeado o iniciativas de la UDELAR hacen este trabajo. A nivel internacional, organizaciones como Snopes o FactCheck.org son referencias establecidas. Sin embargo, la verificación no puede delegarse completamente: cada persona necesita desarrollar habilidades propias de evaluación crítica.</p>
+
+        <h3>Relación con la Estrategia Nacional</h3>
+        <p>Este tema trabaja las habilidades de "analizar la información y cuestionar contenidos" correspondiente a la dimensión 1 de la Estrategia Nacional de Ciudadanía Digital 2024–2028 (Agesic).</p>
+
+        <div class="caja-ia">
+          <div class="caja-ia-titulo">🤖 Inteligencia artificial integrada</div>
+          <p>La IA genera nuevas formas de contenido falso difíciles de detectar: deepfakes (videos y audios manipulados), texto generado que imita estilos periodísticos, imágenes sintéticas que parecen fotografías reales. Al mismo tiempo, hay herramientas de IA que ayudan a detectar este tipo de contenido. El desafío no es solo técnico: requiere desarrollar criterios críticos para evaluar lo que vemos, independientemente de si fue generado por humanos o máquinas.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. ACTIVIDAD -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#E0F2F1;">🎯</div>
+          <div>
+            <div class="acordeon-titulo">Actividad participativa</div>
+            <div class="acordeon-subtitulo">Para trabajar en el aula con los estudiantes</div>
+          </div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido">
+        <div class="caja-actividad">
+          <div class="caja-actividad-titulo">📋 "Real o falso: el desafío de verificar"</div>
+          <p><strong>Duración estimada</strong>: 50 minutos</p>
+          <p><strong>Materiales</strong>: tarjetas impresas o pantalla con capturas de noticias, titulares y publicaciones (reales y falsas, mezcladas)</p>
+        </div>
+
+        <h3>Desarrollo</h3>
+        <p><strong>Momento 1 — Disparador (10 min)</strong></p>
+        <p>El docente muestra tres o cuatro titulares o publicaciones de redes sociales —algunos reales, otros falsos, alguno engañoso— sin revelar cuáles son cuáles. Los estudiantes votan de mano alzada cuáles creen que son verdaderos. Se registra en el pizarrón.</p>
+
+        <p><strong>Momento 2 — Investigación en grupos (20 min)</strong></p>
+        <p>En grupos de 3 o 4, los estudiantes reciben una tarjeta con una publicación o noticia. Su tarea es investigar si es real, falsa o engañosa, y argumentar cómo llegaron a esa conclusión. Pueden usar dispositivos si hay acceso. Si no, trabajan con las pistas que da el propio texto.</p>
+
+        <p><strong>Momento 3 — Puesta en común (10 min)</strong></p>
+        <p>Cada grupo presenta su caso: qué tenían, cómo lo investigaron, a qué conclusión llegaron. El docente revela la verdad de cada caso y señala las estrategias que usaron los grupos, tanto las que funcionaron como las que no.</p>
+
+        <p><strong>Momento 4 — Cierre y reflexión crítica (10 min)</strong></p>
+        <p>El docente introduce el momento crítico a partir de las preguntas de la sección correspondiente.</p>
+
+        <div class="caja-actividad">
+          <div class="caja-actividad-titulo">💡 Variante sin internet</div>
+          <p>Si no hay acceso a internet, trabajar con las características internas del texto: ¿tiene fuentes identificadas?, ¿la fecha es visible?, ¿el lenguaje es sensacionalista?, ¿el autor está identificado? Estos criterios permiten hacer una evaluación razonada sin necesidad de verificar en línea.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. GUÍA DOCENTE -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#EDE7F6;">📖</div>
+          <div>
+            <div class="acordeon-titulo">Guía docente</div>
+            <div class="acordeon-subtitulo">Orientaciones para ciclo básico y bachillerato</div>
+          </div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido">
+        <div class="tabs-nivel">
+          <button class="tab-nivel activo" onclick="cambiarNivel(this, 'basico')">Ciclo básico</button>
+          <button class="tab-nivel" onclick="cambiarNivel(this, 'bachillerato')">Bachillerato</button>
+        </div>
+
+        <div class="panel-nivel visible" id="panel-basico">
+          <div class="caja-nivel">
+            <div class="caja-nivel-titulo">Ciclo básico (1.º – 3.º año)</div>
+            <p>El foco en ciclo básico es que los estudiantes identifiquen que no todo lo que circula en internet es verdadero, y que existen estrategias básicas para evaluar la información antes de compartirla. No es necesario profundizar en los mecanismos de producción de desinformación.</p>
+          </div>
+          <h3>Preguntas orientadoras</h3>
+          <ul>
+            <li>¿Alguna vez compartieron algo que después resultó ser falso? ¿Cómo se enteraron?</li>
+            <li>Cuando leen algo en internet, ¿cómo saben si es verdadero?</li>
+            <li>¿Qué harían antes de compartir una noticia que les parece importante?</li>
+            <li>¿Por qué creen que la gente comparte cosas falsas?</li>
+          </ul>
+          <h3>Conceptos clave que emergen</h3>
+          <ul>
+            <li>Diferencia entre información real, falsa y engañosa</li>
+            <li>Criterios básicos de evaluación: fuente, fecha, autor</li>
+            <li>Responsabilidad de quien comparte</li>
+          </ul>
+          <h3>Producto sugerido</h3>
+          <p>Afiche grupal con "5 preguntas antes de compartir", escrito en lenguaje accesible para mostrar en el aula o compartir con la comunidad educativa.</p>
+        </div>
+
+        <div class="panel-nivel" id="panel-bachillerato">
+          <div class="caja-nivel">
+            <div class="caja-nivel-titulo">Bachillerato (4.º – 6.º año)</div>
+            <p>En bachillerato se puede trabajar la economía política de la desinformación: quién la produce, con qué fines, cómo los algoritmos la amplifican, y cuál es el rol de los medios de comunicación y las plataformas en su circulación. También se puede profundizar en las implicancias éticas y políticas.</p>
+          </div>
+          <h3>Preguntas orientadoras</h3>
+          <ul>
+            <li>¿Quién se beneficia de que circule información falsa sobre un tema?</li>
+            <li>¿Por qué los algoritmos tienden a amplificar contenido emotivo aunque sea falso?</li>
+            <li>¿Qué responsabilidad tienen las plataformas sobre el contenido que difunden?</li>
+            <li>¿Puede la IA resolver el problema de la desinformación? ¿Por qué?</li>
+          </ul>
+          <h3>Conceptos clave que emergen</h3>
+          <ul>
+            <li>Economía de la atención y desinformación</li>
+            <li>Sesgos de confirmación y burbujas de filtro</li>
+            <li>Deepfakes y contenido generado por IA</li>
+            <li>Responsabilidad de plataformas y medios</li>
+            <li>Fact-checking como práctica ciudadana</li>
+          </ul>
+          <h3>Producto sugerido</h3>
+          <p>Análisis crítico de un caso real de desinformación: cómo circuló, qué impacto tuvo, cómo fue desmentido (o no), y qué dice esto sobre el ecosistema informativo actual.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. MOMENTO CRÍTICO -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#FFEBEE;">💭</div>
+          <div>
+            <div class="acordeon-titulo">Momento crítico</div>
+            <div class="acordeon-subtitulo">Preguntas para pensar y tomar posición</div>
+          </div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido">
+        <div class="caja-critica">
+          <div class="caja-critica-titulo">💭 Preguntas sin respuesta única</div>
+          <ol>
+            <li>¿Es posible verificar todo lo que leemos? ¿Qué hacemos con la información que no podemos verificar?</li>
+            <li>¿Las plataformas deberían eliminar automáticamente el contenido falso? ¿Quién decidiría qué es falso?</li>
+            <li>¿Compartir algo falso sin saberlo es lo mismo que mentir? ¿Tenemos responsabilidad sobre lo que compartimos?</li>
+            <li>¿Es más peligrosa la desinformación política o la desinformación sobre salud? ¿Por qué?</li>
+            <li>Si una IA puede generar imágenes o videos falsos perfectos, ¿podemos seguir confiando en lo que vemos?</li>
+          </ol>
+        </div>
+        <p style="font-size:0.85rem; color:var(--gris-suave); margin-top:0.75rem;">Estas preguntas no tienen respuesta correcta. El objetivo es que los estudiantes argumenten su posición y escuchen la de otros.</p>
+      </div>
+    </div>
+
+    <!-- 5. ENTRADAS DISCIPLINARES -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#F5F5F5;">🚪</div>
+          <div>
+            <div class="acordeon-titulo">Entradas disciplinares</div>
+            <div class="acordeon-subtitulo">Cómo abordar este tema según tu asignatura</div>
+          </div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido">
+        <p style="font-size:0.9rem; color:var(--gris-suave); margin-bottom:1rem;">La ciudadanía digital es el centro. La asignatura es la puerta de entrada.</p>
+        <div class="entradas-grid">
+          <div class="entrada-card informatica">
+            <h4>💻 Desde Informática</h4>
+            <p>Explorar cómo funcionan técnicamente los algoritmos de recomendación y por qué tienden a amplificar contenido emotivo. Trabajar con herramientas de detección de imágenes generadas por IA o de verificación de metadatos de fotos.</p>
+            <p style="margin-top:0.5rem;"><strong>Pregunta guía</strong>: ¿Cómo decide un algoritmo qué información mostrarte primero?</p>
+          </div>
+          <div class="entrada-card ciudadania">
+            <h4>⚖️ Desde Ed. para la Ciudadanía</h4>
+            <p>Trabajar la desinformación como problema democrático: cómo afecta la participación ciudadana, las elecciones y la deliberación pública. Analizar casos de desinformación política en Uruguay y la región.</p>
+            <p style="margin-top:0.5rem;"><strong>Pregunta guía</strong>: ¿Puede una democracia funcionar bien si los ciudadanos están desinformados?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <div class="nav-entre-temas">
+    <a href="tema-2-privacidad.html">← Tema 02: Privacidad y datos personales</a>
+    <a href="tema-4-convivencia.html">Tema 04: Convivencia digital →</a>
+  </div>
+
+  <footer>
+    <p>Navegar con Otros · Recurso web de ciudadanía digital para docentes de Educación Media · Uruguay · 2026</p>
+    <p style="margin-top:0.5rem;"><a href="index.html">← Volver al inicio</a></p>
+  </footer>
+
+  <script>
+    function toggleAcordeon(btn) {
+      const contenido = btn.nextElementSibling;
+      const estaAbierto = btn.classList.contains('abierto');
+      btn.classList.toggle('abierto', !estaAbierto);
+      contenido.classList.toggle('visible', !estaAbierto);
+    }
+    function cambiarNivel(tab, nivel) {
+      const tabs = tab.parentElement.querySelectorAll('.tab-nivel');
+      const paneles = tab.closest('.acordeon-contenido').querySelectorAll('.panel-nivel');
+      tabs.forEach(t => t.classList.remove('activo'));
+      paneles.forEach(p => p.classList.remove('visible'));
+      tab.classList.add('activo');
+      document.getElementById('panel-' + nivel).classList.add('visible');
+    }
+  </script>
+
+</body>
+</html>

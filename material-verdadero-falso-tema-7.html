@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verdadero o Falso — Creación y participación — Navegar con Otros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    :root {
+      --color-tema: #00897B;
+      --color-tema-claro: #E0F2F1;
+    }
+  </style>
+</head>
+<body>
+  <nav><a href="index.html" class="nav-logo">Navegar <span>con Otros</span></a><ul class="nav-links"><li><a href="index.html#temas">Temas</a></li><li><a href="recursos.html">Recursos</a></li></ul></nav>
+  <div class="mh"><div class="mhi">
+    <div class="mm">
+      <div class="mr"><a href="index.html">Inicio</a> → <a href="tema-7-creacion.html">Tema 07</a> → Verdadero o Falso</div>
+      <h1>Verdadero o Falso</h1>
+      <p>Afirmaciones sobre creación de contenido, propiedad intelectual y participación digital para debatir en clase.</p>
+      <div class="badges"><span class="badge bg">Creación y participación</span><span class="badge bv">Ciclo básico y bachillerato</span><span class="badge ba">Disparador o cierre</span></div>
+    </div>
+    <div class="ma">
+      <button class="btn-p" onclick="window.print()">🖨️ Imprimir / PDF</button>
+      <button class="btn-r" onclick="reiniciar()">↺ Reiniciar</button>
+    </div>
+  </div></div>
+  <div class="inst"><div class="inst-i">
+    <h3>¿Cómo usar este material?</h3>
+    <div class="inst-g">
+      <div class="ii"><strong>Individual en pantalla</strong>Cada estudiante responde y ve la explicación después de cada afirmación.</div>
+      <div class="ii"><strong>Grupal proyectado</strong>El docente proyecta y la clase vota de mano alzada antes de ver la respuesta.</div>
+      <div class="ii"><strong>Impreso</strong>Los estudiantes marcan V o F y después comparan las respuestas.</div>
+      <div class="ii"><strong>Ojo</strong>Algunas afirmaciones tienen matices importantes. El debate es el objetivo.</div>
+    </div>
+  </div></div>
+  <div class="pb"><div class="pt"><span id="pl">Pregunta 1 de 10</span><span id="pp">0 correctas</span></div><div class="ptrack"><div class="pfill" id="pf"></div></div></div>
+  <div class="jc" id="juego"></div>
+  <footer><p>Navegar con Otros · Ciudadanía digital para docentes · Uruguay · 2026</p><p style="margin-top:0.5rem;"><a href="tema-7-creacion.html">← Volver al Tema 07</a></p></footer>
+  <script>
+    const afs=[
+      {t:"Todo el contenido que encontrás en internet es de libre uso para tus proyectos.",r:false,e:"Falso. La mayoría del contenido en internet está protegido por derechos de autor. Para usarlo legalmente necesitás permiso del autor, o que el contenido tenga una licencia que lo permita (Creative Commons, dominio público). Usar contenido protegido sin permiso es una infracción, aunque no lo hagas con fines comerciales.",d:"¿Sabías esto? ¿Cómo buscás normalmente imágenes o música para tus trabajos?"},
+      {t:"Las licencias Creative Commons permiten que los autores compartan su trabajo bajo condiciones que ellos mismos eligen.",r:true,e:"Verdadero. Creative Commons es un sistema de licencias que permite a los autores mantener algunos derechos y ceder otros. Hay seis tipos de licencias CC, que combinan condiciones como: atribución obligatoria, uso no comercial, compartir igual, sin obras derivadas. Es fundamental leer qué permite cada licencia específica.",d:"¿Conocías Creative Commons? ¿Sabés cómo filtrar resultados por tipo de licencia en Google Images?"},
+      {t:"Publicar contenido en internet sobre un tema de interés público es una forma de participación ciudadana.",r:true,e:"Verdadero. Producir y difundir contenido sobre asuntos que afectan a la comunidad —una denuncia, una campaña, información sobre derechos— es una forma legítima de participación ciudadana en la era digital. La web 2.0 convirtió a los ciudadanos en productores, no solo consumidores de información.",d:"¿Alguna vez publicaste algo con la intención de que cambiara algo? ¿Qué pasó?"},
+      {t:"Un texto generado completamente por una IA tiene los mismos derechos de autor que uno escrito por una persona.",r:false,e:"Falso, aunque el debate legal está abierto. En la mayoría de los marcos legales actuales, los derechos de autor requieren autoría humana. Un texto generado enteramente por IA no tiene autor humano identificable y en principio no está protegido. Sin embargo, si una persona hace una contribución creativa significativa usando IA como herramienta, esa contribución puede estar protegida.",d:"¿Quién creés que debería ser el autor de algo creado con IA: la persona que dio las instrucciones, la empresa que desarrolló la IA, o nadie?"},
+      {t:"Wikipedia puede ser usada como fuente primaria en trabajos académicos porque tiene millones de editores.",r:false,e:"Falso en general. Wikipedia es una fuente secundaria y de referencia general, útil como punto de partida pero no como fuente primaria en trabajos académicos. Su valor real está en que cada artículo cita sus fuentes: esas fuentes primarias son las que deberías consultar y citar. Wikipedia sí puede ser útil para entender un tema y encontrar bibliografía.",d:"¿Cómo usás Wikipedia cuando investigás? ¿Lo usás como punto de llegada o de partida?"},
+      {t:"Una petición en línea con miles de firmas siempre tiene impacto legal o institucional.",r:false,e:"Falso. Las peticiones en línea no tienen fuerza legal obligatoria por sí solas. Su impacto depende de muchos factores: la visibilidad que alcanzan, la cobertura mediática, la presión política que generan, y la voluntad institucional de responder. Pueden ser muy efectivas como herramienta de presión, pero no garantizan ningún resultado.",d:"¿Conocés alguna petición en línea que haya tenido impacto real? ¿Qué la hizo efectiva?"},
+      {t:"Compartir en redes la foto de alguien sin su permiso, aunque sea una foto pública, puede ser problemático.",r:true,e:"Verdadero. Aunque una foto sea técnicamente pública (publicada en una red social), compartirla en un contexto diferente puede vulnerar la privacidad o el derecho a la imagen de la persona. El contexto importa: una foto publicada para amigos cercanos no necesariamente autoriza su difusión masiva.",d:"¿Alguna vez te compartieron una foto tuya en un contexto que no esperabas? ¿Cómo te sentiste?"},
+      {t:"Usar una imagen generada por IA para un trabajo escolar es lo mismo que dibujarla uno mismo.",r:false,e:"No exactamente. Usar IA para generar una imagen es una herramienta, como usar Photoshop o una cámara. Lo que importa es ser transparente sobre cómo se creó el contenido. Presentar una imagen generada por IA como si fuera propia sin indicarlo puede ser engañoso, y en algunos contextos educativos puede considerarse deshonestidad académica.",d:"¿Cuándo está bien usar IA para crear contenido y cuándo no? ¿Cambia según el contexto?"},
+      {t:"El código abierto (software libre) es menos seguro que el software propietario porque cualquiera puede ver el código.",r:false,e:"Falso. El código abierto suele ser igual o más seguro que el software propietario. El hecho de que muchas personas puedan revisar el código significa que los errores y vulnerabilidades se detectan y corrigen más rápido. Muchos de los sistemas más seguros del mundo (Linux, Firefox, muchos servidores) son de código abierto.",d:"¿Usás software de código abierto sin saberlo? (LibreOffice, Firefox, Android base son ejemplos)"},
+      {t:"Un creador de contenido digital que no es periodista no tiene ninguna responsabilidad sobre la información que publica.",r:false,e:"Falso. Aunque los creadores de contenido no están sujetos al código deontológico periodístico, sí tienen responsabilidad sobre lo que publican: responsabilidad legal (no difamar, no violar derechos de autor) y responsabilidad ética (verificar antes de compartir, especialmente si tienen audiencia). La audiencia no exime de responsabilidad: la amplifica.",d:"¿Creés que todos los que publican en internet tienen la misma responsabilidad, independientemente de cuántos seguidores tengan?"}
+    ];
+    let correctas=0,respondidas=0;
+    function construir(){
+      const j=document.getElementById('juego');j.innerHTML='';
+      afs.forEach((a,i)=>{
+        const c=document.createElement('div');c.className='ac'+(i===0?' activa':'');c.id='c'+i;
+        c.innerHTML=`<div class="an">Afirmación ${i+1} de ${afs.length}</div><div class="at">${a.t}</div><div class="ab"><button class="bvf bv2" onclick="resp(${i},true)">✓ Verdadero</button><button class="bvf bf" onclick="resp(${i},false)">✗ Falso</button></div><div class="rp" id="r${i}"></div>`;
+        j.appendChild(c);
+      });
+      const f=document.createElement('div');f.className='rf';f.id='fin';j.appendChild(f);
+    }
+    function resp(i,e){
+      const a=afs[i],ok=e===a.r;if(ok)correctas++;respondidas++;
+      document.querySelector(`#c${i} .bv2`).disabled=true;document.querySelector(`#c${i} .bf`).disabled=true;
+      document.querySelector(`#c${i} .bv2`).style.opacity='0.6';document.querySelector(`#c${i} .bf`).style.opacity='0.6';
+      const p=document.getElementById('r'+i);
+      p.innerHTML=`<div class="rr ${ok?'ok':'no'}">${ok?'✓ Correcto':'✗ Incorrecto'} — La afirmación es ${a.r?'verdadera':'falsa'}</div><p class="re">${a.e}</p><div class="rd">💬 Para debatir: ${a.d}</div><button class="bs" onclick="sig(${i})">${i<afs.length-1?'Siguiente →':'Ver resultado final'}</button>`;
+      p.classList.add('visible');actualizar();
+    }
+    function sig(i){document.getElementById('c'+i).classList.remove('activa');if(i<afs.length-1)document.getElementById('c'+(i+1)).classList.add('activa');else final();}
+    function final(){
+      const f=document.getElementById('fin');const p=Math.round(correctas/afs.length*100);
+      let e='🌱',m='Estás comenzando a explorar el tema. El debate en clase va a profundizar estas ideas.';
+      if(p>=70){e='🎨';m='Buen manejo del tema. Ahora viene lo más interesante: crear con criterio.';}
+      if(p>=90){e='🚀';m='Excelente. Tenés una base sólida para crear y participar de forma responsable.';}
+      f.innerHTML=`<div class="re2">${e}</div><h2>Juego completado</h2><div class="rp2">${correctas}/${afs.length}</div><div class="rs">respuestas correctas (${p}%)</div><div class="rm">${m}</div><button class="bs" onclick="reiniciar()">↺ Jugar de nuevo</button>`;
+      f.classList.add('visible');actualizar();
+    }
+    function actualizar(){
+      document.getElementById('pf').style.width=(respondidas/afs.length*100)+'%';
+      document.getElementById('pl').textContent=respondidas<afs.length?`Pregunta ${respondidas+1} de ${afs.length}`:'Completado';
+      document.getElementById('pp').textContent=correctas+' correctas';
+    }
+    function reiniciar(){correctas=0;respondidas=0;document.getElementById('pf').style.width='0%';document.getElementById('pl').textContent='Pregunta 1 de 10';document.getElementById('pp').textContent='0 correctas';construir();}
+    construir();
+  </script>
+</body>
+</html>

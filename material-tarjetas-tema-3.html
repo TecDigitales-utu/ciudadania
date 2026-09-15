@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjetas de casos — Desinformación — Navegar con Otros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    :root {
+      --color-tema: #EF5350;
+      --color-tema-claro: #FFEBEE;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Navegar <span>con Otros</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#temas">Temas</a></li>
+      <li><a href="recursos.html">Recursos</a></li>
+      <li><a href="sobre-el-proyecto.html">Sobre el proyecto</a></li>
+    </ul>
+  </nav>
+
+  <div class="material-header">
+    <div class="material-header-inner">
+      <div class="material-meta">
+        <div class="material-ruta"><a href="index.html">Inicio</a> → <a href="tema-3-desinformacion.html">Tema 03: Desinformación</a> → Tarjetas de casos</div>
+        <h1>Tarjetas de casos</h1>
+        <p>Situaciones para analizar, debatir y verificar en el aula. Cada tarjeta presenta un caso de desinformación, contenido engañoso o uso de IA.</p>
+        <div class="material-badges">
+          <span class="badge badge-coral">Desinformación</span>
+          <span class="badge badge-violeta">Ciclo básico y bachillerato</span>
+          <span class="badge badge-verde">Actividad grupal</span>
+        </div>
+      </div>
+      <div class="material-acciones">
+        <button class="btn-imprimir" onclick="window.print()">🖨️ Imprimir / PDF</button>
+        <button class="btn-instrucciones" onclick="document.getElementById('instrucciones').classList.toggle('visible')">📋 Instrucciones</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="instrucciones-panel" id="instrucciones">
+    <div class="instrucciones-panel-inner">
+      <h3>¿Cómo usar estas tarjetas?</h3>
+      <div class="instrucciones-grid">
+        <div class="instruccion-item"><strong>Imprimí y recortá</strong>Repartí una tarjeta por grupo. Cada grupo investiga su caso y presenta sus conclusiones.</div>
+        <div class="instruccion-item"><strong>Debate grupal</strong>Usá una sola tarjeta para toda la clase y debatid juntos. El docente puede revelar la verdad al final.</div>
+        <div class="instruccion-item"><strong>Sin internet</strong>Trabajá con las pistas internas del texto: ¿tiene fuente?, ¿fecha?, ¿lenguaje sensacionalista?, ¿autor identificado?</div>
+        <div class="instruccion-item"><strong>Con internet</strong>Los grupos verifican en línea y después comparten cómo lo hicieron: qué buscaron, qué encontraron.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tarjetas-contenedor">
+    <p class="tarjetas-intro">Hacé clic en una tarjeta para verla completa · 8 tarjetas · Tema 03</p>
+    <div class="tarjetas-grid">
+
+      <div class="tarjeta tipo-falsa" onclick="abrirModal('m1')">
+        <div class="tarjeta-header"><span class="tarjeta-numero">Tarjeta 01</span><span class="tarjeta-tipo">Noticia falsa</span></div>
+        <div class="tarjeta-cuerpo">
+          <div class="tarjeta-situacion">El mensaje de WhatsApp</div>
+          <p class="tarjeta-descripcion">Un mensaje que circula por WhatsApp afirma que beber agua caliente con limón cura el COVID-19 y que "los médicos no quieren que sepas esto".</p>
+          <div class="tarjeta-pregunta">¿Cómo sabrías si esto es verdad? ¿Qué señales de alerta ves en el mensaje?</div>
+        </div>
+        <div class="tarjeta-pie">👥 Grupal · 🔍 Verificación</div>
+      </div>
+
+      <div class="tarjeta tipo-engañosa" onclick="abrirModal('m2')">
+        <div class="tarjeta-header"><span class="tarjeta-numero">Tarjeta 02</span><span class="tarjeta-tipo">Contenido engañoso</span></div>
+        <div class="tarjeta-cuerpo">
+          <div class="tarjeta-situacion">La foto fuera de contexto</div>
+          <p class="tarjeta-descripcion">Durante una inundación en Uruguay, circula en redes una foto impactante de personas en el agua. La foto es real, pero es de una inundación en Bangladesh de hace cinco años.</p>
+          <div class="tarjeta-pregunta">¿Es mentira usar una foto real para ilustrar una noticia diferente? ¿Por qué?</div>
+        </div>
+        <div class="tarjeta-pie">👥 Grupal · 💬 Debate</div>
+      </div>
+
+      <div class="tarjeta tipo-ia" onclick="abrirModal('m3')">
+        <div class="tarjeta-header"><span class="tarjeta-numero">Tarjeta 03</span><span class="tarjeta-tipo">IA y deepfake</span></div>
+        <div class="tarjeta-cuerpo">
+          <div class="tarjeta-situacion">El video del político</div>
+          <p class="tarjeta-descripcion">Un video muestra a un político uruguayo diciendo cosas que nunca dijo. El video fue generado con IA y se viralizó días antes de una elección.</p>
+          <div class="tarjeta-pregunta">¿Cómo podrías saber si un video es real o generado por IA? ¿Qué consecuencias puede tener esto para la democracia?</div>
+        </div>
+        <div class="tarjeta-pie">👥 Grupal · 🤖 IA · ⚖️ Democracia</div>
+      </div>
+
+      <div class="tarjeta tipo-engañosa" onclick="abrirModal('m4')">
+        <div class="tarjeta-header"><span class="tarjeta-numero">Tarjeta 04</span><span class="tarjeta-tipo">Titular engañoso</span></div>
+        <div class="tarjeta-cuerpo">
+          <div class="tarjeta-situacion">El titular que miente sin mentir</div>
+          <p class="tarjeta-descripcion">Un medio publica: "Científicos descubren que el chocolate previene el cáncer". El artículo, que casi nadie lee, aclara que fue un estudio pequeño, no replicado, con ratas.</p>
+          <div class="tarjeta-pregunta">¿El titular miente? ¿Es lo mismo que desinformar? ¿Quién tiene la responsabilidad: el medio o el lector?</div>
+        </div>
+        <div class="tarjeta-pie">👥 Grupal · 💬 Debate</div>
+      </div>
+
+      <div class="tarjeta tipo-falsa" onclick="abrirModal('m5')">
+        <div class="tarjeta-header"><span class="tarjeta-numero">Tarjeta 05</span><span class="tarjeta-tipo">Noticia falsa</span></div>
+        <div class="tarjeta-cuerpo">
+          <div class="tarjeta-situacion">El meme de estadística</div>
+          <p class="tarjeta-descripcion">Un meme afirma que "el 80% de los jóvenes uruguayos no sabe leer correctamente". No cita ninguna fuente. Fue compartido 50.000 veces.</p>
+          <div class="tarjeta-pregunta">¿Por qué la gente comparte cosas sin verificar? ¿Qué hace que este meme sea creíble aunque no tenga fuente?</div>
+        </div>
+        <div class="tarjeta-pie">👥 Grupal · 🔍 Verificación</div>
+      </div>
+
+      <div class="tarjeta tipo-ia" onclick="abrirModal('m6')">
+        <div class="tarjeta-header"><span class="tarjeta-numero">Tarjeta 06</span><span class="tarjeta-tipo">IA y contenido falso</span></div>
+        <div class="tarjeta-cuerpo">
+          <div class="tarjeta-situacion">La foto del terremoto</div>
+          <p class="tarjeta-descripcion">Después de un terremoto en Turquía, circulan en redes imágenes impactantes de edificios derrumbados. Algunas son reales. Otras fueron generadas por IA y son completamente falsas.</p>
+          <div class="tarjeta-pregunta">¿Cómo distinguirías una foto real de una generada por IA? ¿Qué daño puede hacer una imagen falsa en una emergencia?</div>
+        </div>
+        <div class="tarjeta-pie">👥 Grupal · 🤖 IA</div>
+      </div>
+
+      <div class="tarjeta tipo-engañosa" onclick="abrirModal('m7')">
+        <div class="tarjeta-header"><span class="tarjeta-numero">Tarjeta 07</span><span class="tarjeta-tipo">Contenido engañoso</span></div>
+        <div class="tarjeta-cuerpo">
+          <div class="tarjeta-situacion">La estadística cortada</div>
+          <p class="tarjeta-descripcion">Una publicación muestra un gráfico que dice que la criminalidad "aumentó un 300%" en los últimos años. El gráfico empieza desde un número muy bajo y el eje Y está manipulado para exagerar la diferencia.</p>
+          <div class="tarjeta-pregunta">¿Puede un gráfico mentir sin usar números falsos? ¿Cómo lo detectarías?</div>
+        </div>
+        <div class="tarjeta-pie">👥 Grupal · 📊 Datos</div>
+      </div>
+
+      <div class="tarjeta tipo-falsa" onclick="abrirModal('m8')">
+        <div class="tarjeta-header"><span class="tarjeta-numero">Tarjeta 08</span><span class="tarjeta-tipo">Noticia falsa</span></div>
+        <div class="tarjeta-cuerpo">
+          <div class="tarjeta-situacion">El comparte y gana</div>
+          <p class="tarjeta-descripcion">Una publicación dice: "Compartí esto y una empresa donará $1 por cada compartida a niños con cáncer. Ya llevan 2 millones de compartidas". No hay empresa, no hay donación.</p>
+          <div class="tarjeta-pregunta">¿Por qué la gente comparte estas publicaciones aunque parezcan sospechosas? ¿Qué gana quien las crea?</div>
+        </div>
+        <div class="tarjeta-pie">👥 Grupal · 💬 Debate</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MODALES -->
+  <div class="modal-overlay" id="m1" onclick="cerrarModal('m1')">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-header" style="background:#FFEBEE;">
+        <div><div style="font-size:0.75rem;font-weight:700;color:#EF5350;margin-bottom:0.3rem;">Tarjeta 01 · Noticia falsa</div><div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:1.2rem;color:#B71C1C;">El mensaje de WhatsApp</div></div>
+        <button onclick="cerrarModal('m1')" style="background:none;border:none;font-size:1.4rem;cursor:pointer;color:#B71C1C;">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>Un mensaje que circula masivamente por WhatsApp afirma que beber agua caliente con limón tres veces al día cura el COVID-19 y previene otras enfermedades. Agrega: "Los médicos no quieren que sepas esto porque perderían dinero". No cita ninguna fuente ni autor.</p>
+        <p>El mensaje fue compartido por millones de personas en varios países, incluso por personas con buenas intenciones que querían ayudar a sus contactos.</p>
+        <div class="modal-preguntas" style="background:#FFEBEE;">
+          <p style="color:#B71C1C;">Preguntas para debatir</p>
+          <ul>
+            <li>¿Qué señales de alerta tiene este mensaje? ¿Cuáles identificás?</li>
+            <li>¿Por qué la gente lo comparte aunque no tenga fuente?</li>
+            <li>¿Qué daño puede causar este tipo de desinformación sobre salud?</li>
+            <li>¿Cómo verificarías si esto es verdad antes de compartirlo?</li>
+          </ul>
+        </div>
+        <button class="modal-cerrar" onclick="cerrarModal('m1')">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="m2" onclick="cerrarModal('m2')">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-header" style="background:#FFF3E0;">
+        <div><div style="font-size:0.75rem;font-weight:700;color:#F57C00;margin-bottom:0.3rem;">Tarjeta 02 · Contenido engañoso</div><div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:1.2rem;color:#E65100;">La foto fuera de contexto</div></div>
+        <button onclick="cerrarModal('m2')" style="background:none;border:none;font-size:1.4rem;cursor:pointer;color:#E65100;">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>Durante una inundación en Uruguay, alguien publica en redes sociales una foto muy impactante que muestra personas atrapadas en el agua. La foto genera miles de reacciones y comentarios. El problema es que la foto es real, pero corresponde a una inundación en Bangladesh ocurrida hace cinco años. No tiene nada que ver con Uruguay.</p>
+        <div class="modal-preguntas" style="background:#FFF3E0;">
+          <p style="color:#E65100;">Preguntas para debatir</p>
+          <ul>
+            <li>¿Es mentira usar una foto real para ilustrar una noticia diferente?</li>
+            <li>¿Esto es lo mismo que inventar una foto falsa? ¿Por qué?</li>
+            <li>¿Cómo podrías verificar si una foto corresponde al evento que dice mostrar?</li>
+            <li>¿Qué consecuencias puede tener este tipo de contenido en una emergencia real?</li>
+          </ul>
+        </div>
+        <button class="modal-cerrar" onclick="cerrarModal('m2')">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="m3" onclick="cerrarModal('m3')">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-header" style="background:#F3E5F5;">
+        <div><div style="font-size:0.75rem;font-weight:700;color:#8E24AA;margin-bottom:0.3rem;">Tarjeta 03 · IA y deepfake</div><div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:1.2rem;color:#4A148C;">El video del político</div></div>
+        <button onclick="cerrarModal('m3')" style="background:none;border:none;font-size:1.4rem;cursor:pointer;color:#4A148C;">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>Un video circula en redes mostrando a un político uruguayo haciendo declaraciones polémicas que nunca realizó. La voz y el rostro parecen auténticos. El video fue creado usando herramientas de inteligencia artificial que permiten generar o modificar videos de forma realista (deepfake). Se difundió masivamente días antes de una elección.</p>
+        <div class="modal-preguntas" style="background:#F3E5F5;">
+          <p style="color:#4A148C;">Preguntas para debatir</p>
+          <ul>
+            <li>¿Cómo podrías saber si un video es real o generado por IA?</li>
+            <li>¿Qué consecuencias puede tener este tipo de contenido para la democracia?</li>
+            <li>¿Quién debería ser responsable: quien lo creó, quien lo compartió, o la plataforma que lo difundió?</li>
+            <li>¿Debería existir una ley que prohíba crear deepfakes de personas reales?</li>
+          </ul>
+        </div>
+        <button class="modal-cerrar" onclick="cerrarModal('m3')">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="m4" onclick="cerrarModal('m4')">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-header" style="background:#FFF3E0;">
+        <div><div style="font-size:0.75rem;font-weight:700;color:#F57C00;margin-bottom:0.3rem;">Tarjeta 04 · Titular engañoso</div><div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:1.2rem;color:#E65100;">El titular que miente sin mentir</div></div>
+        <button onclick="cerrarModal('m4')" style="background:none;border:none;font-size:1.4rem;cursor:pointer;color:#E65100;">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>Un medio de comunicación publica el titular: "Científicos descubren que el chocolate previene el cáncer". Miles de personas lo comparten entusiasmadas. El artículo completo, que casi nadie lee, aclara que fue un estudio pequeño realizado con ratas de laboratorio, no replicado por otros investigadores, y que los propios autores advierten que no puede extrapolarse a humanos.</p>
+        <div class="modal-preguntas" style="background:#FFF3E0;">
+          <p style="color:#E65100;">Preguntas para debatir</p>
+          <ul>
+            <li>¿El titular miente técnicamente? ¿Es lo mismo que desinformar?</li>
+            <li>¿Quién tiene la responsabilidad: el medio que publica el titular o el lector que no lee el artículo?</li>
+            <li>¿Por qué los medios usan titulares sensacionalistas aunque el contenido sea más matizado?</li>
+            <li>¿Cómo deberías leer una noticia sobre ciencia antes de compartirla?</li>
+          </ul>
+        </div>
+        <button class="modal-cerrar" onclick="cerrarModal('m4')">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="m5" onclick="cerrarModal('m5')">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-header" style="background:#FFEBEE;">
+        <div><div style="font-size:0.75rem;font-weight:700;color:#EF5350;margin-bottom:0.3rem;">Tarjeta 05 · Noticia falsa</div><div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:1.2rem;color:#B71C1C;">El meme de estadística</div></div>
+        <button onclick="cerrarModal('m5')" style="background:none;border:none;font-size:1.4rem;cursor:pointer;color:#B71C1C;">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>Un meme con fondo negro y letras blancas afirma: "El 80% de los jóvenes uruguayos no sabe leer correctamente. ¿Hasta cuándo vamos a seguir así?". No cita ninguna fuente, no tiene fecha ni autor. Fue compartido más de 50.000 veces y generó cientos de comentarios indignados.</p>
+        <div class="modal-preguntas" style="background:#FFEBEE;">
+          <p style="color:#B71C1C;">Preguntas para debatir</p>
+          <ul>
+            <li>¿Por qué la gente comparte cosas sin verificar? ¿Qué hace que este meme sea creíble aunque no tenga fuente?</li>
+            <li>¿Qué efecto tiene en la sociedad que circule esta información aunque sea falsa?</li>
+            <li>¿Cómo verificarías si esta estadística existe realmente?</li>
+            <li>¿Tiene importancia si la intención era "llamar la atención sobre un problema real"?</li>
+          </ul>
+        </div>
+        <button class="modal-cerrar" onclick="cerrarModal('m5')">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="m6" onclick="cerrarModal('m6')">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-header" style="background:#F3E5F5;">
+        <div><div style="font-size:0.75rem;font-weight:700;color:#8E24AA;margin-bottom:0.3rem;">Tarjeta 06 · IA y contenido falso</div><div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:1.2rem;color:#4A148C;">La foto del terremoto</div></div>
+        <button onclick="cerrarModal('m6')" style="background:none;border:none;font-size:1.4rem;cursor:pointer;color:#4A148C;">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>Después de un terremoto real en Turquía que causó miles de víctimas, circulan en redes sociales imágenes muy impactantes de edificios derrumbados y personas atrapadas. Algunas son fotos reales. Otras fueron generadas por inteligencia artificial y son completamente inventadas. Es difícil distinguirlas a simple vista.</p>
+        <div class="modal-preguntas" style="background:#F3E5F5;">
+          <p style="color:#4A148C;">Preguntas para debatir</p>
+          <ul>
+            <li>¿Cómo distinguirías una foto real de una generada por IA?</li>
+            <li>¿Qué daño puede hacer una imagen falsa en el contexto de una emergencia real?</li>
+            <li>¿Quién se beneficia de difundir imágenes falsas de catástrofes?</li>
+            <li>¿Deberían las plataformas detectar y eliminar estas imágenes automáticamente?</li>
+          </ul>
+        </div>
+        <button class="modal-cerrar" onclick="cerrarModal('m6')">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="m7" onclick="cerrarModal('m7')">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-header" style="background:#FFF3E0;">
+        <div><div style="font-size:0.75rem;font-weight:700;color:#F57C00;margin-bottom:0.3rem;">Tarjeta 07 · Contenido engañoso</div><div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:1.2rem;color:#E65100;">La estadística cortada</div></div>
+        <button onclick="cerrarModal('m7')" style="background:none;border:none;font-size:1.4rem;cursor:pointer;color:#E65100;">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>Una publicación muestra un gráfico de barras con el título "La criminalidad se disparó un 300% en los últimos 5 años". El gráfico parece dramático. Pero si mirás el eje vertical, empieza desde 95 en vez de desde 0, lo que hace que la diferencia parezca enorme cuando en realidad es pequeña. Los números son reales, pero el gráfico está diseñado para engañar.</p>
+        <div class="modal-preguntas" style="background:#FFF3E0;">
+          <p style="color:#E65100;">Preguntas para debatir</p>
+          <ul>
+            <li>¿Puede un gráfico mentir sin usar números falsos?</li>
+            <li>¿Cómo lo detectarías si no sabes mucho de estadística?</li>
+            <li>¿Qué preguntas deberías hacerte antes de creer un gráfico?</li>
+            <li>¿Quién es responsable de que este tipo de gráficos circulen?</li>
+          </ul>
+        </div>
+        <button class="modal-cerrar" onclick="cerrarModal('m7')">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="m8" onclick="cerrarModal('m8')">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="modal-header" style="background:#FFEBEE;">
+        <div><div style="font-size:0.75rem;font-weight:700;color:#EF5350;margin-bottom:0.3rem;">Tarjeta 08 · Noticia falsa</div><div style="font-family:'Nunito',sans-serif;font-weight:800;font-size:1.2rem;color:#B71C1C;">El comparte y gana</div></div>
+        <button onclick="cerrarModal('m8')" style="background:none;border:none;font-size:1.4rem;cursor:pointer;color:#B71C1C;">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>Una publicación dice: "Compartí esto antes de las 12 de la noche y una empresa donará $1 por cada compartida a niños con cáncer. Ya llevan 2 millones de compartidas — ¡ayudá a llegar al millón de dólares!". No hay empresa identificada, no hay ninguna donación real. Es una estrategia para conseguir engagement masivo.</p>
+        <div class="modal-preguntas" style="background:#FFEBEE;">
+          <p style="color:#B71C1C;">Preguntas para debatir</p>
+          <ul>
+            <li>¿Por qué la gente comparte estas publicaciones aunque parezcan sospechosas?</li>
+            <li>¿Qué gana quien las crea? ¿Cuál es el negocio detrás?</li>
+            <li>¿Qué tiene de dañino compartir algo así aunque "no haga daño a nadie"?</li>
+            <li>¿Cómo reconocerías este tipo de contenido antes de compartirlo?</li>
+          </ul>
+        </div>
+        <button class="modal-cerrar" onclick="cerrarModal('m8')">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Navegar con Otros · Recurso web de ciudadanía digital para docentes · Uruguay · 2026</p>
+    <p style="margin-top:0.5rem;"><a href="tema-3-desinformacion.html">← Volver al Tema 03</a></p>
+  </footer>
+
+  <script>
+    function abrirModal(id) { document.getElementById(id).classList.add('visible'); document.body.style.overflow = 'hidden'; }
+    function cerrarModal(id) { document.getElementById(id).classList.remove('visible'); document.body.style.overflow = ''; }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') { document.querySelectorAll('.modal-overlay.visible').forEach(m => m.classList.remove('visible')); document.body.style.overflow = ''; }});
+  </script>
+
+</body>
+</html>

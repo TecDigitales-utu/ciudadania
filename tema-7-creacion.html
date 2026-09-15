@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creación y participación — Navegar con Otros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    :root {
+      --color-tema: #00897B;
+      --color-tema-claro: #E0F2F1;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Navegar <span>con Otros</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#temas">Temas</a></li>
+      <li><a href="recursos.html">Recursos</a></li>
+      <li><a href="sobre-el-proyecto.html">Sobre el proyecto</a></li>
+    </ul>
+  </nav>
+
+  <div class="nav-temas">
+    <a href="tema-1-identidad.html">01 · Identidad</a>
+    <a href="tema-2-privacidad.html">02 · Privacidad</a>
+    <a href="tema-3-desinformacion.html">03 · Desinformación</a>
+    <a href="tema-4-convivencia.html">04 · Convivencia</a>
+    <a href="tema-5-bienestar.html">05 · Bienestar</a>
+    <a href="tema-6-derechos.html">06 · Derechos</a>
+    <a href="tema-7-creacion.html" class="activo">07 · Creación</a>
+  </div>
+
+  <header class="tema-header">
+    <div class="tema-header-inner">
+      <div class="tema-numero-grande">07</div>
+      <span class="tema-etiqueta">Tema 07</span>
+      <h1>Creación y participación</h1>
+      <p>Cómo producir contenido digital de forma ética y responsable, participar en la vida pública a través de los entornos digitales, y contribuir a una cultura digital más justa.</p>
+      <span class="tema-dimension">Dimensión: Creación y participación en el entorno digital</span>
+    </div>
+  </header>
+
+  <main class="contenido">
+
+    <!-- MARCO CONCEPTUAL -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn abierto" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#E0F2F1;">🧭</div>
+          <div><div class="acordeon-titulo">Marco conceptual</div><div class="acordeon-subtitulo">Qué es el tema y por qué importa</div></div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido visible">
+
+        <h3>De consumidores a productores</h3>
+        <p>La web 2.0 transformó la relación de las personas con la tecnología: ya no solo consumimos contenidos, también los producimos. Un video, un comentario, una publicación, un meme, una encuesta, una denuncia pública: todo eso es producción de contenido digital. Esta capacidad de crear y publicar sin intermediarios es una de las características más significativas de los entornos digitales actuales.</p>
+        <p>Esta capacidad trae consigo responsabilidades. Producir contenido implica tomar decisiones sobre qué decir, cómo decirlo, a quién afecta, y qué impacto puede tener. La ciudadanía digital activa no es solo saber cómo publicar, sino pensar antes de hacerlo.</p>
+
+        <h3>Propiedad intelectual y licencias</h3>
+        <p>Cuando usamos imágenes, música, texto o videos de otros en nuestros propios contenidos, necesitamos entender los derechos de autor. No todo lo que está en internet es de libre uso. Sin embargo, existen alternativas:</p>
+        <ul>
+          <li><strong>Copyright tradicional</strong>: todos los derechos reservados. No se puede usar sin permiso.</li>
+          <li><strong>Creative Commons</strong>: el autor mantiene algunos derechos y cede otros. Hay que verificar qué permite cada licencia específica.</li>
+          <li><strong>Dominio público</strong>: obras cuya protección expiró o que fueron cedidas libremente. De uso libre.</li>
+        </ul>
+
+        <h3>Participación digital ciudadana</h3>
+        <p>Los entornos digitales son espacios de participación política y cívica: peticiones en línea, campañas de concientización, acceso a información pública, comunicación con instituciones, denuncia de irregularidades. Esta dimensión de la ciudadanía digital conecta el uso de la tecnología con el ejercicio de derechos y responsabilidades ciudadanas.</p>
+        <p>También incluye participar en la producción del conocimiento colectivo: editar Wikipedia, contribuir a proyectos de código abierto, documentar el patrimonio cultural, reportar datos para mapas colaborativos.</p>
+
+        <h3>Relación con la Estrategia Nacional</h3>
+        <p>Este tema trabaja las habilidades de "crear y participar para la transformación personal y social" y "desarrollar contenidos digitales", correspondientes a la dimensión 3 de la Estrategia Nacional de Ciudadanía Digital 2024–2028 (Agesic).</p>
+
+        <div class="caja-ia">
+          <div class="caja-ia-titulo">🤖 Inteligencia artificial integrada</div>
+          <p>La IA es una nueva herramienta para la creación de contenido: genera texto, imágenes, audio y video. Esto plantea nuevas preguntas sobre autoría, originalidad y responsabilidad: ¿quién es el autor de un contenido generado con IA? ¿Qué obligaciones tenemos al usarla? ¿Cómo afecta a los creadores humanos? La IA también permite participar de formas nuevas, pero también puede ser usada para suplantar voces o generar desinformación a escala.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACTIVIDAD -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#E0F2F1;">🎯</div>
+          <div><div class="acordeon-titulo">Actividad participativa</div><div class="acordeon-subtitulo">Para trabajar en el aula con los estudiantes</div></div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido">
+        <div class="caja-actividad">
+          <div class="caja-actividad-titulo">📋 "Creamos para transformar"</div>
+          <p><strong>Duración estimada</strong>: 50 minutos (o dos clases si se produce el contenido)</p>
+          <p><strong>Materiales</strong>: dispositivos con acceso a internet, ficha de planificación impresa</p>
+        </div>
+
+        <h3>Desarrollo</h3>
+        <p><strong>Momento 1 — Disparador (10 min)</strong></p>
+        <p>El docente presenta ejemplos de contenido digital que tuvo impacto ciudadano real: una campaña en redes que logró un cambio, una petición que fue firmada masivamente, un video que visibilizó una injusticia. Pregunta: "¿Ustedes podrían crear algo así? ¿Sobre qué tema?"</p>
+
+        <p><strong>Momento 2 — Planificación en grupos (20 min)</strong></p>
+        <p>En grupos de 3 o 4, los estudiantes identifican un problema o tema que les importe de su comunidad educativa o barrio, y diseñan un contenido digital para abordarlo: puede ser una publicación en redes, un video corto, una infografía, una carta abierta, o una petición. Completan la ficha de planificación.</p>
+
+        <p><strong>Momento 3 — Revisión ética (10 min)</strong></p>
+        <p>Antes de avanzar, cada grupo revisa su propuesta con tres preguntas: ¿a quién afecta este contenido?, ¿hay información que debemos verificar antes de publicar?, ¿usamos materiales de otros y tenemos derecho a hacerlo?</p>
+
+        <p><strong>Momento 4 — Cierre y reflexión crítica (10 min)</strong></p>
+        <p>El docente introduce el momento crítico a partir de las preguntas de la sección correspondiente.</p>
+
+        <div class="caja-actividad">
+          <div class="caja-actividad-titulo">💡 Variante: producción real</div>
+          <p>Si el tiempo lo permite, los grupos producen y publican su contenido (o lo presentan al resto de la clase). El producto puede compartirse con la comunidad educativa como cierre del ciclo de actividades de ciudadanía digital.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- GUÍA DOCENTE -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#EDE7F6;">📖</div>
+          <div><div class="acordeon-titulo">Guía docente</div><div class="acordeon-subtitulo">Orientaciones para ciclo básico y bachillerato</div></div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido">
+        <div class="tabs-nivel">
+          <button class="tab-nivel activo" onclick="cambiarNivel(this,'basico')">Ciclo básico</button>
+          <button class="tab-nivel" onclick="cambiarNivel(this,'bachillerato')">Bachillerato</button>
+        </div>
+
+        <div class="panel-nivel visible" id="panel-basico">
+          <div class="caja-nivel">
+            <div class="caja-nivel-titulo">Ciclo básico (1.º – 3.º año)</div>
+            <p>El foco es que los estudiantes experimenten la creación de contenido como acto responsable: planificar, verificar, pensar en el impacto antes de publicar. No es necesario profundizar en propiedad intelectual; basta con la noción de que no todo es de libre uso.</p>
+          </div>
+          <h3>Preguntas orientadoras</h3>
+          <ul>
+            <li>¿Qué publicás normalmente en internet? ¿Lo pensás antes de hacerlo?</li>
+            <li>¿Alguna vez publicaste algo que después quisiste borrar? ¿Por qué?</li>
+            <li>Si quisieras cambiar algo de tu escuela o barrio, ¿cómo usarías internet para hacerlo?</li>
+            <li>¿Podés usar cualquier imagen o canción que encuentres en internet para tu contenido? ¿Por qué?</li>
+          </ul>
+          <h3>Conceptos clave que emergen</h3>
+          <ul>
+            <li>Creación responsable: pensar antes de publicar</li>
+            <li>Noción básica de derechos de autor</li>
+            <li>Participación digital como herramienta ciudadana</li>
+          </ul>
+          <h3>Producto sugerido</h3>
+          <p>Una publicación, infografía o video corto sobre un tema que les importe, con ficha de planificación que incluya verificación de fuentes y revisión ética previa a la publicación.</p>
+        </div>
+
+        <div class="panel-nivel" id="panel-bachillerato">
+          <div class="caja-nivel">
+            <div class="caja-nivel-titulo">Bachillerato (4.º – 6.º año)</div>
+            <p>En bachillerato se puede profundizar en las licencias Creative Commons, en la autoría en la era de la IA, en las formas de participación política digital, y en el rol de los creadores de contenido como actores con responsabilidad pública.</p>
+          </div>
+          <h3>Preguntas orientadoras</h3>
+          <ul>
+            <li>¿Qué obligaciones tiene alguien que tiene muchos seguidores y produce contenido que otros consumen?</li>
+            <li>¿Quién es el autor de un contenido generado con IA? ¿Importa la autoría?</li>
+            <li>¿Las peticiones en línea tienen impacto real? ¿Bajo qué condiciones?</li>
+            <li>¿Cómo decidís qué fuentes usás y cómo las citás cuando creás contenido?</li>
+          </ul>
+          <h3>Conceptos clave que emergen</h3>
+          <ul>
+            <li>Licencias Creative Commons y dominio público</li>
+            <li>Autoría y IA: propiedad intelectual en la era generativa</li>
+            <li>Influencers y responsabilidad pública</li>
+            <li>Activismo digital: posibilidades y límites</li>
+            <li>Conocimiento abierto: Wikipedia, código abierto, datos abiertos</li>
+          </ul>
+          <h3>Producto sugerido</h3>
+          <p>Campaña digital sobre un tema de ciudadanía: incluye investigación, producción de contenido con fuentes verificadas y citadas, selección de materiales con licencias apropiadas, y reflexión sobre el impacto esperado.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOMENTO CRÍTICO -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#FFEBEE;">💭</div>
+          <div><div class="acordeon-titulo">Momento crítico</div><div class="acordeon-subtitulo">Preguntas para pensar y tomar posición</div></div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido">
+        <div class="caja-critica">
+          <div class="caja-critica-titulo">💭 Preguntas sin respuesta única</div>
+          <ol>
+            <li>¿Quién es el autor de un texto o imagen generada con inteligencia artificial? ¿Importa la autoría?</li>
+            <li>¿Tener muchos seguidores convierte a alguien en una figura pública con responsabilidades especiales?</li>
+            <li>¿Las peticiones en línea son una forma efectiva de participación ciudadana, o son solo un "activismo de sofá"?</li>
+            <li>¿Toda persona que crea contenido digital tiene responsabilidad sobre su impacto, aunque su audiencia sea pequeña?</li>
+            <li>¿El conocimiento abierto y libre (Wikipedia, código abierto) es un bien público o una amenaza para quienes crean y viven de su trabajo?</li>
+          </ol>
+        </div>
+        <p style="font-size:0.85rem;color:var(--gris-suave);margin-top:0.75rem;">Estas preguntas no tienen respuesta correcta. El objetivo es argumentar y escuchar.</p>
+      </div>
+    </div>
+
+    <!-- ENTRADAS DISCIPLINARES -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#F5F5F5;">🚪</div>
+          <div><div class="acordeon-titulo">Entradas disciplinares</div><div class="acordeon-subtitulo">Cómo abordar este tema según tu asignatura</div></div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido">
+        <p style="font-size:0.9rem;color:var(--gris-suave);margin-bottom:1rem;">La ciudadanía digital es el centro. La asignatura es la puerta de entrada.</p>
+        <div class="entradas-grid">
+          <div class="entrada-card informatica">
+            <h4>💻 Desde Informática</h4>
+            <p>Explorar herramientas de producción de contenido digital (editores de video, diseño gráfico, podcasting) y sus implicancias técnicas. Trabajar con licencias Creative Commons en la búsqueda de recursos: cómo filtrar por licencia en buscadores y bancos de imágenes.</p>
+            <p style="margin-top:0.5rem;"><strong>Pregunta guía</strong>: ¿Cómo podés crear contenido original usando recursos de otros sin infringir sus derechos?</p>
+          </div>
+          <div class="entrada-card ciudadania">
+            <h4>⚖️ Desde Ed. para la Ciudadanía</h4>
+            <p>Analizar formas de participación ciudadana digital: peticiones, campañas, acceso a información pública, comunicación con instituciones. Debatir el rol de los creadores de contenido como actores políticos y las responsabilidades que conlleva tener audiencia.</p>
+            <p style="margin-top:0.5rem;"><strong>Pregunta guía</strong>: ¿Qué formas de participación ciudadana habilitan los entornos digitales que antes no existían?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <div class="nav-entre-temas">
+    <a href="tema-6-derechos.html">← Tema 06: Derechos digitales</a>
+    <a href="index.html">Volver al inicio →</a>
+  </div>
+
+  <div class="nav-fin">
+    <p>¡Recorriste los siete temas de <strong>Navegar con Otros</strong>!</p>
+    <a href="index.html" class="btn-inicio">Volver al inicio</a>
+  </div>
+
+  <footer>
+    <p>Navegar con Otros · Recurso web de ciudadanía digital para docentes de Educación Media · Uruguay · 2026</p>
+    <p style="margin-top:0.5rem;"><a href="index.html">← Volver al inicio</a></p>
+  </footer>
+
+  <script>
+    function toggleAcordeon(btn){const c=btn.nextElementSibling,a=btn.classList.contains('abierto');btn.classList.toggle('abierto',!a);c.classList.toggle('visible',!a);}
+    function cambiarNivel(tab,nivel){const tabs=tab.parentElement.querySelectorAll('.tab-nivel'),paneles=tab.closest('.acordeon-contenido').querySelectorAll('.panel-nivel');tabs.forEach(t=>t.classList.remove('activo'));paneles.forEach(p=>p.classList.remove('visible'));tab.classList.add('activo');document.getElementById('panel-'+nivel).classList.add('visible');}
+  </script>
+</body>
+</html>

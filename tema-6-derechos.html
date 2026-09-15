@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Derechos digitales y normativa — Navegar con Otros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    :root {
+      --color-tema: #EF5350;
+      --color-tema-claro: #FFEBEE;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">Navegar <span>con Otros</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#temas">Temas</a></li>
+      <li><a href="recursos.html">Recursos</a></li>
+      <li><a href="sobre-el-proyecto.html">Sobre el proyecto</a></li>
+    </ul>
+  </nav>
+
+  <div class="nav-temas">
+    <a href="tema-1-identidad.html">01 · Identidad</a>
+    <a href="tema-2-privacidad.html">02 · Privacidad</a>
+    <a href="tema-3-desinformacion.html">03 · Desinformación</a>
+    <a href="tema-4-convivencia.html">04 · Convivencia</a>
+    <a href="tema-5-bienestar.html">05 · Bienestar</a>
+    <a href="tema-6-derechos.html" class="activo">06 · Derechos</a>
+    <a href="tema-7-creacion.html">07 · Creación</a>
+  </div>
+
+  <header class="tema-header">
+    <div class="tema-header-inner">
+      <div class="tema-numero-grande">06</div>
+      <span class="tema-etiqueta">Tema 06</span>
+      <h1>Derechos digitales y normativa</h1>
+      <p>Qué derechos tenemos en entornos digitales, cuál es el marco legal uruguayo que los protege, y cómo ejercerlos en la práctica.</p>
+      <span class="tema-dimension">Dimensión: Convivencia y prácticas en el entorno digital</span>
+    </div>
+  </header>
+
+  <main class="contenido">
+
+    <!-- MARCO CONCEPTUAL -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn abierto" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#FFEBEE;">🧭</div>
+          <div><div class="acordeon-titulo">Marco conceptual</div><div class="acordeon-subtitulo">Qué es el tema y por qué importa</div></div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido visible">
+
+        <h3>Derechos digitales</h3>
+        <p>Los derechos digitales son los derechos humanos aplicados a los entornos digitales. No son derechos nuevos: son los mismos derechos fundamentales —privacidad, libertad de expresión, no discriminación, acceso a la información— extendidos al mundo digital. Lo que cambia es el contexto en que se ejercen y las nuevas formas en que pueden ser vulnerados.</p>
+        <p>Entre los derechos digitales más relevantes se encuentran: el derecho a la privacidad y la protección de datos personales, el derecho al acceso a internet, el derecho a la libertad de expresión en línea, el derecho a no ser discriminado por motivos digitales, y el derecho al olvido.</p>
+
+        <h3>Marco legal uruguayo</h3>
+        <p>Uruguay cuenta con un conjunto de leyes que protegen los derechos digitales de sus ciudadanos. Las más relevantes para el ámbito educativo son:</p>
+
+        <div class="caja-ley">
+          <div class="caja-ley-titulo">Ley N° 18.331 — Protección de Datos Personales (2008)</div>
+          <p>Establece el derecho de toda persona a conocer, acceder, rectificar y cancelar la información que sobre ella existe en bases de datos públicas o privadas. Creó la Unidad Reguladora y de Control de Datos Personales (URCDP).</p>
+        </div>
+
+        <div class="caja-ley">
+          <div class="caja-ley-titulo">Ley N° 19.580 — Violencia basada en género (2017)</div>
+          <p>Tipifica la violencia digital y mediática como forma de violencia basada en género. Incluye la difusión no consentida de imágenes íntimas como delito penal.</p>
+        </div>
+
+        <div class="caja-ley">
+          <div class="caja-ley-titulo">Ley N° 18.515 — Grooming (2009, modificada)</div>
+          <p>Tipifica como delito el contacto de adultos con menores a través de medios electrónicos con fines de abuso sexual.</p>
+        </div>
+
+        <div class="caja-ley">
+          <div class="caja-ley-titulo">Ley N° 19.307 — Servicios de comunicación audiovisual (2014)</div>
+          <p>Regula los medios de comunicación e incluye disposiciones sobre contenidos digitales y protección de derechos de los usuarios.</p>
+        </div>
+
+        <h3>Instituciones de referencia en Uruguay</h3>
+        <ul>
+          <li><strong>URCDP</strong> (Unidad Reguladora y de Control de Datos Personales): recibe denuncias sobre uso indebido de datos personales.</li>
+          <li><strong>INAU</strong> (Instituto del Niño y Adolescente del Uruguay): línea 0800 5050, atención a situaciones de violencia y abuso.</li>
+          <li><strong>Ministerio del Interior</strong>: recibe denuncias por delitos informáticos.</li>
+          <li><strong>Poder Judicial / Fiscalía</strong>: para casos de delitos tipificados.</li>
+        </ul>
+
+        <div class="caja-ia">
+          <div class="caja-ia-titulo">🤖 Inteligencia artificial integrada</div>
+          <p>La IA plantea nuevos desafíos para los derechos digitales: ¿quién es responsable cuando un sistema de IA toma una decisión discriminatoria? ¿Qué pasa con los datos usados para entrenar modelos de IA? La Unión Europea aprobó en 2024 el Reglamento de IA (AI Act), la primera ley integral sobre IA en el mundo. Uruguay aún no cuenta con legislación específica sobre IA, pero el debate está abierto.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACTIVIDAD -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#E0F2F1;">🎯</div>
+          <div><div class="acordeon-titulo">Actividad participativa</div><div class="acordeon-subtitulo">Para trabajar en el aula con los estudiantes</div></div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido">
+        <div class="caja-actividad">
+          <div class="caja-actividad-titulo">📋 "¿Qué derecho se vulneró?"</div>
+          <p><strong>Duración estimada</strong>: 50 minutos</p>
+          <p><strong>Materiales</strong>: tarjetas de casos impresas o proyectadas</p>
+        </div>
+
+        <h3>Desarrollo</h3>
+        <p><strong>Momento 1 — Disparador (10 min)</strong></p>
+        <p>El docente pregunta: "¿Saben qué derechos tienen en internet?" Se registran las respuestas espontáneas en el pizarrón. Luego presenta brevemente los derechos digitales fundamentales y las leyes uruguayas más relevantes.</p>
+
+        <p><strong>Momento 2 — Análisis de casos (20 min)</strong></p>
+        <p>En grupos de 3 o 4, cada grupo recibe una tarjeta con una situación de vulneración de derechos digitales. Su tarea: identificar qué derechos se ven afectados, qué ley uruguaya aplica, qué podría hacer la persona afectada y a quién podría acudir.</p>
+
+        <p><strong>Momento 3 — Puesta en común (10 min)</strong></p>
+        <p>Cada grupo presenta su caso y sus conclusiones. El docente complementa con información sobre las rutas de denuncia reales disponibles en Uruguay.</p>
+
+        <p><strong>Momento 4 — Cierre y reflexión crítica (10 min)</strong></p>
+        <p>El docente introduce el momento crítico a partir de las preguntas de la sección correspondiente.</p>
+
+        <div class="caja-actividad">
+          <div class="caja-actividad-titulo">💡 Variante: mapa de derechos</div>
+          <p>Como producto final, el grupo construye un "mapa de derechos digitales" visual: qué derechos existen, qué ley los protege, y dónde acudir si son vulnerados. Puede quedarse en el aula como material de consulta.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- GUÍA DOCENTE -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#EDE7F6;">📖</div>
+          <div><div class="acordeon-titulo">Guía docente</div><div class="acordeon-subtitulo">Orientaciones para ciclo básico y bachillerato</div></div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido">
+        <div class="tabs-nivel">
+          <button class="tab-nivel activo" onclick="cambiarNivel(this,'basico')">Ciclo básico</button>
+          <button class="tab-nivel" onclick="cambiarNivel(this,'bachillerato')">Bachillerato</button>
+        </div>
+
+        <div class="panel-nivel visible" id="panel-basico">
+          <div class="caja-nivel">
+            <div class="caja-nivel-titulo">Ciclo básico (1.º – 3.º año)</div>
+            <p>El foco es que los estudiantes sepan que tienen derechos en internet, que esos derechos están protegidos por leyes, y que existen instituciones a las que pueden acudir si son vulnerados. No es necesario memorizar los números de ley.</p>
+          </div>
+          <h3>Preguntas orientadoras</h3>
+          <ul>
+            <li>¿Sabían que tenían derechos en internet? ¿Cuáles conocían?</li>
+            <li>¿Alguna vez sintieron que alguien usó información suya sin su permiso?</li>
+            <li>Si alguien publica una foto tuya sin pedirte permiso, ¿qué podés hacer?</li>
+            <li>¿Saben a dónde pueden ir si algo les pasa en internet?</li>
+          </ul>
+          <h3>Conceptos clave que emergen</h3>
+          <ul>
+            <li>Derechos digitales como extensión de los derechos humanos</li>
+            <li>Derecho a la imagen y a la privacidad</li>
+            <li>Rutas de ayuda: INAU 0800 5050, docentes, familias</li>
+          </ul>
+          <h3>Producto sugerido</h3>
+          <p>Afiche "Mis derechos en internet": tres derechos que los estudiantes consideran más importantes, explicados en sus propias palabras.</p>
+        </div>
+
+        <div class="panel-nivel" id="panel-bachillerato">
+          <div class="caja-nivel">
+            <div class="caja-nivel-titulo">Bachillerato (4.º – 6.º año)</div>
+            <p>En bachillerato se puede trabajar el marco legal con mayor profundidad: analizar leyes concretas, comprender cómo se ejercen los derechos, y debatir sobre los límites de la regulación digital, incluyendo el debate sobre regulación de la IA.</p>
+          </div>
+          <h3>Preguntas orientadoras</h3>
+          <ul>
+            <li>¿Qué establece la Ley N° 18.331 sobre los datos personales? ¿Cómo podrías ejercer tus derechos bajo esa ley?</li>
+            <li>¿La libertad de expresión en internet tiene límites? ¿Cuáles?</li>
+            <li>¿Debería existir un "derecho al olvido" efectivo en Uruguay? ¿Cómo funcionaría?</li>
+            <li>¿Qué implicancias tiene para los derechos ciudadanos que los sistemas de IA tomen decisiones sobre personas?</li>
+          </ul>
+          <h3>Conceptos clave que emergen</h3>
+          <ul>
+            <li>Habeas data: derecho de acceso, rectificación y cancelación de datos</li>
+            <li>URCDP: función y mecanismos de denuncia</li>
+            <li>Libertad de expresión y sus límites legales</li>
+            <li>Regulación de IA: el AI Act europeo como referencia</li>
+            <li>Brecha digital como problema de derechos</li>
+          </ul>
+          <h3>Producto sugerido</h3>
+          <p>Análisis de un caso real de vulneración de derechos digitales en Uruguay: qué ocurrió, qué ley aplica, qué hizo la persona afectada y qué resultado tuvo.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOMENTO CRÍTICO -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#EDE7F6;">💭</div>
+          <div><div class="acordeon-titulo">Momento crítico</div><div class="acordeon-subtitulo">Preguntas para pensar y tomar posición</div></div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido">
+        <div class="caja-critica">
+          <div class="caja-critica-titulo">💭 Preguntas sin respuesta única</div>
+          <ol>
+            <li>¿Tener derechos digitales sirve de algo si la mayoría de las personas no los conoce?</li>
+            <li>¿Debería existir un acceso a internet garantizado como derecho fundamental, igual que la educación o la salud?</li>
+            <li>¿La libertad de expresión en internet tiene los mismos límites que fuera de internet? ¿Debería?</li>
+            <li>¿Quién debería regular la inteligencia artificial: los gobiernos, las empresas, o un organismo internacional?</li>
+            <li>¿Es posible proteger los derechos digitales de los ciudadanos cuando las plataformas más usadas son empresas extranjeras con leyes propias?</li>
+          </ol>
+        </div>
+        <p style="font-size:0.85rem;color:var(--gris-suave);margin-top:0.75rem;">Estas preguntas no tienen respuesta correcta. El objetivo es argumentar y escuchar.</p>
+      </div>
+    </div>
+
+    <!-- ENTRADAS DISCIPLINARES -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#F5F5F5;">🚪</div>
+          <div><div class="acordeon-titulo">Entradas disciplinares</div><div class="acordeon-subtitulo">Cómo abordar este tema según tu asignatura</div></div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido">
+        <p style="font-size:0.9rem;color:var(--gris-suave);margin-bottom:1rem;">La ciudadanía digital es el centro. La asignatura es la puerta de entrada.</p>
+        <div class="entradas-grid">
+          <div class="entrada-card informatica">
+            <h4>💻 Desde Informática</h4>
+            <p>Explorar técnicamente cómo funciona el habeas data: cómo solicitar acceso a los datos que una empresa tiene sobre vos, cómo funciona la URCDP, y qué herramientas técnicas existen para proteger los datos personales (cifrado, VPN, navegadores privados).</p>
+            <p style="margin-top:0.5rem;"><strong>Pregunta guía</strong>: ¿Cómo podrías saber qué datos tiene Google sobre vos y cómo pedirle que los elimine?</p>
+          </div>
+          <div class="entrada-card ciudadania">
+            <h4>⚖️ Desde Ed. para la Ciudadanía</h4>
+            <p>Trabajar el marco legal uruguayo en profundidad: analizar las leyes N° 18.331, N° 19.580 y N° 18.515, comprender cómo se ejerce el habeas data, y debatir sobre la regulación de la IA como desafío político y ético contemporáneo.</p>
+            <p style="margin-top:0.5rem;"><strong>Pregunta guía</strong>: ¿Qué mecanismos concretos tiene Uruguay para proteger los derechos digitales de sus ciudadanos?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <div class="nav-entre-temas">
+    <a href="tema-5-bienestar.html">← Tema 05: Bienestar digital</a>
+    <a href="tema-7-creacion.html">Tema 07: Creación y participación →</a>
+  </div>
+
+  <footer>
+    <p>Navegar con Otros · Recurso web de ciudadanía digital para docentes de Educación Media · Uruguay · 2026</p>
+    <p style="margin-top:0.5rem;"><a href="index.html">← Volver al inicio</a></p>
+  </footer>
+
+  <script>
+    function toggleAcordeon(btn){const c=btn.nextElementSibling,a=btn.classList.contains('abierto');btn.classList.toggle('abierto',!a);c.classList.toggle('visible',!a);}
+    function cambiarNivel(tab,nivel){const tabs=tab.parentElement.querySelectorAll('.tab-nivel'),paneles=tab.closest('.acordeon-contenido').querySelectorAll('.panel-nivel');tabs.forEach(t=>t.classList.remove('activo'));paneles.forEach(p=>p.classList.remove('visible'));tab.classList.add('activo');document.getElementById('panel-'+nivel).classList.add('visible');}
+  </script>
+</body>
+</html>

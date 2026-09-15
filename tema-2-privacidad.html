@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacidad y datos personales — Navegar con Otros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    :root {
+      --color-tema: #5E35B1;
+      --color-tema-claro: #EDE7F6;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Navegar <span>con Otros</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#temas">Temas</a></li>
+      <li><a href="recursos.html">Recursos</a></li>
+      <li><a href="sobre-el-proyecto.html">Sobre el proyecto</a></li>
+    </ul>
+  </nav>
+
+  <div class="nav-temas">
+    <a href="tema-1-identidad.html">01 · Identidad</a>
+    <a href="tema-2-privacidad.html" class="activo">02 · Privacidad</a>
+    <a href="tema-3-desinformacion.html">03 · Desinformación</a>
+    <a href="tema-4-convivencia.html">04 · Convivencia</a>
+    <a href="tema-5-bienestar.html">05 · Bienestar</a>
+    <a href="tema-6-derechos.html">06 · Derechos</a>
+    <a href="tema-7-creacion.html">07 · Creación</a>
+  </div>
+
+  <header class="tema-header">
+    <div class="tema-header-inner">
+      <div class="tema-numero-grande">02</div>
+      <span class="tema-etiqueta">Tema 02</span>
+      <h1>Privacidad y datos personales</h1>
+      <p>Qué son los datos personales, por qué importan y cómo podemos tomar decisiones informadas sobre nuestra privacidad en entornos digitales.</p>
+      <span class="tema-dimension">Dimensión: Convivencia y prácticas en el entorno digital</span>
+    </div>
+  </header>
+
+  <main class="contenido">
+
+    <!-- 1. MARCO CONCEPTUAL -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn abierto" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#EDE7F6;">🧭</div>
+          <div>
+            <div class="acordeon-titulo">Marco conceptual</div>
+            <div class="acordeon-subtitulo">Qué es el tema y por qué importa</div>
+          </div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido visible">
+        <h3>Datos personales</h3>
+        <p>Un dato personal es cualquier información que permite identificar a una persona, directa o indirectamente. El nombre y la cédula de identidad son datos personales obvios, pero también lo son la dirección de correo electrónico, el número de teléfono, la ubicación geográfica, las fotos, los mensajes y hasta los hábitos de navegación.</p>
+        <p>En entornos digitales generamos datos personales de forma continua: cada vez que usamos una aplicación, hacemos una búsqueda, enviamos un mensaje o compramos algo en línea. La mayoría de las veces no somos conscientes de cuántos datos producimos ni de quién los recibe.</p>
+
+        <h3>Privacidad</h3>
+        <p>La privacidad es el derecho a controlar qué información compartimos sobre nosotros mismos, con quién y en qué condiciones. No significa ocultamiento: compartir información es parte de la vida social. Significa poder decidir.</p>
+        <p>En entornos digitales, la privacidad es más difícil de ejercer porque las plataformas están diseñadas para recopilar la mayor cantidad de datos posible. Los términos y condiciones que aceptamos —habitualmente sin leer— suelen autorizar usos de nuestra información que no imaginamos.</p>
+
+        <h3>Consentimiento informado</h3>
+        <p>El consentimiento informado es el principio según el cual una persona solo puede autorizar el uso de sus datos si entiende qué está autorizando, para qué, y quién lo va a usar. En la práctica, los formularios de consentimiento digital suelen ser largos, técnicos y difíciles de entender, lo que hace que el consentimiento sea más formal que real.</p>
+
+        <h3>Relación con la Estrategia Nacional</h3>
+        <p>Este tema trabaja la habilidad de "gestionar la privacidad (protección de datos personales)", correspondiente a la dimensión 2 de la Estrategia Nacional de Ciudadanía Digital 2024–2028 (Agesic).</p>
+
+        <div class="caja-ia">
+          <div class="caja-ia-titulo">🤖 Inteligencia artificial integrada</div>
+          <p>Los sistemas de IA se entrenan con grandes volúmenes de datos, muchos de ellos personales. Cuando usamos herramientas de IA generativa, los textos, imágenes o consultas que ingresamos pueden ser utilizados para mejorar los modelos. Esto plantea preguntas sobre privacidad que aún no tienen respuestas definitivas en términos legales.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. ACTIVIDAD -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#E0F2F1;">🎯</div>
+          <div>
+            <div class="acordeon-titulo">Actividad participativa</div>
+            <div class="acordeon-subtitulo">Para trabajar en el aula con los estudiantes</div>
+          </div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido">
+        <div class="caja-actividad">
+          <div class="caja-actividad-titulo">📋 "¿Qué estoy aceptando?"</div>
+          <p><strong>Duración estimada</strong>: 50 minutos</p>
+          <p><strong>Materiales</strong>: copias impresas o proyección de fragmentos de términos y condiciones de plataformas conocidas (TikTok, Instagram, WhatsApp u otras que usen los estudiantes)</p>
+        </div>
+
+        <h3>Desarrollo</h3>
+        <p><strong>Momento 1 — Disparador (10 min)</strong></p>
+        <p>El docente pregunta: "¿Alguna vez leyeron los términos y condiciones antes de aceptarlos?" Se hace una encuesta de mano alzada. Luego muestra un dato: si alguien leyera todos los términos y condiciones de los servicios que usa en un año, le llevaría aproximadamente 76 días hábiles de trabajo. Se abre una breve conversación sobre por qué esto es un problema.</p>
+
+        <p><strong>Momento 2 — Análisis en grupos (20 min)</strong></p>
+        <p>En grupos de 3 o 4, los estudiantes reciben un fragmento de los términos y condiciones de una plataforma popular. Su tarea es identificar: ¿qué datos recopila la plataforma? ¿Para qué los usa? ¿Con quién los comparte? ¿Qué pasa si no aceptás?</p>
+
+        <p><strong>Momento 3 — Puesta en común (10 min)</strong></p>
+        <p>Cada grupo comparte sus hallazgos. El docente anota en el pizarrón los usos de datos que aparecen y los organiza: ¿cuáles les parecen razonables? ¿Cuáles les sorprendieron?</p>
+
+        <p><strong>Momento 4 — Cierre y reflexión crítica (10 min)</strong></p>
+        <p>El docente introduce el momento crítico a partir de las preguntas de la sección correspondiente.</p>
+
+        <div class="caja-actividad">
+          <div class="caja-actividad-titulo">💡 Variante con producción</div>
+          <p>Los grupos pueden reescribir el fragmento analizado en un lenguaje comprensible para cualquier persona, como si fueran traductores de "burocrático a humano". El resultado puede exponerse o publicarse en el aula.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. GUÍA DOCENTE -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#EDE7F6;">📖</div>
+          <div>
+            <div class="acordeon-titulo">Guía docente</div>
+            <div class="acordeon-subtitulo">Orientaciones para ciclo básico y bachillerato</div>
+          </div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido">
+        <div class="tabs-nivel">
+          <button class="tab-nivel activo" onclick="cambiarNivel(this, 'basico')">Ciclo básico</button>
+          <button class="tab-nivel" onclick="cambiarNivel(this, 'bachillerato')">Bachillerato</button>
+        </div>
+
+        <div class="panel-nivel visible" id="panel-basico">
+          <div class="caja-nivel">
+            <div class="caja-nivel-titulo">Ciclo básico (1.º – 3.º año)</div>
+            <p>El foco es que los estudiantes identifiquen qué es un dato personal y comprendan que compartir información tiene consecuencias. No es necesario profundizar en aspectos legales: alcanza con que puedan distinguir qué información es sensible y tomar decisiones básicas sobre su privacidad.</p>
+          </div>
+
+          <h3>Preguntas orientadoras</h3>
+          <ul>
+            <li>¿Qué información personal tienen en sus perfiles de redes sociales?</li>
+            <li>¿Quién puede ver esa información?</li>
+            <li>¿Alguna vez alguien usó información suya de una forma que no esperaban?</li>
+            <li>¿Hay información que nunca compartirían en internet? ¿Por qué?</li>
+          </ul>
+
+          <h3>Conceptos clave que emergen</h3>
+          <ul>
+            <li>Dato personal: qué es y qué no es</li>
+            <li>Diferencia entre información pública y privada</li>
+            <li>Consecuencias de compartir información sin pensar</li>
+          </ul>
+
+          <h3>Producto sugerido</h3>
+          <p>Lista grupal de "reglas de oro" para proteger la privacidad en línea, escrita en lenguaje accesible para compartir con otros estudiantes o familias.</p>
+        </div>
+
+        <div class="panel-nivel" id="panel-bachillerato">
+          <div class="caja-nivel">
+            <div class="caja-nivel-titulo">Bachillerato (4.º – 6.º año)</div>
+            <p>En bachillerato se puede trabajar el consentimiento informado como problema real, el modelo de negocio basado en datos, y el marco legal uruguayo. Los estudiantes pueden analizar casos concretos y debatir sobre el equilibrio entre privacidad y conveniencia.</p>
+          </div>
+
+          <h3>Preguntas orientadoras</h3>
+          <ul>
+            <li>¿Es posible usar servicios digitales gratuitos sin ceder datos? ¿Vale la pena?</li>
+            <li>¿Qué diferencia hay entre personalización y vigilancia?</li>
+            <li>¿Deberían las empresas poder usar nuestros datos para entrenar IA sin pedirlo explícitamente?</li>
+            <li>¿Qué mecanismos existen en Uruguay para proteger los datos personales?</li>
+          </ul>
+
+          <h3>Conceptos clave que emergen</h3>
+          <ul>
+            <li>Economía de datos y modelo de negocio digital</li>
+            <li>Consentimiento informado y sus limitaciones reales</li>
+            <li>Ley N° 18.331 de Protección de Datos Personales (Uruguay)</li>
+            <li>Derecho de acceso, rectificación y cancelación de datos</li>
+          </ul>
+
+          <h3>Producto sugerido</h3>
+          <p>Análisis comparativo de las políticas de privacidad de dos plataformas distintas: ¿cuál protege más al usuario? ¿Qué criterios usaron para evaluar?</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. MOMENTO CRÍTICO -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#FFEBEE;">💭</div>
+          <div>
+            <div class="acordeon-titulo">Momento crítico</div>
+            <div class="acordeon-subtitulo">Preguntas para pensar y tomar posición</div>
+          </div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido">
+        <div class="caja-critica">
+          <div class="caja-critica-titulo">💭 Preguntas sin respuesta única</div>
+          <ol>
+            <li>¿Qué perdés cuando aceptás los términos y condiciones sin leerlos? ¿Quién gana con eso?</li>
+            <li>Si un servicio es gratuito y útil, ¿es justo que use tus datos a cambio? ¿Tenés otra opción real?</li>
+            <li>¿Hay una diferencia entre que una empresa sepa dónde vivís y que lo sepa el gobierno? ¿Cuál?</li>
+            <li>¿Debería ser ilegal diseñar formularios de consentimiento difíciles de entender?</li>
+            <li>¿Qué pasaría si durante un día no usaras ningún servicio que recopile tus datos? ¿Sería posible?</li>
+          </ol>
+        </div>
+        <p style="font-size:0.85rem; color:var(--gris-suave); margin-top:0.75rem;">Estas preguntas no tienen una respuesta correcta. El objetivo es que los estudiantes puedan argumentar su posición y escuchar la de otros.</p>
+      </div>
+    </div>
+
+    <!-- 5. ENTRADAS DISCIPLINARES -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#F5F5F5;">🚪</div>
+          <div>
+            <div class="acordeon-titulo">Entradas disciplinares</div>
+            <div class="acordeon-subtitulo">Cómo abordar este tema según tu asignatura</div>
+          </div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido">
+        <p style="font-size:0.9rem; color:var(--gris-suave); margin-bottom:1rem;">La ciudadanía digital es el centro. La asignatura es la puerta de entrada.</p>
+        <div class="entradas-grid">
+          <div class="entrada-card informatica">
+            <h4>💻 Desde Informática</h4>
+            <p>Explorar técnicamente cómo se recopilan datos: cookies, LocalStorage, APIs de geolocalización, permisos de aplicaciones en el celular. Usar herramientas para ver qué datos comparte el navegador con los sitios que visitamos.</p>
+            <p style="margin-top:0.5rem;"><strong>Pregunta guía</strong>: ¿Qué permisos pedís sin querer cuando instalás una app?</p>
+          </div>
+          <div class="entrada-card ciudadania">
+            <h4>⚖️ Desde Ed. para la Ciudadanía</h4>
+            <p>Trabajar la Ley N° 18.331 de Protección de Datos Personales de Uruguay: qué derechos otorga, cómo ejercerlos, y qué organismos los garantizan (URCDP). Analizar casos reales de vulneración de datos en Uruguay.</p>
+            <p style="margin-top:0.5rem;"><strong>Pregunta guía</strong>: ¿Cómo podés pedir a una empresa que borre tus datos en Uruguay?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <div class="nav-entre-temas">
+    <a href="tema-1-identidad.html">← Tema 01: Identidad y huella digital</a>
+    <a href="tema-3-desinformacion.html">Tema 03: Desinformación y pensamiento crítico →</a>
+  </div>
+
+  <footer>
+    <p>Navegar con Otros · Recurso web de ciudadanía digital para docentes de Educación Media · Uruguay · 2026</p>
+    <p style="margin-top:0.5rem;">Desarrollado como Proyecto Técnico de Fin de Carrera — <a href="sobre-el-proyecto.html">Sobre el proyecto</a></p>
+  </footer>
+
+  <script>
+    function toggleAcordeon(btn) {
+      const contenido = btn.nextElementSibling;
+      const estaAbierto = btn.classList.contains('abierto');
+      btn.classList.toggle('abierto', !estaAbierto);
+      contenido.classList.toggle('visible', !estaAbierto);
+    }
+
+    function cambiarNivel(tab, nivel) {
+      const tabs = tab.parentElement.querySelectorAll('.tab-nivel');
+      const paneles = tab.closest('.acordeon-contenido').querySelectorAll('.panel-nivel');
+      tabs.forEach(t => t.classList.remove('activo'));
+      paneles.forEach(p => p.classList.remove('visible'));
+      tab.classList.add('activo');
+      document.getElementById('panel-' + nivel).classList.add('visible');
+    }
+  </script>
+
+</body>
+</html>

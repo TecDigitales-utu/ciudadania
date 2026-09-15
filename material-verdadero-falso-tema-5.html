@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verdadero o Falso — Bienestar digital — Navegar con Otros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    :root {
+      --color-tema: #5E35B1;
+      --color-tema-claro: #EDE7F6;
+    }
+  </style>
+</head>
+<body>
+  <nav><a href="index.html" class="nav-logo">Navegar <span>con Otros</span></a><ul class="nav-links"><li><a href="index.html#temas">Temas</a></li><li><a href="recursos.html">Recursos</a></li></ul></nav>
+  <div class="mh"><div class="mhi">
+    <div class="mm">
+      <div class="mr"><a href="index.html">Inicio</a> → <a href="tema-5-bienestar.html">Tema 05</a> → Verdadero o Falso</div>
+      <h1>Verdadero o Falso</h1>
+      <p>Afirmaciones sobre bienestar digital, diseño persuasivo y economía de la atención para debatir en clase.</p>
+      <div class="badges"><span class="badge bv">Bienestar digital</span><span class="badge bg">Ciclo básico y bachillerato</span><span class="badge ba">Disparador o cierre</span></div>
+    </div>
+    <div class="ma">
+      <button class="btn-p" onclick="window.print()">🖨️ Imprimir / PDF</button>
+      <button class="btn-r" onclick="reiniciar()">↺ Reiniciar</button>
+    </div>
+  </div></div>
+  <div class="inst"><div class="inst-i">
+    <h3>¿Cómo usar este material?</h3>
+    <div class="inst-g">
+      <div class="ii"><strong>Individual en pantalla</strong>Cada estudiante responde y ve la explicación después de cada afirmación.</div>
+      <div class="ii"><strong>Grupal proyectado</strong>El docente proyecta y la clase vota de mano alzada antes de ver la respuesta.</div>
+      <div class="ii"><strong>Impreso</strong>Los estudiantes marcan V o F y después comparan las respuestas.</div>
+      <div class="ii"><strong>Ojo</strong>Algunas afirmaciones son más complejas de lo que parecen. El debate es el objetivo.</div>
+    </div>
+  </div></div>
+  <div class="pb"><div class="pt"><span id="pl">Pregunta 1 de 10</span><span id="pp">0 correctas</span></div><div class="ptrack"><div class="pfill" id="pf"></div></div></div>
+  <div class="jc" id="juego"></div>
+  <footer><p>Navegar con Otros · Ciudadanía digital para docentes · Uruguay · 2026</p><p style="margin-top:0.5rem;"><a href="tema-5-bienestar.html">← Volver al Tema 05</a></p></footer>
+  <script>
+    const afs=[
+      {t:"Las plataformas digitales están diseñadas para que las usemos el mayor tiempo posible.",r:true,e:"Verdadero. El modelo de negocio de la mayoría de las plataformas gratuitas depende del tiempo que pasamos en ellas: más tiempo significa más datos y más publicidad. El diseño persuasivo (scroll infinito, notificaciones, likes) existe para maximizar ese tiempo.",d:"¿Sabías esto antes? ¿Cambia algo en tu forma de ver las apps que usás?"},
+      {t:"El scroll infinito es una característica accidental: las apps no pueden evitarlo.",r:false,e:"Falso. El scroll infinito es una decisión de diseño deliberada. Podría existir un fondo de página. Aza Raskin, quien lo inventó en 2006, declaró públicamente haberse arrepentido de crearlo por sus efectos en el bienestar de los usuarios.",d:"¿Sabías que el scroll infinito fue inventado por una persona y que esa persona se arrepintió?"},
+      {t:"Usar mucho tiempo el celular siempre es malo para la salud mental.",r:false,e:"Más complejo. La investigación muestra que lo que importa no es solo la cantidad de tiempo sino el tipo de uso. Usar el celular para conectarse con amigos, aprender o crear tiene efectos distintos a usarlo para compararse con otros o consumir contenido pasivamente.",d:"¿Cómo usás vos el celular? ¿Hay usos que te hacen sentir mejor y otros peor?"},
+      {t:"Las notificaciones de las apps están configuradas por defecto para que lleguen muchas porque eso beneficia a las empresas.",r:true,e:"Verdadero. Más notificaciones significan más veces que abrimos la app. Las empresas configuran las notificaciones por defecto en modo agresivo precisamente para aumentar el tiempo de uso.",d:"¿Cuántas notificaciones recibís por día? ¿Cuántas de ellas son realmente importantes?"},
+      {t:"Si alguien no puede parar de usar una app, es un problema de fuerza de voluntad.",r:false,e:"Falso, o al menos incompleto. Las plataformas contratan a psicólogos y diseñadores para hacer sus productos lo más adictivos posible. Reducir el problema a la fuerza de voluntad ignora que hay equipos enteros dedicados a hacer exactamente lo contrario.",d:"¿Quién tiene más responsabilidad sobre el uso excesivo: el usuario o la empresa que diseñó el producto?"},
+      {t:"Los likes fueron diseñados originalmente para generar bienestar y conexión positiva.",r:true,e:"Verdadero, aunque con matices. El botón de like de Facebook fue creado con la intención de difundir positividad. Sin embargo, sus efectos reales generaron comparación social, ansiedad y búsqueda de validación. La buena intención no garantizó el buen resultado.",d:"¿El like te genera bienestar o ansiedad? ¿Depende de la situación?"},
+      {t:"Las apps de bienestar y meditación no pueden ser adictivas porque están diseñadas para ayudarnos.",r:false,e:"Falso. Algunas apps de meditación y bienestar usan las mismas técnicas de diseño persuasivo (rachas, notificaciones, gamificación) que las apps de redes sociales. El propósito declarado no determina el diseño real.",d:"¿Confiás más en una app porque dice que es 'saludable'? ¿Deberías?"},
+      {t:"El FOMO (miedo a perderse algo) es un fenómeno que existía antes de las redes sociales.",r:true,e:"Verdadero. El FOMO existía antes de internet, pero las redes sociales lo intensificaron enormemente al hacer visible en tiempo real todo lo que otros están haciendo. Las plataformas aprovechan y amplifican ese miedo para que sigamos conectados.",d:"¿El FOMO te afecta? ¿En qué situaciones?"},
+      {t:"Las empresas de tecnología tienen la obligación legal de proteger el bienestar digital de sus usuarios.",r:false,e:"En Uruguay, no existe aún una regulación específica sobre bienestar digital o diseño persuasivo. En Europa, el Reglamento de Servicios Digitales (DSA, 2022) establece algunas obligaciones, pero la regulación en este campo está recién comenzando a nivel mundial.",d:"¿Debería existir una ley que obligue a las apps a proteger el bienestar de los usuarios? ¿Qué debería decir?"},
+      {t:"Desactivar notificaciones y configurar tiempos de pantalla son acciones que cualquier persona puede tomar sin esperar que cambien las plataformas.",r:true,e:"Verdadero. Aunque el problema tiene causas estructurales que van más allá del individuo, existen acciones concretas que cada persona puede tomar para gestionar mejor su relación con la tecnología: desactivar notificaciones, usar modos de enfoque, revisar el tiempo de pantalla, configurar el autoplay en 'off'.",d:"¿Cuál de estas acciones podrías probar esta semana? ¿Qué esperarías que cambie?"}
+    ];
+    let correctas=0,respondidas=0;
+    function construir(){
+      const j=document.getElementById('juego');j.innerHTML='';
+      afs.forEach((a,i)=>{
+        const c=document.createElement('div');
+        c.className='ac'+(i===0?' activa':'');c.id='c'+i;
+        c.innerHTML=`<div class="an">Afirmación ${i+1} de ${afs.length}</div><div class="at">${a.t}</div><div class="ab"><button class="bvf bv2" onclick="resp(${i},true)">✓ Verdadero</button><button class="bvf bf" onclick="resp(${i},false)">✗ Falso</button></div><div class="rp" id="r${i}"></div>`;
+        j.appendChild(c);
+      });
+      const f=document.createElement('div');f.className='rf';f.id='fin';j.appendChild(f);
+    }
+    function resp(i,e){
+      const a=afs[i],ok=e===a.r;if(ok)correctas++;respondidas++;
+      document.querySelector(`#c${i} .bv2`).disabled=true;document.querySelector(`#c${i} .bf`).disabled=true;
+      document.querySelector(`#c${i} .bv2`).style.opacity='0.6';document.querySelector(`#c${i} .bf`).style.opacity='0.6';
+      const p=document.getElementById('r'+i);
+      p.innerHTML=`<div class="rr ${ok?'ok':'no'}">${ok?'✓ Correcto':'✗ Incorrecto'} — La afirmación es ${a.r?'verdadera':'falsa'}</div><p class="re">${a.e}</p><div class="rd">💬 Para debatir: ${a.d}</div><button class="bs" onclick="sig(${i})">${i<afs.length-1?'Siguiente →':'Ver resultado final'}</button>`;
+      p.classList.add('visible');actualizar();
+    }
+    function sig(i){document.getElementById('c'+i).classList.remove('activa');if(i<afs.length-1)document.getElementById('c'+(i+1)).classList.add('activa');else final();}
+    function final(){
+      const f=document.getElementById('fin');const p=Math.round(correctas/afs.length*100);
+      let e='🌱',m='Estás empezando a explorar el tema. La conversación en clase va a ayudarte a profundizar.';
+      if(p>=70){e='🧘';m='Buen manejo del tema. Las preguntas para debatir son el siguiente paso.';}
+      if(p>=90){e='🎯';m='Excelente. Ahora podés ayudar a otros a reflexionar sobre su relación con la tecnología.';}
+      f.innerHTML=`<div class="re2">${e}</div><h2>Juego completado</h2><div class="rp2">${correctas}/${afs.length}</div><div class="rs">respuestas correctas (${p}%)</div><div class="rm">${m}</div><button class="bs" onclick="reiniciar()">↺ Jugar de nuevo</button>`;
+      f.classList.add('visible');actualizar();
+    }
+    function actualizar(){
+      document.getElementById('pf').style.width=(respondidas/afs.length*100)+'%';
+      document.getElementById('pl').textContent=respondidas<afs.length?`Pregunta ${respondidas+1} de ${afs.length}`:'Completado';
+      document.getElementById('pp').textContent=correctas+' correctas';
+    }
+    function reiniciar(){correctas=0;respondidas=0;document.getElementById('pf').style.width='0%';document.getElementById('pl').textContent='Pregunta 1 de 10';document.getElementById('pp').textContent='0 correctas';construir();}
+    construir();
+  </script>
+</body>
+</html>

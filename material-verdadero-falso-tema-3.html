@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verdadero o Falso — Desinformación — Navegar con Otros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    :root {
+      --color-tema: #EF5350;
+      --color-tema-claro: #FFEBEE;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">Navegar <span>con Otros</span></a>
+    <ul class="nav-links"><li><a href="index.html#temas">Temas</a></li><li><a href="recursos.html">Recursos</a></li></ul>
+  </nav>
+  <div class="material-header">
+    <div class="material-header-inner">
+      <div class="material-meta">
+        <div class="material-ruta"><a href="index.html">Inicio</a> → <a href="tema-3-desinformacion.html">Tema 03</a> → Verdadero o Falso</div>
+        <h1>Verdadero o Falso</h1>
+        <p>Afirmaciones sobre desinformación y pensamiento crítico para debatir en clase.</p>
+        <div class="material-badges">
+          <span class="badge badge-coral">Desinformación</span>
+          <span class="badge badge-violeta">Ciclo básico y bachillerato</span>
+          <span class="badge badge-amarillo">Disparador o cierre</span>
+        </div>
+      </div>
+      <div class="material-acciones">
+        <button class="btn-imprimir" onclick="window.print()">🖨️ Imprimir / PDF</button>
+        <button class="btn-reiniciar" onclick="reiniciar()">↺ Reiniciar</button>
+      </div>
+    </div>
+  </div>
+  <div class="instrucciones">
+    <div class="instrucciones-inner">
+      <h3>¿Cómo usar este material?</h3>
+      <div class="instrucciones-grid">
+        <div class="instruccion-item"><strong>Individual en pantalla</strong>Cada estudiante responde y ve la explicación después de cada afirmación.</div>
+        <div class="instruccion-item"><strong>Grupal proyectado</strong>El docente proyecta y la clase vota de mano alzada antes de ver la respuesta.</div>
+        <div class="instruccion-item"><strong>Impreso</strong>Los estudiantes marcan V o F y después comparan las respuestas.</div>
+        <div class="instruccion-item"><strong>Ojo</strong>Algunas afirmaciones son más complejas de lo que parecen. El debate es el objetivo.</div>
+      </div>
+    </div>
+  </div>
+  <div class="progreso-barra">
+    <div class="progreso-texto"><span id="progreso-label">Pregunta 1 de 10</span><span id="progreso-puntos">0 correctas</span></div>
+    <div class="progreso-track"><div class="progreso-fill" id="progreso-fill"></div></div>
+  </div>
+  <div class="juego-contenedor" id="juego"></div>
+  <footer>
+    <p>Navegar con Otros · Ciudadanía digital para docentes · Uruguay · 2026</p>
+    <p style="margin-top:0.5rem;"><a href="tema-3-desinformacion.html">← Volver al Tema 03</a></p>
+  </footer>
+  <script>
+    const afirmaciones = [
+      {texto:"Si algo tiene muchos 'me gusta' y compartidas, probablemente es verdadero.",respuesta:false,explicacion:"Falso. La popularidad de una publicación no tiene relación con su veracidad. La desinformación se viraliza justamente porque activa emociones fuertes (miedo, indignación, esperanza) que impulsan a compartir sin verificar.",debate:"¿Por qué tendemos a confiar más en algo que mucha gente comparte?"},
+      {texto:"Una foto es siempre una prueba de que algo ocurrió.",respuesta:false,explicacion:"Falso. Las fotos pueden estar editadas, pueden ser reales pero de otro contexto (otra fecha, otro lugar), o pueden ser generadas completamente por inteligencia artificial.",debate:"¿Qué harías para verificar si una foto es auténtica?"},
+      {texto:"La desinformación solo existe en internet y redes sociales.",respuesta:false,explicacion:"Falso. La desinformación existe desde mucho antes de internet: en rumores, panfletos, propaganda, noticias falsas de periódicos. Internet acelera su difusión pero no la inventó.",debate:"¿Cambia algo el hecho de que la desinformación se difunda más rápido hoy?"},
+      {texto:"Solo la gente poco educada cae en la desinformación.",respuesta:false,explicacion:"Falso. Estudios muestran que personas con alta educación también son susceptibles a la desinformación, especialmente cuando el contenido coincide con sus creencias previas (sesgo de confirmación).",debate:"¿Por qué es más fácil creer algo que confirma lo que ya pensamos?"},
+      {texto:"Un deepfake es un video generado o manipulado con inteligencia artificial.",respuesta:true,explicacion:"Verdadero. Los deepfakes son videos, audios o imágenes generados o alterados usando IA, de forma que resultan difíciles de distinguir de contenido real.",debate:"¿Qué impacto pueden tener los deepfakes en la confianza que tenemos en lo que vemos?"},
+      {texto:"Verificar la información antes de compartirla es responsabilidad del medio que la publicó, no del usuario.",respuesta:false,explicacion:"Debatible. Los medios tienen responsabilidad editorial, pero los usuarios también tienen responsabilidad sobre lo que difunden. En la era digital, todos somos emisores, no solo receptores.",debate:"¿Cuánta responsabilidad tiene cada persona sobre lo que comparte en redes?"},
+      {texto:"Un titular puede ser engañoso aunque la noticia sea verdadera.",respuesta:true,explicacion:"Verdadero. El contenido engañoso no siempre miente: a veces usa titulares sensacionalistas, omite contexto, o presenta datos reales de forma que genera conclusiones incorrectas.",debate:"¿Deberían existir reglas sobre cómo pueden titular los medios sus noticias?"},
+      {texto:"Las plataformas como Facebook o TikTok tienen interés en eliminar la desinformación porque daña su reputación.",respuesta:false,explicacion:"Más complejo. Las plataformas ganan dinero con el tiempo de atención de los usuarios. El contenido falso o emotivo genera más interacción, lo que puede ir en contra de los incentivos para eliminarlo.",debate:"¿Podés confiar en que una plataforma va a moderar contenido si ese contenido le genera ganancias?"},
+      {texto:"El fact-checking (verificación de hechos) es una práctica solo para periodistas profesionales.",respuesta:false,explicacion:"Falso. El fact-checking es una práctica que cualquier persona puede aprender y aplicar: buscar la fuente original, verificar la fecha, contrastar con otras fuentes, usar herramientas de búsqueda inversa de imágenes.",debate:"¿Qué habilidades necesitarías para verificar información por tu cuenta?"},
+      {texto:"Si una información nos genera mucha indignación o miedo, es una señal de que deberíamos verificarla antes de compartirla.",respuesta:true,explicacion:"Verdadero. Las emociones intensas son una señal de alerta: la desinformación está diseñada justamente para activar emociones que nos lleven a compartir sin pensar. Si algo nos genera una reacción muy fuerte, es un buen momento para detenerse y verificar.",debate:"¿Es posible entrenar nuestra reacción para verificar antes de compartir, aunque algo nos genere mucha emoción?"}
+    ];
+    let correctas=0,respondidas=0;
+    function construirJuego(){
+      const j=document.getElementById('juego');j.innerHTML='';
+      afirmaciones.forEach((af,i)=>{
+        const c=document.createElement('div');
+        c.className='afirmacion-card'+(i===0?' activa':'');c.id='card-'+i;
+        c.innerHTML=`<div class="afirmacion-numero">Afirmación ${i+1} de ${afirmaciones.length}</div><div class="afirmacion-texto">${af.texto}</div><div class="afirmacion-botones"><button class="btn-vf btn-verdadero" onclick="responder(${i},true)">✓ Verdadero</button><button class="btn-vf btn-falso" onclick="responder(${i},false)">✗ Falso</button></div><div class="respuesta-panel" id="resp-${i}"></div>`;
+        j.appendChild(c);
+      });
+      const fin=document.createElement('div');fin.className='resultado-final';fin.id='resultado-final';j.appendChild(fin);
+    }
+    function responder(i,e){
+      const af=afirmaciones[i],ok=e===af.respuesta;
+      if(ok)correctas++;respondidas++;
+      document.querySelector(`#card-${i} .btn-verdadero`).disabled=true;
+      document.querySelector(`#card-${i} .btn-falso`).disabled=true;
+      document.querySelector(`#card-${i} .btn-verdadero`).style.opacity='0.6';
+      document.querySelector(`#card-${i} .btn-falso`).style.opacity='0.6';
+      const p=document.getElementById('resp-'+i);
+      p.innerHTML=`<div class="respuesta-resultado ${ok?'correcto':'incorrecto'}">${ok?'✓ Correcto':'✗ Incorrecto'} — La afirmación es ${af.respuesta?'verdadera':'falsa'}</div><p class="respuesta-explicacion">${af.explicacion}</p><div class="respuesta-para-debatir">💬 Para debatir: ${af.debate}</div><button class="btn-siguiente" onclick="siguiente(${i})">${i<afirmaciones.length-1?'Siguiente →':'Ver resultado final'}</button>`;
+      p.classList.add('visible');
+      actualizarProgreso();
+    }
+    function siguiente(i){
+      document.getElementById('card-'+i).classList.remove('activa');
+      if(i<afirmaciones.length-1)document.getElementById('card-'+(i+1)).classList.add('activa');
+      else mostrarFinal();
+    }
+    function mostrarFinal(){
+      const fin=document.getElementById('resultado-final');
+      const pct=Math.round(correctas/afirmaciones.length*100);
+      let emoji='🌱',msg='Estás empezando a desarrollar el ojo crítico. El debate en clase va a ayudarte a profundizar.';
+      if(pct>=70){emoji='🔍';msg='Buen manejo del tema. Las preguntas para debatir son el siguiente paso.';}
+      if(pct>=90){emoji='🧭';msg='Excelente pensamiento crítico. Ahora podés ayudar a otros a desarrollarlo.';}
+      fin.innerHTML=`<div class="resultado-emoji">${emoji}</div><h2>Juego completado</h2><div class="resultado-puntos">${correctas}/${afirmaciones.length}</div><div class="resultado-sub">respuestas correctas (${pct}%)</div><div class="resultado-mensaje">${msg}</div><button class="btn-siguiente" onclick="reiniciar()">↺ Jugar de nuevo</button>`;
+      fin.classList.add('visible');actualizarProgreso();
+    }
+    function actualizarProgreso(){
+      document.getElementById('progreso-fill').style.width=(respondidas/afirmaciones.length*100)+'%';
+      document.getElementById('progreso-label').textContent=respondidas<afirmaciones.length?`Pregunta ${respondidas+1} de ${afirmaciones.length}`:'Completado';
+      document.getElementById('progreso-puntos').textContent=correctas+' correctas';
+    }
+    function reiniciar(){correctas=0;respondidas=0;document.getElementById('progreso-fill').style.width='0%';document.getElementById('progreso-label').textContent='Pregunta 1 de 10';document.getElementById('progreso-puntos').textContent='0 correctas';construirJuego();}
+    construirJuego();
+  </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ficha de producción — Creación y participación — Navegar con Otros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    :root {
+      --color-tema: #00897B;
+      --color-tema-claro: #E0F2F1;
+    }
+  </style>
+</head>
+<body>
+  <nav><a href="index.html" class="nav-logo">Navegar <span>con Otros</span></a><ul class="nav-links"><li><a href="index.html#temas">Temas</a></li><li><a href="recursos.html">Recursos</a></li></ul></nav>
+  <div class="mh"><div class="mhi">
+    <div class="mm">
+      <div class="mr"><a href="index.html">Inicio</a> → <a href="tema-7-creacion.html">Tema 07</a> → Ficha de producción</div>
+      <h1>Ficha de producción</h1>
+      <p>Planificá tu contenido digital con criterio. Tu progreso se guarda automáticamente.</p>
+      <div class="badges"><span class="badge bg">Creación y participación</span><span class="badge bv">Individual o grupal</span></div>
+    </div>
+    <div class="ma">
+      <div class="gs" id="gs">💾 Sin cambios aún</div>
+      <button class="btn-pdf" id="btnpdf" onclick="pdf()">⬇️ Descargar PDF</button>
+      <button class="btn-l" onclick="limpiar()">✕ Limpiar</button>
+    </div>
+  </div></div>
+  <div class="av"><div class="av-i"><div style="font-size:1.5rem;flex-shrink:0">📎</div><div class="av-t"><strong>¿Cómo entregar?</strong> Completá la ficha, descargá el PDF y subilo a la tarea en <strong>CREA</strong>. Tu progreso se guarda automáticamente en este dispositivo.</div></div></div>
+  <div class="fc"><div class="f" id="ficha">
+    <div class="ft"><div class="ft-t">Creamos para transformar</div><div class="ft-s">Tema 07 · Creación y participación · Navegar con Otros</div></div>
+    <div class="fd">
+      <div class="fdd"><label>Nombre / Grupo</label><input type="text" id="f1" placeholder="Escribí acá..."></div>
+      <div class="fdd"><label>Año / Clase</label><input type="text" id="f2" placeholder="Ej: 2.º B"></div>
+      <div class="fdd"><label>Fecha</label><input type="text" id="f3"></div>
+    </div>
+    <!-- P1 -->
+    <div class="fs">
+      <div class="fst"><div class="fsi" style="background:#E0F2F1;">💡</div><span style="color:#00897B;">Parte 1 — Planificación del contenido</span></div>
+      <p class="fp">¿Sobre qué tema o problema van a crear contenido? ¿Por qué les importa?</p>
+      <textarea class="ta" id="f4" style="min-height:60px" placeholder="Describí el tema y por qué lo eligieron..."></textarea>
+      <p class="fp" style="margin-top:1rem;">¿Qué tipo de contenido van a crear?</p>
+      <textarea class="ta" id="f5" style="min-height:50px" placeholder="Ej: video, infografía, publicación, petición, carta abierta..."></textarea>
+      <p class="fp" style="margin-top:1rem;">¿A quién va dirigido? ¿Dónde lo van a publicar o presentar?</p>
+      <textarea class="ta" id="f6" style="min-height:50px" placeholder="Audiencia y canal de difusión..."></textarea>
+      <p class="fp" style="margin-top:1rem;">¿Qué quieren lograr con este contenido?</p>
+      <textarea class="ta" id="f7" style="min-height:50px" placeholder="Objetivo concreto del contenido..."></textarea>
+    </div>
+    <!-- P2 -->
+    <div class="fs">
+      <div class="fst"><div class="fsi" style="background:#E0F2F1;">✅</div><span style="color:#00897B;">Parte 2 — Revisión ética antes de publicar</span></div>
+      <p style="font-size:0.85rem;color:var(--gris-suave);margin-bottom:1rem;">Antes de publicar, verificá cada punto. Hacé clic en los que completaste.</p>
+      <ul class="check-lista">
+        <li class="check-item"><div class="check-box" onclick="toggleCheck(this)"></div><div class="check-texto">Verificamos que la información que incluimos es correcta y tiene fuente.</div></li>
+        <li class="check-item"><div class="check-box" onclick="toggleCheck(this)"></div><div class="check-texto">Las imágenes, música o videos que usamos tienen licencia que lo permite (Creative Commons, dominio público, o son nuestros).</div></li>
+        <li class="check-item"><div class="check-box" onclick="toggleCheck(this)"></div><div class="check-texto">Si mencionamos personas reales, lo hacemos de forma respetuosa y con información verificada.</div></li>
+        <li class="check-item"><div class="check-box" onclick="toggleCheck(this)"></div><div class="check-texto">Pensamos en el impacto que puede tener este contenido en las personas que aparecen o son mencionadas.</div></li>
+        <li class="check-item"><div class="check-box" onclick="toggleCheck(this)"></div><div class="check-texto">Si usamos IA, lo indicamos claramente en el contenido.</div></li>
+      </ul>
+      <p class="fp">¿Hubo algún punto difícil de resolver? ¿Cómo lo resolvieron?</p>
+      <textarea class="ta" id="f8" placeholder="Describí las decisiones éticas que tomaron..."></textarea>
+    </div>
+    <!-- P3 -->
+    <div class="fs">
+      <div class="fst"><div class="fsi" style="background:#FFEBEE;">💭</div><span style="color:#EF5350;">Parte 3 — Momento crítico</span></div>
+      <p style="font-size:0.85rem;color:var(--gris-suave);margin-bottom:0.75rem;">Elegí una y escribí tu posición.</p>
+      <div class="ccrit">¿Quién es el autor de un texto generado con IA? ¿Importa la autoría?</div>
+      <div class="ccrit">¿Tener muchos seguidores convierte a alguien en una figura pública con responsabilidades especiales?</div>
+      <div class="ccrit">¿El conocimiento abierto y libre es un bien público o una amenaza para quienes viven de su trabajo creativo?</div>
+      <p class="fp">Pregunta elegida y mi posición:</p>
+      <textarea class="ta" id="f9" style="min-height:100px" placeholder="Escribí tu posición y los argumentos que la sostienen..."></textarea>
+    </div>
+    <!-- P4 -->
+    <div class="fs">
+      <div class="fst"><div class="fsi" style="background:#E0F2F1;">🌱</div><span style="color:#00897B;">Parte 4 — Reflexión final</span></div>
+      <p class="fp">¿Qué aprendiste sobre la creación de contenido responsable en esta actividad?</p>
+      <textarea class="ta" id="f10" placeholder="Escribí tu reflexión..."></textarea>
+      <p class="fp" style="margin-top:1rem;">¿Qué vas a tener en cuenta la próxima vez que publiques algo en internet?</p>
+      <textarea class="ta" id="f11" placeholder="Tu compromiso personal..."></textarea>
+    </div>
+  </div></div>
+  <footer><p>Navegar con Otros · Ciudadanía digital para docentes · Uruguay · 2026</p><p style="margin-top:0.5rem;"><a href="tema-7-creacion.html">← Volver al Tema 07</a></p></footer>
+  <script>
+    const KEY='ficha-t7',CAMPOS=['f1','f2','f3','f4','f5','f6','f7','f8','f9','f10','f11'];
+    let timer;
+    const hoy=new Date();
+    document.getElementById('f3').placeholder=hoy.getDate().toString().padStart(2,'0')+'/'+(hoy.getMonth()+1).toString().padStart(2,'0')+'/'+hoy.getFullYear();
+    function toggleCheck(el){el.classList.toggle('marcado');el.textContent=el.classList.contains('marcado')?'✓':'';}
+    function cargar(){const d=JSON.parse(localStorage.getItem(KEY)||'{}');CAMPOS.forEach(id=>{const e=document.getElementById(id);if(e&&d[id])e.value=d[id];});if(Object.keys(d).length>0){est('guardado','✓ Progreso cargado');setTimeout(()=>est('','💾 Guardado automático'),2000);}}
+    function guardar(){est('guardando','⏳ Guardando...');const d={};CAMPOS.forEach(id=>{const e=document.getElementById(id);if(e)d[id]=e.value;});localStorage.setItem(KEY,JSON.stringify(d));setTimeout(()=>est('guardado','✓ Guardado'),500);setTimeout(()=>est('','💾 Guardado automático'),2500);}
+    function est(t,x){const e=document.getElementById('gs');e.className='gs'+(t?' '+t:'');e.textContent=x;}
+    CAMPOS.forEach(id=>{const e=document.getElementById(id);if(e)e.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(guardar,800);});});
+    function limpiar(){if(confirm('¿Limpiar todos los campos?')){CAMPOS.forEach(id=>{const e=document.getElementById(id);if(e)e.value='';});document.querySelectorAll('.check-box').forEach(c=>{c.classList.remove('marcado');c.textContent='';});localStorage.removeItem(KEY);est('','💾 Sin cambios aún');}}
+    function pdf(){
+      const btn=document.getElementById('btnpdf');btn.disabled=true;btn.textContent='⏳ Generando...';
+      const orig=document.getElementById('ficha'),clon=orig.cloneNode(true);
+      clon.querySelectorAll('input[type="text"]').forEach(el=>{const s=document.createElement('span');s.textContent=el.value||'___';s.style.cssText='border-bottom:1px solid #ccc;display:inline-block;min-width:80px;font-size:0.9rem;';el.parentNode.replaceChild(s,el);});
+      clon.querySelectorAll('textarea').forEach(el=>{const d=document.createElement('div');d.textContent=el.value||' ';d.style.cssText='border:1px solid #ccc;border-radius:6px;padding:0.5rem;min-height:50px;font-size:0.85rem;line-height:1.5;white-space:pre-wrap;background:#fafafa;';el.parentNode.replaceChild(d,el);});
+      const nombre=document.getElementById('f1').value||'ficha';
+      html2pdf().set({margin:[10,10,10,10],filename:'ficha-creacion-'+nombre.replace(/\s+/g,'-').toLowerCase()+'.pdf',image:{type:'jpeg',quality:0.95},html2canvas:{scale:2,useCORS:true},jsPDF:{unit:'mm',format:'a4',orientation:'portrait'}}).from(clon).save().then(()=>{btn.disabled=false;btn.textContent='⬇️ Descargar PDF';});
+    }
+    cargar();
+  </script>
+</body>
+</html>

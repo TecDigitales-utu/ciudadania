@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verdadero o Falso — Identidad y huella digital — Navegar con Otros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    :root {
+      --color-tema: #00897B;
+      --color-tema-claro: #E0F2F1;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Navegar <span>con Otros</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#temas">Temas</a></li>
+      <li><a href="recursos.html">Recursos</a></li>
+      <li><a href="sobre-el-proyecto.html">Sobre el proyecto</a></li>
+    </ul>
+  </nav>
+
+  <div class="material-header">
+    <div class="material-header-inner">
+      <div class="material-meta">
+        <div class="material-ruta">
+          <a href="index.html">Inicio</a> → <a href="tema-1-identidad.html">Tema 01: Identidad y huella digital</a> → Verdadero o Falso
+        </div>
+        <h1>Verdadero o Falso</h1>
+        <p>Afirmaciones sobre identidad y huella digital para debatir en clase. Ideal para arrancar la actividad o como cierre.</p>
+        <div class="material-badges">
+          <span class="badge badge-verde">Identidad y huella digital</span>
+          <span class="badge badge-violeta">Ciclo básico y bachillerato</span>
+          <span class="badge badge-amarillo">Disparador o cierre</span>
+        </div>
+      </div>
+      <div class="material-acciones">
+        <button class="btn-imprimir" onclick="window.print()">🖨️ Imprimir / PDF</button>
+        <button class="btn-reiniciar" onclick="reiniciar()">↺ Reiniciar juego</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="instrucciones">
+    <div class="instrucciones-inner">
+      <h3>¿Cómo usar este material?</h3>
+      <div class="instrucciones-grid">
+        <div class="instruccion-item"><strong>En pantalla (individual)</strong>Cada estudiante responde en su dispositivo. Al terminar aparece el puntaje y un mensaje para debatir.</div>
+        <div class="instruccion-item"><strong>En pantalla (grupal)</strong>El docente proyecta y la clase vota de mano alzada antes de ver la respuesta. El debate ocurre después de cada afirmación.</div>
+        <div class="instruccion-item"><strong>Impreso</strong>Usá el botón de imprimir para obtener la lista de afirmaciones. Los estudiantes marcan V o F y después se comparan las respuestas.</div>
+        <div class="instruccion-item"><strong>Ojo</strong>Algunas afirmaciones no tienen una respuesta completamente correcta. El objetivo es el debate, no acertar.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="progreso-barra">
+    <div class="progreso-texto">
+      <span id="progreso-label">Pregunta 1 de 10</span>
+      <span id="progreso-puntos">0 correctas</span>
+    </div>
+    <div class="progreso-track">
+      <div class="progreso-fill" id="progreso-fill"></div>
+    </div>
+  </div>
+
+  <div class="juego-contenedor" id="juego">
+  </div>
+
+  <!-- VERSIÓN IMPRESIÓN -->
+  <div class="afirmaciones-impresion" id="afirmaciones-impresion"></div>
+
+  <footer>
+    <p>Navegar con Otros · Recurso web de ciudadanía digital para docentes de Educación Media · Uruguay · 2026</p>
+    <p style="margin-top:0.5rem;"><a href="tema-1-identidad.html">← Volver al Tema 01</a></p>
+  </footer>
+
+  <script>
+    const afirmaciones = [
+      {
+        texto: "Si borrás una publicación de una red social, desaparece para siempre.",
+        respuesta: false,
+        explicacion: "Falso. Aunque borrés una publicación de tu perfil, puede haber sido guardada, capturada o indexada por buscadores antes de que la borraras. Además, las plataformas pueden conservar copias en sus servidores durante un tiempo.",
+        debate: "¿Cambia esto la forma en que publicás cosas? ¿Pensás antes de publicar que podría quedar para siempre?"
+      },
+      {
+        texto: "La huella digital incluye solo lo que publicamos nosotros mismos.",
+        respuesta: false,
+        explicacion: "Falso. La huella digital tiene dos partes: la activa (lo que publicamos nosotros) y la pasiva (lo que se registra sin que lo decidamos, como nuestra ubicación, el tiempo que pasamos en una página o lo que buscamos).",
+        debate: "¿Cuál de los dos tipos de huella te parece más difícil de controlar? ¿Por qué?"
+      },
+      {
+        texto: "Tener una identidad diferente en internet que en la vida offline es necesariamente negativo.",
+        respuesta: false,
+        explicacion: "Falso. Todos construimos distintas versiones de nosotros mismos según el contexto: somos distintos con nuestra familia, con amigos, en el trabajo. Lo digital no es diferente. El problema aparece cuando esa diferencia implica engaño o daño a otros.",
+        debate: "¿Cuándo creés que tener una identidad digital diferente se vuelve un problema?"
+      },
+      {
+        texto: "Los algoritmos de las redes sociales pueden inferir cosas sobre nosotros que nunca publicamos.",
+        respuesta: true,
+        explicacion: "Verdadero. Los algoritmos analizan patrones de comportamiento (qué miramos, cuánto tiempo, con qué interactuamos) y pueden inferir preferencias, estados de ánimo, orientación sexual o condiciones de salud, aunque nunca lo hayamos publicado explícitamente.",
+        debate: "¿Cómo te hace sentir que un sistema pueda 'saber' cosas sobre vos que nunca dijiste?"
+      },
+      {
+        texto: "Una vez que aceptás los términos y condiciones de una app, no podés hacer nada con tus datos.",
+        respuesta: false,
+        explicacion: "Falso. En Uruguay, la Ley N° 18.331 de Protección de Datos Personales te da derechos sobre tu información: podés pedir acceso a tus datos, rectificarlos o solicitar que los eliminen, incluso después de haber aceptado los términos.",
+        debate: "¿Sabías que tenías estos derechos? ¿Los ejercerías alguna vez?"
+      },
+      {
+        texto: "Lo que publicás en internet puede afectar oportunidades reales como conseguir trabajo o una beca.",
+        respuesta: true,
+        explicacion: "Verdadero. Muchas empresas e instituciones revisan las redes sociales de los candidatos como parte del proceso de selección. La huella digital puede jugar a favor o en contra dependiendo de lo que encuentren.",
+        debate: "¿Es justo que te juzguen por algo que publicaste hace cinco años siendo adolescente?"
+      },
+      {
+        texto: "Usar el modo incógnito del navegador te hace completamente anónimo en internet.",
+        respuesta: false,
+        explicacion: "Falso. El modo incógnito impide que el navegador guarde el historial en tu dispositivo, pero tu proveedor de internet, el empleador (si usás una red de trabajo) o los sitios que visitás pueden seguir viendo tu actividad.",
+        debate: "¿Para qué creés que sirve realmente el modo incógnito? ¿Para qué no sirve?"
+      },
+      {
+        texto: "Publicar una foto de otra persona sin su permiso puede tener consecuencias legales en Uruguay.",
+        respuesta: true,
+        explicacion: "Verdadero. En Uruguay, la Ley N° 19.580 sobre violencia basada en género y otras normas protegen el derecho a la imagen. Publicar fotos de alguien sin su consentimiento, especialmente si son íntimas, puede tener consecuencias legales.",
+        debate: "¿En qué situaciones cotidianas publicamos fotos de otros sin pensar si quieren que las publiquemos?"
+      },
+      {
+        texto: "La privacidad en internet es imposible: si usás internet, perdés tu privacidad.",
+        respuesta: false,
+        explicacion: "Debatible. Si bien es cierto que usar servicios digitales implica ceder cierta información, existen herramientas y decisiones que permiten gestionar mejor la privacidad: usar navegadores más seguros, revisar permisos de apps, leer las configuraciones de privacidad.",
+        debate: "¿Cuánto esfuerzo estás dispuesto a hacer para proteger tu privacidad? ¿Vale la pena?"
+      },
+      {
+        texto: "La identidad digital es fija: una vez que te definís en internet, es difícil cambiar cómo te ven.",
+        respuesta: false,
+        explicacion: "Falso, aunque tiene algo de verdad. La identidad digital se construye continuamente y puede cambiar. Sin embargo, la permanencia de la información en internet hace que sea más difícil borrar ciertas imágenes o narrativas que ya circularon.",
+        debate: "¿Hubo algún momento en que quisiste cambiar cómo te ven en internet? ¿Lo lograste?"
+      }
+    ];
+
+    let actual = 0;
+    let correctas = 0;
+    let respondidas = 0;
+
+    function construirJuego() {
+      const juego = document.getElementById('juego');
+      juego.innerHTML = '';
+
+      afirmaciones.forEach((af, i) => {
+        const card = document.createElement('div');
+        card.className = 'afirmacion-card' + (i === 0 ? ' activa' : '');
+        card.id = 'card-' + i;
+        card.innerHTML = `
+          <div class="afirmacion-numero">Afirmación ${i + 1} de ${afirmaciones.length}</div>
+          <div class="afirmacion-texto">${af.texto}</div>
+          <div class="afirmacion-botones">
+            <button class="btn-vf btn-verdadero" onclick="responder(${i}, true)">✓ Verdadero</button>
+            <button class="btn-vf btn-falso" onclick="responder(${i}, false)">✗ Falso</button>
+          </div>
+          <div class="respuesta-panel" id="respuesta-${i}"></div>
+        `;
+        juego.appendChild(card);
+      });
+
+      const final = document.createElement('div');
+      final.className = 'resultado-final';
+      final.id = 'resultado-final';
+      juego.appendChild(final);
+
+      construirImpresion();
+    }
+
+    function responder(i, eleccion) {
+      const af = afirmaciones[i];
+      const esCorrecta = eleccion === af.respuesta;
+      if (esCorrecta) correctas++;
+      respondidas++;
+
+      const btnV = document.querySelector(`#card-${i} .btn-verdadero`);
+      const btnF = document.querySelector(`#card-${i} .btn-falso`);
+      btnV.disabled = true;
+      btnF.disabled = true;
+      btnV.style.opacity = '0.6';
+      btnF.style.opacity = '0.6';
+
+      let tipo = esCorrecta ? 'correcto' : 'incorrecto';
+      let icono = esCorrecta ? '✓' : '✗';
+      let mensaje = esCorrecta ? '¡Correcto!' : 'Incorrecto';
+
+      if (af.respuesta === false && !af.texto.includes('imposible') && i === 8) {
+        tipo = 'debate';
+        icono = '💬';
+        mensaje = 'Esta es debatible';
+      }
+
+      const panel = document.getElementById('respuesta-' + i);
+      panel.innerHTML = `
+        <div class="respuesta-resultado ${tipo}">${icono} ${mensaje} — La afirmación es ${af.respuesta ? 'verdadera' : 'falsa'}</div>
+        <p class="respuesta-explicacion">${af.explicacion}</p>
+        <div class="respuesta-para-debatir">💬 Para debatir: ${af.debate}</div>
+        <button class="btn-siguiente" onclick="siguiente(${i})">${i < afirmaciones.length - 1 ? 'Siguiente afirmación →' : 'Ver resultado final'}</button>
+      `;
+      panel.classList.add('visible');
+
+      actualizarProgreso();
+    }
+
+    function siguiente(i) {
+      document.getElementById('card-' + i).classList.remove('activa');
+      if (i < afirmaciones.length - 1) {
+        document.getElementById('card-' + (i + 1)).classList.add('activa');
+      } else {
+        mostrarFinal();
+      }
+    }
+
+    function mostrarFinal() {
+      const final = document.getElementById('resultado-final');
+      const porcentaje = Math.round((correctas / afirmaciones.length) * 100);
+      let emoji = '🌱';
+      let mensaje = 'Estás empezando a explorar el tema. El debate en clase te va a ayudar a profundizar.';
+      if (porcentaje >= 70) { emoji = '🌊'; mensaje = 'Buen manejo del tema. Las preguntas para debatir son el siguiente paso.'; }
+      if (porcentaje >= 90) { emoji = '🧭'; mensaje = 'Excelente. Ahora podés ayudar a tus compañeros a pensar críticamente sobre estos temas.'; }
+
+      final.innerHTML = `
+        <div class="resultado-emoji">${emoji}</div>
+        <h2>Juego completado</h2>
+        <div class="resultado-puntos">${correctas}/${afirmaciones.length}</div>
+        <div class="resultado-sub">respuestas correctas (${porcentaje}%)</div>
+        <div class="resultado-mensaje">${mensaje}</div>
+        <button class="btn-siguiente" onclick="reiniciar()">↺ Jugar de nuevo</button>
+      `;
+      final.classList.add('visible');
+      actualizarProgreso();
+    }
+
+    function actualizarProgreso() {
+      const fill = document.getElementById('progreso-fill');
+      const label = document.getElementById('progreso-label');
+      const puntos = document.getElementById('progreso-puntos');
+      const progreso = (respondidas / afirmaciones.length) * 100;
+      fill.style.width = progreso + '%';
+      if (respondidas < afirmaciones.length) {
+        label.textContent = `Pregunta ${respondidas + 1} de ${afirmaciones.length}`;
+      } else {
+        label.textContent = 'Completado';
+      }
+      puntos.textContent = `${correctas} correctas`;
+    }
+
+    function reiniciar() {
+      actual = 0;
+      correctas = 0;
+      respondidas = 0;
+      document.getElementById('progreso-fill').style.width = '0%';
+      document.getElementById('progreso-label').textContent = 'Pregunta 1 de 10';
+      document.getElementById('progreso-puntos').textContent = '0 correctas';
+      construirJuego();
+    }
+
+    function construirImpresion() {
+      const cont = document.getElementById('afirmaciones-impresion');
+      cont.innerHTML = '<h2 style="font-family:\'Nunito\',sans-serif;color:#5E35B1;margin-bottom:1rem;font-size:14pt;">Verdadero o Falso — Identidad y huella digital</h2>';
+      afirmaciones.forEach((af, i) => {
+        cont.innerHTML += `
+          <div class="afirmacion-impresa">
+            <div class="afirmacion-impresa-num">${i + 1}.</div>
+            <div>
+              <div class="afirmacion-impresa-texto">${af.texto}</div>
+              <div class="afirmacion-impresa-opciones">
+                <span class="opcion-vf opcion-v">V</span>
+                <span class="opcion-vf opcion-f">F</span>
+              </div>
+            </div>
+          </div>`;
+      });
+    }
+
+    construirJuego();
+  </script>
+
+</body>
+</html>

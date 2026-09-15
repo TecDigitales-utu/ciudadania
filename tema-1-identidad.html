@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Identidad y huella digital — Navegar con Otros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    :root {
+      --color-tema: #00897B;
+      --color-tema-claro: #E0F2F1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">Navegar <span>con Otros</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#temas">Temas</a></li>
+      <li><a href="recursos.html">Recursos</a></li>
+      <li><a href="sobre-el-proyecto.html">Sobre el proyecto</a></li>
+    </ul>
+  </nav>
+
+  <!-- NAV TEMAS -->
+  <div class="nav-temas">
+    <a href="tema-1-identidad.html" class="activo">01 · Identidad</a>
+    <a href="tema-2-privacidad.html">02 · Privacidad</a>
+    <a href="tema-3-desinformacion.html">03 · Desinformación</a>
+    <a href="tema-4-convivencia.html">04 · Convivencia</a>
+    <a href="tema-5-bienestar.html">05 · Bienestar</a>
+    <a href="tema-6-derechos.html">06 · Derechos</a>
+    <a href="tema-7-creacion.html">07 · Creación</a>
+  </div>
+
+  <!-- CABEZAL -->
+  <header class="tema-header">
+    <div class="tema-header-inner">
+      <div class="tema-numero-grande">01</div>
+      <span class="tema-etiqueta">Tema 01</span>
+      <h1>Identidad y huella digital</h1>
+      <p>Cómo construimos nuestra identidad en entornos digitales y qué rastros dejamos en ellos, de forma consciente e inconsciente.</p>
+      <span class="tema-dimension">Dimensión: Comprensión del entorno digital</span>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="contenido">
+
+    <!-- 1. MARCO CONCEPTUAL -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn abierto" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#E0F2F1;">🧭</div>
+          <div>
+            <div class="acordeon-titulo">Marco conceptual</div>
+            <div class="acordeon-subtitulo">Qué es el tema y por qué importa</div>
+          </div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido visible">
+        <h3>Identidad digital</h3>
+        <p>La identidad digital es el conjunto de información que existe sobre una persona en los entornos digitales. Incluye lo que publicamos nosotros mismos —fotos, comentarios, perfiles en redes sociales— pero también lo que otros publican sobre nosotros y lo que los sistemas registran de nuestro comportamiento en línea.</p>
+        <p>A diferencia de la identidad en el mundo físico, la identidad digital es múltiple: podemos tener distintas "versiones" de nosotros mismos en distintas plataformas, construidas con distintos públicos en mente. Esa multiplicidad no significa que seamos "falsos" en alguna de ellas, sino que la identidad siempre se construye en relación con otros y con el contexto.</p>
+
+        <h3>Huella digital</h3>
+        <p>La huella digital es el rastro que dejamos al usar dispositivos y plataformas conectadas a internet. Se divide en dos tipos:</p>
+        <ul>
+          <li><strong>Huella activa</strong>: la que generamos de forma consciente. Publicaciones, likes, comentarios, registros en sitios web, correos electrónicos.</li>
+          <li><strong>Huella pasiva</strong>: la que se genera sin que lo decidamos conscientemente. La dirección IP desde la que navegamos, el tiempo que pasamos en una página, los productos que miramos sin comprar, la ubicación que registra una aplicación.</li>
+        </ul>
+        <p>La huella digital es permanente y acumulativa. Lo que publicamos hoy puede existir en internet dentro de diez años, aunque lo hayamos borrado de nuestra cuenta.</p>
+
+        <h3>Relación con la Estrategia Nacional</h3>
+        <p>Este tema trabaja las habilidades de "comprender el uso de los datos (incluida la huella digital)" y "gestionar la huella y la identidad digital", correspondientes a las dimensiones 1 y 2 de la Estrategia Nacional de Ciudadanía Digital 2024–2028 (Agesic).</p>
+
+        <div class="caja-ia">
+          <div class="caja-ia-titulo">🤖 Inteligencia artificial integrada</div>
+          <p>Los algoritmos de las plataformas construyen un perfil de cada usuario a partir de su huella digital: qué mira, cuánto tiempo, qué le gusta, con quién interactúa. Ese perfil determina qué contenido le muestra el sistema. No es neutral: refleja decisiones de diseño sobre qué comportamientos se quieren fomentar.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. ACTIVIDAD -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#E0F2F1;">🎯</div>
+          <div>
+            <div class="acordeon-titulo">Actividad participativa</div>
+            <div class="acordeon-subtitulo">Para trabajar en el aula con los estudiantes</div>
+          </div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido">
+        <div class="caja-actividad">
+          <div class="caja-actividad-titulo">📋 "¿Quién soy en internet?"</div>
+          <p><strong>Duración estimada</strong>: 50 minutos</p>
+          <p><strong>Materiales</strong>: hojas en blanco o cartulinas, marcadores, opcional: acceso a dispositivos</p>
+        </div>
+
+        <h3>Desarrollo</h3>
+        <p><strong>Momento 1 — Punto de partida (10 min)</strong></p>
+        <p>El docente propone la siguiente situación: "Alguien que no te conoce busca tu nombre en internet. ¿Qué encuentra?" Cada estudiante escribe o dibuja de forma individual qué cree que aparecería sobre ellos.</p>
+
+        <p><strong>Momento 2 — Mapa de huella digital (20 min)</strong></p>
+        <p>En grupos de 3 o 4, los estudiantes construyen un mapa visual de su huella digital. El mapa tiene dos zonas: huella activa (lo que publicaron) y huella pasiva (lo que se registra sin que lo decidan). Cada grupo trabaja con ejemplos reales o hipotéticos.</p>
+
+        <p><strong>Momento 3 — Puesta en común (10 min)</strong></p>
+        <p>Cada grupo comparte uno o dos elementos de su mapa que les resultaron sorprendentes o que no habían pensado antes. El docente anota en el pizarrón los elementos que aparecen.</p>
+
+        <p><strong>Momento 4 — Cierre y reflexión crítica (10 min)</strong></p>
+        <p>El docente introduce el momento crítico a partir de las preguntas de la sección correspondiente.</p>
+
+        <div class="caja-actividad">
+          <div class="caja-actividad-titulo">💡 Variante sin dispositivos</div>
+          <p>Si no hay acceso a internet, la actividad funciona igual trabajando con ejemplos hipotéticos o situaciones que los estudiantes conozcan de su propia experiencia. No es necesario que busquen información real sobre sí mismos.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. GUÍA DOCENTE -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#EDE7F6;">📖</div>
+          <div>
+            <div class="acordeon-titulo">Guía docente</div>
+            <div class="acordeon-subtitulo">Orientaciones para ciclo básico y bachillerato</div>
+          </div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido">
+        <div class="tabs-nivel">
+          <button class="tab-nivel activo" onclick="cambiarNivel(this, 'basico')">Ciclo básico</button>
+          <button class="tab-nivel" onclick="cambiarNivel(this, 'bachillerato')">Bachillerato</button>
+        </div>
+
+        <div class="panel-nivel visible" id="panel-basico">
+          <div class="caja-nivel">
+            <div class="caja-nivel-titulo">Ciclo básico (1.º – 3.º año)</div>
+            <p>El foco en ciclo básico está en que los estudiantes identifiquen que tienen una presencia digital y que esa presencia tiene consecuencias. No es necesario que dominen los conceptos técnicos: alcanza con que puedan nombrar qué publican y qué se registra de ellos.</p>
+          </div>
+
+          <h3>Preguntas orientadoras</h3>
+          <ul>
+            <li>¿En qué plataformas tienen cuenta? ¿Qué publican en cada una?</li>
+            <li>¿Saben quién puede ver lo que publican?</li>
+            <li>¿Alguna vez borraron algo que publicaron? ¿Por qué?</li>
+            <li>¿Qué creen que pasa con esa información cuando la borran?</li>
+          </ul>
+
+          <h3>Conceptos clave que emergen</h3>
+          <ul>
+            <li>Huella activa y pasiva</li>
+            <li>Permanencia de la información en internet</li>
+            <li>Diferencia entre privado y público en entornos digitales</li>
+          </ul>
+
+          <h3>Producto sugerido</h3>
+          <p>Afiche grupal con el mapa de huella digital del grupo, diferenciando huella activa y pasiva. Puede incluir consejos para gestionar la huella de forma consciente.</p>
+        </div>
+
+        <div class="panel-nivel" id="panel-bachillerato">
+          <div class="caja-nivel">
+            <div class="caja-nivel-titulo">Bachillerato (4.º – 6.º año)</div>
+            <p>En bachillerato se puede ir más lejos: analizar cómo las plataformas usan la huella digital para construir perfiles, qué implica eso para la autonomía y los derechos, y cómo se relaciona con el modelo de negocio de las redes sociales.</p>
+          </div>
+
+          <h3>Preguntas orientadoras</h3>
+          <ul>
+            <li>¿Quién tiene acceso a su huella digital además de ellos mismos?</li>
+            <li>¿Para qué usan las plataformas esa información?</li>
+            <li>¿Qué relación hay entre los datos que dejan y los anuncios que ven?</li>
+            <li>¿Es posible controlar completamente la propia huella digital? ¿Por qué?</li>
+          </ul>
+
+          <h3>Conceptos clave que emergen</h3>
+          <ul>
+            <li>Modelo de negocio basado en datos</li>
+            <li>Perfilamiento algorítmico</li>
+            <li>Consentimiento y protección de datos personales</li>
+            <li>Derecho al olvido</li>
+          </ul>
+
+          <h3>Producto sugerido</h3>
+          <p>Análisis escrito o presentación grupal: "¿Qué sabe de mí la plataforma X?" Pueden incluir capturas de las preferencias o configuraciones de privacidad de una red social y analizar qué datos se recopilan y para qué.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. MOMENTO CRÍTICO -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#FFEBEE;">💭</div>
+          <div>
+            <div class="acordeon-titulo">Momento crítico</div>
+            <div class="acordeon-subtitulo">Preguntas para pensar y tomar posición</div>
+          </div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido">
+        <div class="caja-critica">
+          <div class="caja-critica-titulo">💭 Preguntas sin respuesta única</div>
+          <ol>
+            <li>¿Es posible tener privacidad real en internet? ¿O la privacidad es una ilusión?</li>
+            <li>¿Somos los mismos en línea que fuera de línea, o construimos personajes? ¿Está mal construir personajes?</li>
+            <li>Si una plataforma es gratis, ¿qué estamos pagando en realidad?</li>
+            <li>¿Debería existir un "derecho al olvido" en internet? ¿Quién debería decidirlo?</li>
+            <li>¿Quién es responsable de lo que publicamos: nosotros, la plataforma, o ambos?</li>
+          </ol>
+        </div>
+        <p style="font-size:0.85rem; color:var(--gris-suave); margin-top:0.75rem;">Estas preguntas no tienen una respuesta correcta. El objetivo es que los estudiantes puedan argumentar su posición y escuchar la de otros. El docente no necesita cerrar con una conclusión única.</p>
+      </div>
+    </div>
+
+    <!-- 5. ENTRADAS DISCIPLINARES -->
+    <div class="acordeon-item">
+      <button class="acordeon-btn" onclick="toggleAcordeon(this)">
+        <div class="acordeon-btn-izq">
+          <div class="acordeon-icono" style="background:#F5F5F5;">🚪</div>
+          <div>
+            <div class="acordeon-titulo">Entradas disciplinares</div>
+            <div class="acordeon-subtitulo">Cómo abordar este tema según tu asignatura</div>
+          </div>
+        </div>
+        <span class="acordeon-flecha">▾</span>
+      </button>
+      <div class="acordeon-contenido">
+        <p style="font-size:0.9rem; color:var(--gris-suave); margin-bottom:1rem;">La ciudadanía digital es el centro. La asignatura es la puerta de entrada.</p>
+        <div class="entradas-grid">
+          <div class="entrada-card informatica">
+            <h4>💻 Desde Informática</h4>
+            <p>Trabajar cómo funcionan técnicamente las cookies, el almacenamiento de datos en servidores y los metadatos de archivos y publicaciones. Usar herramientas concretas para ver la huella que dejan los navegadores (extensiones de privacidad, inspección de cookies).</p>
+            <p style="margin-top:0.5rem;"><strong>Pregunta guía</strong>: ¿Qué datos técnicos se registran cada vez que accedemos a un sitio web?</p>
+          </div>
+          <div class="entrada-card ciudadania">
+            <h4>⚖️ Desde Ed. para la Ciudadanía</h4>
+            <p>Trabajar el marco legal: la Ley N° 18.331 de Protección de Datos Personales de Uruguay y el concepto de derecho al olvido. Analizar qué derechos tenemos sobre nuestra información y cómo ejercerlos.</p>
+            <p style="margin-top:0.5rem;"><strong>Pregunta guía</strong>: ¿Qué dice la ley uruguaya sobre quién puede usar nuestra información y para qué?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- NAVEGACIÓN ENTRE TEMAS -->
+  <div class="nav-entre-temas">
+    <a href="index.html">← Volver al inicio</a>
+    <a href="tema-2-privacidad.html">Tema 02: Privacidad y datos personales →</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Navegar con Otros · Recurso web de ciudadanía digital para docentes de Educación Media · Uruguay · 2026</p>
+    <p style="margin-top:0.5rem;">Desarrollado como Proyecto Técnico de Fin de Carrera — <a href="sobre-el-proyecto.html">Sobre el proyecto</a></p>
+  </footer>
+
+  <script>
+    function toggleAcordeon(btn) {
+      const contenido = btn.nextElementSibling;
+      const estaAbierto = btn.classList.contains('abierto');
+      btn.classList.toggle('abierto', !estaAbierto);
+      contenido.classList.toggle('visible', !estaAbierto);
+    }
+
+    function cambiarNivel(tab, nivel) {
+      const tabs = tab.parentElement.querySelectorAll('.tab-nivel');
+      const paneles = tab.closest('.acordeon-contenido').querySelectorAll('.panel-nivel');
+      tabs.forEach(t => t.classList.remove('activo'));
+      paneles.forEach(p => p.classList.remove('visible'));
+      tab.classList.add('activo');
+      document.getElementById('panel-' + nivel).classList.add('visible');
+    }
+  </script>
+
+</body>
+</html>

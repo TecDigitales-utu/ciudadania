@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjetas de casos — Identidad y huella digital — Navegar con Otros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    :root {
+      --color-tema: #00897B;
+      --color-tema-claro: #E0F2F1;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Navegar <span>con Otros</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#temas">Temas</a></li>
+      <li><a href="recursos.html">Recursos</a></li>
+      <li><a href="sobre-el-proyecto.html">Sobre el proyecto</a></li>
+    </ul>
+  </nav>
+
+  <!-- CABEZAL -->
+  <div class="material-header">
+    <div class="material-header-inner">
+      <div class="material-meta">
+        <div class="material-ruta">
+          <a href="index.html">Inicio</a> → <a href="tema-1-identidad.html">Tema 01: Identidad y huella digital</a> → Tarjetas de casos
+        </div>
+        <h1>Tarjetas de casos</h1>
+        <p>Situaciones para analizar, debatir y tomar posición en el aula. Cada tarjeta presenta un caso y una pregunta disparadora.</p>
+        <div class="material-badges">
+          <span class="badge badge-verde">Identidad y huella digital</span>
+          <span class="badge badge-violeta">Ciclo básico y bachillerato</span>
+          <span class="badge badge-coral">Actividad grupal</span>
+        </div>
+      </div>
+      <div class="material-acciones">
+        <button class="btn-imprimir" onclick="window.print()">🖨️ Imprimir / PDF</button>
+        <button class="btn-instrucciones" onclick="toggleInstrucciones()">📋 Instrucciones de uso</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- INSTRUCCIONES -->
+  <div class="instrucciones-panel" id="instrucciones">
+    <div class="instrucciones-panel-inner">
+      <h3>¿Cómo usar estas tarjetas?</h3>
+      <div class="instrucciones-grid">
+        <div class="instruccion-item">
+          <strong>Imprimí y recortá</strong>
+          Usá el botón "Imprimir / PDF" para obtener las tarjetas en papel. Recortalas y entregá una por grupo o una por estudiante.
+        </div>
+        <div class="instruccion-item">
+          <strong>Organizá los grupos</strong>
+          Formá grupos de 3 a 4 estudiantes. Cada grupo analiza su tarjeta y prepara una respuesta a la pregunta.
+        </div>
+        <div class="instruccion-item">
+          <strong>Puesta en común</strong>
+          Cada grupo presenta el caso y su posición. El resto puede estar de acuerdo o no. El docente modera sin imponer una respuesta correcta.
+        </div>
+        <div class="instruccion-item">
+          <strong>Variante: sorteo</strong>
+          Podés repartir las tarjetas al azar o dejar que los grupos elijan. También podés usar una sola tarjeta para toda la clase y debatirla juntos.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TARJETAS -->
+  <div class="tarjetas-contenedor">
+    <p class="tarjetas-intro">Hacé clic en una tarjeta para verla completa · 8 tarjetas · Tema 01</p>
+
+    <div class="tarjetas-grid">
+
+      <!-- TARJETA 1 -->
+      <div class="tarjeta tipo-huella" onclick="abrirModal('modal-1')">
+        <div class="tarjeta-header">
+          <span class="tarjeta-numero">Tarjeta 01</span>
+          <span class="tarjeta-tipo">Huella digital</span>
+        </div>
+        <div class="tarjeta-cuerpo">
+          <div class="tarjeta-situacion">La foto de cumpleaños</div>
+          <p class="tarjeta-descripcion">Valentina tenía 12 años cuando su mamá publicó fotos de su cumpleaños en Facebook. Ahora tiene 17 y esas fotos siguen ahí, visibles para cualquiera.</p>
+          <div class="tarjeta-pregunta">¿Quién debería tener el control de esas fotos: Valentina o su mamá?</div>
+        </div>
+        <div class="tarjeta-pie">👥 Grupal · 💬 Debate</div>
+      </div>
+
+      <!-- TARJETA 2 -->
+      <div class="tarjeta tipo-identidad" onclick="abrirModal('modal-2')">
+        <div class="tarjeta-header">
+          <span class="tarjeta-numero">Tarjeta 02</span>
+          <span class="tarjeta-tipo">Identidad digital</span>
+        </div>
+        <div class="tarjeta-cuerpo">
+          <div class="tarjeta-situacion">El perfil de Instagram</div>
+          <p class="tarjeta-descripcion">Mateo tiene dos cuentas de Instagram: una "real" con sus amigos y una anónima donde publica cosas que no publicaría con su nombre.</p>
+          <div class="tarjeta-pregunta">¿El Mateo de la cuenta anónima es "el verdadero Mateo"? ¿Está haciendo algo malo?</div>
+        </div>
+        <div class="tarjeta-pie">👥 Grupal · 💬 Debate</div>
+      </div>
+
+      <!-- TARJETA 3 -->
+      <div class="tarjeta tipo-huella" onclick="abrirModal('modal-3')">
+        <div class="tarjeta-header">
+          <span class="tarjeta-numero">Tarjeta 03</span>
+          <span class="tarjeta-tipo">Huella digital</span>
+        </div>
+        <div class="tarjeta-cuerpo">
+          <div class="tarjeta-situacion">El comentario de hace cinco años</div>
+          <p class="tarjeta-descripcion">Lucas escribió un comentario hiriente en una publicación cuando tenía 13 años. Ahora tiene 18, cambió mucho, pero el comentario sigue ahí y aparece cuando alguien busca su nombre.</p>
+          <div class="tarjeta-pregunta">¿Debería poder borrar ese comentario para siempre? ¿O es parte de su historia?</div>
+        </div>
+        <div class="tarjeta-pie">👥 Grupal · 💬 Debate</div>
+      </div>
+
+      <!-- TARJETA 4 -->
+      <div class="tarjeta tipo-dilema" onclick="abrirModal('modal-4')">
+        <div class="tarjeta-header">
+          <span class="tarjeta-numero">Tarjeta 04</span>
+          <span class="tarjeta-tipo">Dilema</span>
+        </div>
+        <div class="tarjeta-cuerpo">
+          <div class="tarjeta-situacion">La app de ubicación</div>
+          <p class="tarjeta-descripcion">Los padres de Sofía instalaron una app en su celular que les muestra su ubicación en tiempo real. Sofía tiene 15 años y no le parece bien, pero sus padres dicen que es por su seguridad.</p>
+          <div class="tarjeta-pregunta">¿Es vigilancia o es cuidado? ¿A qué edad una persona tiene derecho a su privacidad?</div>
+        </div>
+        <div class="tarjeta-pie">👥 Grupal · ⚖️ Dilema</div>
+      </div>
+
+      <!-- TARJETA 5 -->
+      <div class="tarjeta tipo-identidad" onclick="abrirModal('modal-5')">
+        <div class="tarjeta-header">
+          <span class="tarjeta-numero">Tarjeta 05</span>
+          <span class="tarjeta-tipo">Identidad digital</span>
+        </div>
+        <div class="tarjeta-cuerpo">
+          <div class="tarjeta-situacion">El CV y el TikTok</div>
+          <p class="tarjeta-descripcion">Camila está buscando trabajo. Un amigo le avisa que muchas empresas buscan a los candidatos en redes sociales antes de contratarlos. Camila tiene videos de TikTok que le dan vergüenza.</p>
+          <div class="tarjeta-pregunta">¿Es justo que una empresa descarte a alguien por lo que publica en sus redes personales?</div>
+        </div>
+        <div class="tarjeta-pie">👥 Grupal · 💬 Debate</div>
+      </div>
+
+      <!-- TARJETA 6 -->
+      <div class="tarjeta tipo-huella" onclick="abrirModal('modal-6')">
+        <div class="tarjeta-header">
+          <span class="tarjeta-numero">Tarjeta 06</span>
+          <span class="tarjeta-tipo">Huella digital</span>
+        </div>
+        <div class="tarjeta-cuerpo">
+          <div class="tarjeta-situacion">La búsqueda de Google</div>
+          <p class="tarjeta-descripcion">Tomás busca en Google síntomas de una enfermedad. Al día siguiente, ve anuncios de medicamentos y clínicas en todas las páginas que visita.</p>
+          <div class="tarjeta-pregunta">¿Quién le mostró esos anuncios? ¿Cómo sabía lo que había buscado?</div>
+        </div>
+        <div class="tarjeta-pie">👥 Grupal · 🔍 Investigación</div>
+      </div>
+
+      <!-- TARJETA 7 -->
+      <div class="tarjeta tipo-dilema" onclick="abrirModal('modal-7')">
+        <div class="tarjeta-header">
+          <span class="tarjeta-numero">Tarjeta 07</span>
+          <span class="tarjeta-tipo">Dilema</span>
+        </div>
+        <div class="tarjeta-cuerpo">
+          <div class="tarjeta-situacion">La foto sin permiso</div>
+          <p class="tarjeta-descripcion">En una salida de clase, Ramiro le sacó una foto a su compañera Andrea durmiendo en el ómnibus y la publicó en el grupo de WhatsApp del liceo. La foto se viralizó y llegó a grupos que Andrea no conocía.</p>
+          <div class="tarjeta-pregunta">¿Qué hizo mal Ramiro? ¿Qué derechos de Andrea fueron afectados?</div>
+        </div>
+        <div class="tarjeta-pie">👥 Grupal · ⚖️ Derechos</div>
+      </div>
+
+      <!-- TARJETA 8 -->
+      <div class="tarjeta tipo-identidad" onclick="abrirModal('modal-8')">
+        <div class="tarjeta-header">
+          <span class="tarjeta-numero">Tarjeta 08</span>
+          <span class="tarjeta-tipo">Identidad digital</span>
+        </div>
+        <div class="tarjeta-cuerpo">
+          <div class="tarjeta-situacion">El algoritmo sabe</div>
+          <p class="tarjeta-descripcion">Nicolás nunca le contó a nadie que le gustaban los chicos. Pero el algoritmo de Instagram empezó a mostrarle contenido LGBTQ+ y sus sugerencias de amigos cambiaron.</p>
+          <div class="tarjeta-pregunta">¿Puede un algoritmo "saber" algo sobre nosotros que no hemos dicho? ¿Qué implica eso?</div>
+        </div>
+        <div class="tarjeta-pie">👥 Grupal · 💬 Debate · 🤖 IA</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PIE DE IMPRESIÓN -->
+  <div class="pie-impresion">
+    Navegar con Otros · Recurso web de ciudadanía digital para docentes · Uruguay 2026
+  </div>
+
+  <!-- MODALES -->
+  <div class="modal-overlay" id="modal-1" onclick="cerrarModal('modal-1')">
+    <div class="modal tipo-huella" onclick="event.stopPropagation()">
+      <div class="modal-header" style="background:#E0F2F1;">
+        <div>
+          <div style="font-size:0.75rem; font-weight:700; color:#00897B; margin-bottom:0.3rem;">Tarjeta 01 · Huella digital</div>
+          <div style="font-family:'Nunito',sans-serif; font-weight:800; font-size:1.2rem; color:#004D40;">La foto de cumpleaños</div>
+        </div>
+        <button onclick="cerrarModal('modal-1')" style="background:none; border:none; font-size:1.4rem; cursor:pointer; color:#004D40;">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>Valentina tenía 12 años cuando su mamá publicó fotos de su cumpleaños en Facebook. Las fotos mostraban a Valentina con sus amigos, en su casa, con su nombre completo en el pie de foto. Ahora tiene 17 y esas fotos siguen ahí, visibles para cualquiera que busque su nombre.</p>
+        <p>Valentina le pidió a su mamá que las borre, pero su mamá dice que son recuerdos hermosos y que no ve ningún problema.</p>
+        <div class="modal-preguntas" style="background:#E0F2F1;">
+          <p style="color:#004D40;">Preguntas para debatir</p>
+          <ul>
+            <li>¿Quién debería tener el control de esas fotos: Valentina o su mamá?</li>
+            <li>¿Tiene Valentina derecho a decidir sobre su propia imagen aunque sea menor de edad?</li>
+            <li>¿Qué debería hacer Valentina si su mamá se niega a borrarlas?</li>
+            <li>¿Existe alguna ley que proteja a Valentina en este caso?</li>
+          </ul>
+        </div>
+        <button class="modal-cerrar" onclick="cerrarModal('modal-1')">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-2" onclick="cerrarModal('modal-2')">
+    <div class="modal tipo-identidad" onclick="event.stopPropagation()">
+      <div class="modal-header" style="background:#EDE7F6;">
+        <div>
+          <div style="font-size:0.75rem; font-weight:700; color:#5E35B1; margin-bottom:0.3rem;">Tarjeta 02 · Identidad digital</div>
+          <div style="font-family:'Nunito',sans-serif; font-weight:800; font-size:1.2rem; color:#311B92;">El perfil de Instagram</div>
+        </div>
+        <button onclick="cerrarModal('modal-2')" style="background:none; border:none; font-size:1.4rem; cursor:pointer; color:#311B92;">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>Mateo tiene dos cuentas de Instagram. En la primera, con su nombre real, publica fotos con su familia y amigos cercanos, y tiene cuidado con lo que dice porque sabe que sus padres y sus profesores lo siguen.</p>
+        <p>En la segunda, anónima, publica opiniones fuertes sobre política, humor negro y cosas que sabe que generarían conflicto en su entorno. Allí se siente más libre.</p>
+        <div class="modal-preguntas" style="background:#EDE7F6;">
+          <p style="color:#311B92;">Preguntas para debatir</p>
+          <ul>
+            <li>¿El Mateo de la cuenta anónima es "el verdadero Mateo"? ¿O es una máscara?</li>
+            <li>¿Está haciendo algo malo al tener una identidad anónima?</li>
+            <li>¿Hay diferencia entre tener una identidad anónima y mentir sobre quién sos?</li>
+            <li>¿Todos construimos "personajes" según el contexto, también fuera de internet?</li>
+          </ul>
+        </div>
+        <button class="modal-cerrar" onclick="cerrarModal('modal-2')">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-3" onclick="cerrarModal('modal-3')">
+    <div class="modal tipo-huella" onclick="event.stopPropagation()">
+      <div class="modal-header" style="background:#E0F2F1;">
+        <div>
+          <div style="font-size:0.75rem; font-weight:700; color:#00897B; margin-bottom:0.3rem;">Tarjeta 03 · Huella digital</div>
+          <div style="font-family:'Nunito',sans-serif; font-weight:800; font-size:1.2rem; color:#004D40;">El comentario de hace cinco años</div>
+        </div>
+        <button onclick="cerrarModal('modal-3')" style="background:none; border:none; font-size:1.4rem; cursor:pointer; color:#004D40;">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>Lucas escribió un comentario hiriente sobre la apariencia de una compañera en una publicación cuando tenía 13 años. Ahora tiene 18, cambió mucho como persona, se arrepiente de lo que hizo, pero el comentario sigue ahí y aparece cuando alguien busca su nombre en Google.</p>
+        <p>Lucas está aplicando a una beca universitaria y le preocupa que quien lo evalúe encuentre ese comentario.</p>
+        <div class="modal-preguntas" style="background:#E0F2F1;">
+          <p style="color:#004D40;">Preguntas para debatir</p>
+          <ul>
+            <li>¿Debería poder borrar ese comentario para siempre? ¿O es parte de su historia?</li>
+            <li>¿Las personas cambian? ¿Debería internet "recordarlo" para siempre?</li>
+            <li>¿Qué pasa con la persona que fue afectada por ese comentario?</li>
+            <li>¿Existe un "derecho al olvido" en internet? ¿Debería existir?</li>
+          </ul>
+        </div>
+        <button class="modal-cerrar" onclick="cerrarModal('modal-3')">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-4" onclick="cerrarModal('modal-4')">
+    <div class="modal tipo-dilema" onclick="event.stopPropagation()">
+      <div class="modal-header" style="background:#FFEBEE;">
+        <div>
+          <div style="font-size:0.75rem; font-weight:700; color:#EF5350; margin-bottom:0.3rem;">Tarjeta 04 · Dilema</div>
+          <div style="font-family:'Nunito',sans-serif; font-weight:800; font-size:1.2rem; color:#B71C1C;">La app de ubicación</div>
+        </div>
+        <button onclick="cerrarModal('modal-4')" style="background:none; border:none; font-size:1.4rem; cursor:pointer; color:#B71C1C;">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>Los padres de Sofía instalaron una app en su celular que les muestra su ubicación en tiempo real, las 24 horas. Sofía tiene 15 años. Ella entiende que sus padres se preocupan por su seguridad, pero siente que no confían en ella y que no tiene privacidad.</p>
+        <p>Sus padres dicen que es para protegerla, no para espiarla, y que cuando tenga 18 podrá decidir si quiere seguir usándola.</p>
+        <div class="modal-preguntas" style="background:#FFEBEE;">
+          <p style="color:#B71C1C;">Preguntas para debatir</p>
+          <ul>
+            <li>¿Es vigilancia o es cuidado? ¿Puede ser las dos cosas al mismo tiempo?</li>
+            <li>¿A qué edad una persona tiene derecho a su privacidad?</li>
+            <li>¿Cambiaría algo si Sofía hubiera dado su consentimiento?</li>
+            <li>¿Qué alternativas podrían proponer para que los padres se sientan seguros y Sofía tenga privacidad?</li>
+          </ul>
+        </div>
+        <button class="modal-cerrar" onclick="cerrarModal('modal-4')">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-5" onclick="cerrarModal('modal-5')">
+    <div class="modal tipo-identidad" onclick="event.stopPropagation()">
+      <div class="modal-header" style="background:#EDE7F6;">
+        <div>
+          <div style="font-size:0.75rem; font-weight:700; color:#5E35B1; margin-bottom:0.3rem;">Tarjeta 05 · Identidad digital</div>
+          <div style="font-family:'Nunito',sans-serif; font-weight:800; font-size:1.2rem; color:#311B92;">El CV y el TikTok</div>
+        </div>
+        <button onclick="cerrarModal('modal-5')" style="background:none; border:none; font-size:1.4rem; cursor:pointer; color:#311B92;">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>Camila está buscando su primer trabajo. Un amigo le avisa que muchas empresas buscan a los candidatos en redes sociales antes de contratarlos para ver "cómo son en realidad". Camila tiene videos de TikTok de cuando tenía 15 años que le dan vergüenza y que no representan cómo es hoy.</p>
+        <div class="modal-preguntas" style="background:#EDE7F6;">
+          <p style="color:#311B92;">Preguntas para debatir</p>
+          <ul>
+            <li>¿Es justo que una empresa descarte a alguien por lo que publica en sus redes personales?</li>
+            <li>¿Hay diferencia entre la persona que somos en el trabajo y la que somos en las redes?</li>
+            <li>¿Debería Camila borrar esos videos? ¿O eso sería "falsear" su identidad?</li>
+            <li>¿Qué dice esto sobre cómo la huella digital afecta oportunidades reales?</li>
+          </ul>
+        </div>
+        <button class="modal-cerrar" onclick="cerrarModal('modal-5')">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-6" onclick="cerrarModal('modal-6')">
+    <div class="modal tipo-huella" onclick="event.stopPropagation()">
+      <div class="modal-header" style="background:#E0F2F1;">
+        <div>
+          <div style="font-size:0.75rem; font-weight:700; color:#00897B; margin-bottom:0.3rem;">Tarjeta 06 · Huella digital</div>
+          <div style="font-family:'Nunito',sans-serif; font-weight:800; font-size:1.2rem; color:#004D40;">La búsqueda de Google</div>
+        </div>
+        <button onclick="cerrarModal('modal-6')" style="background:none; border:none; font-size:1.4rem; cursor:pointer; color:#004D40;">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>Tomás busca en Google síntomas de una enfermedad que le preocupa. No le contó a nadie. Al día siguiente, ve anuncios de medicamentos, clínicas y seguros médicos en todas las páginas que visita, en Instagram y hasta en YouTube.</p>
+        <div class="modal-preguntas" style="background:#E0F2F1;">
+          <p style="color:#004D40;">Preguntas para debatir</p>
+          <ul>
+            <li>¿Quién le mostró esos anuncios? ¿Cómo sabía lo que había buscado?</li>
+            <li>¿Es esto una invasión a su privacidad o un servicio útil?</li>
+            <li>¿Qué información sobre su salud quedó registrada y dónde?</li>
+            <li>¿Cambiás lo que buscás en internet sabiendo que queda registrado?</li>
+          </ul>
+        </div>
+        <button class="modal-cerrar" onclick="cerrarModal('modal-6')">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-7" onclick="cerrarModal('modal-7')">
+    <div class="modal tipo-dilema" onclick="event.stopPropagation()">
+      <div class="modal-header" style="background:#FFEBEE;">
+        <div>
+          <div style="font-size:0.75rem; font-weight:700; color:#EF5350; margin-bottom:0.3rem;">Tarjeta 07 · Dilema</div>
+          <div style="font-family:'Nunito',sans-serif; font-weight:800; font-size:1.2rem; color:#B71C1C;">La foto sin permiso</div>
+        </div>
+        <button onclick="cerrarModal('modal-7')" style="background:none; border:none; font-size:1.4rem; cursor:pointer; color:#B71C1C;">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>En una salida de clase, Ramiro le sacó una foto a su compañera Andrea durmiendo en el ómnibus y la publicó en el grupo de WhatsApp del liceo con un comentario gracioso. La foto se viralizó: llegó a grupos de otras clases, de otros liceos y de personas que Andrea no conoce.</p>
+        <p>Ramiro dice que fue una broma y que no tenía mala intención.</p>
+        <div class="modal-preguntas" style="background:#FFEBEE;">
+          <p style="color:#B71C1C;">Preguntas para debatir</p>
+          <ul>
+            <li>¿Qué hizo mal Ramiro? ¿La intención importa cuando hay un daño?</li>
+            <li>¿Qué derechos de Andrea fueron afectados?</li>
+            <li>¿Qué debería hacer Andrea? ¿Y el liceo?</li>
+            <li>¿Existe alguna ley en Uruguay que ampare a Andrea?</li>
+          </ul>
+        </div>
+        <button class="modal-cerrar" onclick="cerrarModal('modal-7')">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="modal-8" onclick="cerrarModal('modal-8')">
+    <div class="modal tipo-identidad" onclick="event.stopPropagation()">
+      <div class="modal-header" style="background:#EDE7F6;">
+        <div>
+          <div style="font-size:0.75rem; font-weight:700; color:#5E35B1; margin-bottom:0.3rem;">Tarjeta 08 · Identidad digital · 🤖 IA</div>
+          <div style="font-family:'Nunito',sans-serif; font-weight:800; font-size:1.2rem; color:#311B92;">El algoritmo sabe</div>
+        </div>
+        <button onclick="cerrarModal('modal-8')" style="background:none; border:none; font-size:1.4rem; cursor:pointer; color:#311B92;">✕</button>
+      </div>
+      <div class="modal-body">
+        <p>Nicolás nunca le contó a nadie que le gustaban los chicos. No había publicado nada al respecto. Pero el algoritmo de Instagram empezó a mostrarle contenido LGBTQ+ basado en sus patrones de navegación: a qué perfiles miraba, cuánto tiempo, qué publicaciones guardaba.</p>
+        <p>Sus sugerencias de amigos también cambiaron. Un día, su hermano vio su teléfono y le preguntó por qué le aparecía ese contenido.</p>
+        <div class="modal-preguntas" style="background:#EDE7F6;">
+          <p style="color:#311B92;">Preguntas para debatir</p>
+          <ul>
+            <li>¿Puede un algoritmo "saber" algo sobre nosotros que no hemos dicho en voz alta?</li>
+            <li>¿Qué implica eso para la privacidad y para el derecho a decidir cuándo y cómo compartir algo personal?</li>
+            <li>¿Quién es responsable de lo que el algoritmo "revela"?</li>
+            <li>¿Esto cambia cómo ves el uso de las redes sociales?</li>
+          </ul>
+        </div>
+        <button class="modal-cerrar" onclick="cerrarModal('modal-8')">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Navegar con Otros · Recurso web de ciudadanía digital para docentes de Educación Media · Uruguay · 2026</p>
+    <p style="margin-top:0.5rem;"><a href="tema-1-identidad.html">← Volver al Tema 01</a></p>
+  </footer>
+
+  <script>
+    function toggleInstrucciones() {
+      document.getElementById('instrucciones').classList.toggle('visible');
+    }
+
+    function abrirModal(id) {
+      document.getElementById(id).classList.add('visible');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function cerrarModal(id) {
+      document.getElementById(id).classList.remove('visible');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay.visible').forEach(m => {
+          m.classList.remove('visible');
+        });
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+
+</body>
+</html>

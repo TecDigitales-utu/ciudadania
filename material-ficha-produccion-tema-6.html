@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ficha de producción — Derechos digitales — Navegar con Otros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    :root {
+      --color-tema: #EF5350;
+      --color-tema-claro: #FFEBEE;
+    }
+  </style>
+</head>
+<body>
+  <nav><a href="index.html" class="nav-logo">Navegar <span>con Otros</span></a><ul class="nav-links"><li><a href="index.html#temas">Temas</a></li><li><a href="recursos.html">Recursos</a></li></ul></nav>
+  <div class="mh"><div class="mhi">
+    <div class="mm">
+      <div class="mr"><a href="index.html">Inicio</a> → <a href="tema-6-derechos.html">Tema 06</a> → Ficha de producción</div>
+      <h1>Ficha de producción</h1>
+      <p>Completá la ficha durante la actividad. Tu progreso se guarda automáticamente.</p>
+      <div class="badges"><span class="badge bc">Derechos digitales</span><span class="badge bv">Individual o grupal</span></div>
+    </div>
+    <div class="ma">
+      <div class="gs" id="gs">💾 Sin cambios aún</div>
+      <button class="btn-pdf" id="btnpdf" onclick="pdf()">⬇️ Descargar PDF</button>
+      <button class="btn-l" onclick="limpiar()">✕ Limpiar</button>
+    </div>
+  </div></div>
+  <div class="av"><div class="av-i"><div style="font-size:1.5rem;flex-shrink:0">📎</div><div class="av-t"><strong>¿Cómo entregar?</strong> Completá los campos, descargá el PDF y subilo a la tarea en <strong>CREA</strong>. Tu progreso se guarda automáticamente.</div></div></div>
+  <div class="fc"><div class="f" id="ficha">
+    <div class="ft"><div class="ft-t">¿Qué derecho se vulneró?</div><div class="ft-s">Tema 06 · Derechos digitales y normativa · Navegar con Otros</div></div>
+    <div class="fd">
+      <div class="fdd"><label>Nombre / Grupo</label><input type="text" id="f1" placeholder="Escribí acá..."></div>
+      <div class="fdd"><label>Año / Clase</label><input type="text" id="f2" placeholder="Ej: 2.º B"></div>
+      <div class="fdd"><label>Fecha</label><input type="text" id="f3"></div>
+    </div>
+    <!-- P1 -->
+    <div class="fs">
+      <div class="fst"><div class="fsi" style="background:#FFEBEE;">⚖️</div><span style="color:#EF5350;">Parte 1 — Análisis del caso</span></div>
+      <p class="fp">Describí brevemente el caso que analizó tu grupo:</p>
+      <textarea class="ta" id="f4" style="min-height:60px" placeholder="Resumí la situación del caso..."></textarea>
+      <p class="fp" style="margin-top:1rem;">¿Qué derechos se ven afectados?</p>
+      <textarea class="ta" id="f5" placeholder="Listá los derechos vulnerados y explicá por qué..."></textarea>
+      <p class="fp" style="margin-top:1rem;">¿Qué ley uruguaya aplica? ¿Por qué?</p>
+      <div class="cley">Ley N° 18.331 — Protección de Datos Personales</div>
+      <div class="cley">Ley N° 19.580 — Violencia Basada en Género (incluye imágenes íntimas sin consentimiento)</div>
+      <div class="cley">Ley N° 18.515 — Grooming (contacto de adultos con menores por medios digitales)</div>
+      <textarea class="ta" id="f6" placeholder="Indicá qué ley aplica y por qué..."></textarea>
+    </div>
+    <!-- P2 -->
+    <div class="fs">
+      <div class="fst"><div class="fsi" style="background:#FFEBEE;">🏛️</div><span style="color:#EF5350;">Parte 2 — ¿Qué puede hacer la persona afectada?</span></div>
+      <p class="fp">¿A quién puede acudir? ¿Qué pasos debería seguir?</p>
+      <textarea class="ta" id="f7" placeholder="Describí la ruta de acción: URCDP, INAU, Ministerio del Interior, Fiscalía..."></textarea>
+      <p class="fp" style="margin-top:1rem;">¿Creés que la ley uruguaya protege bien a las personas en este tipo de situaciones? ¿Por qué?</p>
+      <textarea class="ta" id="f8" placeholder="Tu evaluación del marco legal..."></textarea>
+    </div>
+    <!-- P3 -->
+    <div class="fs">
+      <div class="fst"><div class="fsi" style="background:#EDE7F6;">💭</div><span style="color:#5E35B1;">Parte 3 — Momento crítico</span></div>
+      <p style="font-size:0.85rem;color:var(--gris-suave);margin-bottom:0.75rem;">Elegí una y escribí tu posición.</p>
+      <div class="ccrit">¿Tener derechos digitales sirve de algo si la mayoría de las personas no los conoce?</div>
+      <div class="ccrit">¿Debería el acceso a internet ser un derecho fundamental garantizado como la salud o la educación?</div>
+      <div class="ccrit">¿Quién debería regular la inteligencia artificial: los gobiernos, las empresas, o un organismo internacional?</div>
+      <p class="fp">Pregunta elegida y mi posición:</p>
+      <textarea class="ta" id="f9" style="min-height:100px" placeholder="Escribí tu posición y los argumentos que la sostienen..."></textarea>
+    </div>
+    <!-- P4 -->
+    <div class="fs">
+      <div class="fst"><div class="fsi" style="background:#E0F2F1;">🤝</div><span style="color:#00897B;">Parte 4 — Acuerdos del grupo</span></div>
+      <p style="font-size:0.85rem;color:var(--gris-suave);margin-bottom:1rem;">Las ideas más importantes que surgieron en la clase.</p>
+      <ul class="al">
+        <li class="ai"><span class="anum">1.</span><textarea class="ta" id="f10" style="min-height:45px" placeholder="Primera idea..."></textarea></li>
+        <li class="ai"><span class="anum">2.</span><textarea class="ta" id="f11" style="min-height:45px" placeholder="Segunda idea..."></textarea></li>
+        <li class="ai"><span class="anum">3.</span><textarea class="ta" id="f12" style="min-height:45px" placeholder="Tercera idea..."></textarea></li>
+      </ul>
+      <p class="fp" style="margin-top:1rem;">¿Qué derecho digital te parece más importante proteger? ¿Por qué?</p>
+      <textarea class="ta" id="f13" placeholder="Escribí acá..."></textarea>
+    </div>
+  </div></div>
+  <footer><p>Navegar con Otros · Ciudadanía digital para docentes · Uruguay · 2026</p><p style="margin-top:0.5rem;"><a href="tema-6-derechos.html">← Volver al Tema 06</a></p></footer>
+  <script>
+    const KEY='ficha-t6',CAMPOS=['f1','f2','f3','f4','f5','f6','f7','f8','f9','f10','f11','f12','f13'];
+    let timer;
+    const hoy=new Date();
+    document.getElementById('f3').placeholder=hoy.getDate().toString().padStart(2,'0')+'/'+(hoy.getMonth()+1).toString().padStart(2,'0')+'/'+hoy.getFullYear();
+    function cargar(){const d=JSON.parse(localStorage.getItem(KEY)||'{}');CAMPOS.forEach(id=>{const e=document.getElementById(id);if(e&&d[id])e.value=d[id];});if(Object.keys(d).length>0){est('guardado','✓ Progreso cargado');setTimeout(()=>est('','💾 Guardado automático'),2000);}}
+    function guardar(){est('guardando','⏳ Guardando...');const d={};CAMPOS.forEach(id=>{const e=document.getElementById(id);if(e)d[id]=e.value;});localStorage.setItem(KEY,JSON.stringify(d));setTimeout(()=>est('guardado','✓ Guardado'),500);setTimeout(()=>est('','💾 Guardado automático'),2500);}
+    function est(t,x){const e=document.getElementById('gs');e.className='gs'+(t?' '+t:'');e.textContent=x;}
+    CAMPOS.forEach(id=>{const e=document.getElementById(id);if(e)e.addEventListener('input',()=>{clearTimeout(timer);timer=setTimeout(guardar,800);});});
+    function limpiar(){if(confirm('¿Limpiar todos los campos?')){CAMPOS.forEach(id=>{const e=document.getElementById(id);if(e)e.value='';});localStorage.removeItem(KEY);est('','💾 Sin cambios aún');}}
+    function pdf(){
+      const btn=document.getElementById('btnpdf');btn.disabled=true;btn.textContent='⏳ Generando...';
+      const orig=document.getElementById('ficha'),clon=orig.cloneNode(true);
+      clon.querySelectorAll('input[type="text"]').forEach(el=>{const s=document.createElement('span');s.textContent=el.value||'___';s.style.cssText='border-bottom:1px solid #ccc;display:inline-block;min-width:80px;font-size:0.9rem;';el.parentNode.replaceChild(s,el);});
+      clon.querySelectorAll('textarea').forEach(el=>{const d=document.createElement('div');d.textContent=el.value||' ';d.style.cssText='border:1px solid #ccc;border-radius:6px;padding:0.5rem;min-height:50px;font-size:0.85rem;line-height:1.5;white-space:pre-wrap;background:#fafafa;';el.parentNode.replaceChild(d,el);});
+      const nombre=document.getElementById('f1').value||'ficha';
+      html2pdf().set({margin:[10,10,10,10],filename:'ficha-derechos-'+nombre.replace(/\s+/g,'-').toLowerCase()+'.pdf',image:{type:'jpeg',quality:0.95},html2canvas:{scale:2,useCORS:true},jsPDF:{unit:'mm',format:'a4',orientation:'portrait'}}).from(clon).save().then(()=>{btn.disabled=false;btn.textContent='⬇️ Descargar PDF';});
+    }
+    cargar();
+  </script>
+</body>
+</html>
