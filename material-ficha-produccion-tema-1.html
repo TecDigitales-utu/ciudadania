@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ficha de producción — Identidad y huella digital — Navegar con Otros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    :root {
+      --color-tema: #00897B;
+      --color-tema-claro: #E0F2F1;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">Navegar <span>con Otros</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#temas">Temas</a></li>
+      <li><a href="recursos.html">Recursos</a></li>
+      <li><a href="sobre-el-proyecto.html">Sobre el proyecto</a></li>
+    </ul>
+  </nav>
+
+  <div class="material-header">
+    <div class="material-header-inner">
+      <div class="material-meta">
+        <div class="material-ruta"><a href="index.html">Inicio</a> → <a href="tema-1-identidad.html">Tema 01</a> → Ficha de producción</div>
+        <h1>Ficha de producción</h1>
+        <p>Completá la ficha durante la actividad. Tu progreso se guarda automáticamente en este dispositivo.</p>
+        <div class="material-badges">
+          <span class="badge badge-verde">Identidad y huella digital</span>
+          <span class="badge badge-violeta">Ciclo básico y bachillerato</span>
+          <span class="badge badge-coral">Individual o grupal</span>
+        </div>
+      </div>
+      <div class="material-acciones">
+        <div class="guardado-estado" id="estado-guardado">💾 Sin cambios aún</div>
+        <button class="btn-pdf" id="btn-descargar" onclick="descargarPDF()">⬇️ Descargar PDF</button>
+        <button class="btn-limpiar" onclick="limpiarFicha()">✕ Limpiar ficha</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="aviso-crea">
+    <div class="aviso-crea-inner">
+      <div class="aviso-crea-icono">📎</div>
+      <div class="aviso-crea-texto">
+        <strong>¿Cómo entregar esta ficha?</strong> Completá todos los campos, descargá el PDF con el botón de arriba y subí el archivo a la tarea correspondiente en <strong>CREA</strong>. Tu progreso se guarda automáticamente en este dispositivo mientras trabajás.
+      </div>
+    </div>
+  </div>
+
+  <div class="ficha-contenedor">
+    <div class="ficha" id="ficha-contenido">
+      <div class="ficha-top">
+        <div class="ficha-top-titulo">¿Quién soy en internet?</div>
+        <div class="ficha-top-sub">Tema 01 · Identidad y huella digital · Navegar con Otros</div>
+      </div>
+      <div class="ficha-datos">
+        <div class="ficha-dato"><label>Nombre / Grupo</label><input type="text" id="campo-nombre" placeholder="Escribí acá..."></div>
+        <div class="ficha-dato"><label>Año / Clase</label><input type="text" id="campo-año" placeholder="Ej: 2.º B"></div>
+        <div class="ficha-dato"><label>Fecha</label><input type="text" id="campo-fecha" placeholder=""></div>
+      </div>
+      <div class="ficha-seccion">
+        <div class="ficha-seccion-titulo">
+          <div class="ficha-seccion-icono" style="background:#E0F2F1;">🗺️</div>
+          <span style="color:#00897B;">Parte 1 — Mi mapa de huella digital</span>
+        </div>
+        <p style="font-size:0.85rem;color:var(--gris-suave);margin-bottom:1rem;">Anotá ejemplos concretos de cada tipo de huella.</p>
+        <div class="mapa-huella">
+          <div class="mapa-zona activa">
+            <div class="mapa-zona-titulo">Huella activa</div>
+            <div class="mapa-zona-sub">Lo que publico yo conscientemente</div>
+            <div class="mapa-item"><div class="mapa-bala"></div><input class="mapa-input" id="ha1" type="text" placeholder="Ejemplo: fotos en Instagram..."></div>
+            <div class="mapa-item"><div class="mapa-bala"></div><input class="mapa-input" id="ha2" type="text"></div>
+            <div class="mapa-item"><div class="mapa-bala"></div><input class="mapa-input" id="ha3" type="text"></div>
+            <div class="mapa-item"><div class="mapa-bala"></div><input class="mapa-input" id="ha4" type="text"></div>
+            <div class="mapa-item"><div class="mapa-bala"></div><input class="mapa-input" id="ha5" type="text"></div>
+          </div>
+          <div class="mapa-zona pasiva">
+            <div class="mapa-zona-titulo">Huella pasiva</div>
+            <div class="mapa-zona-sub">Lo que se registra sin que lo decida</div>
+            <div class="mapa-item"><div class="mapa-bala"></div><input class="mapa-input" id="hp1" type="text" placeholder="Ejemplo: mi ubicación en Maps..."></div>
+            <div class="mapa-item"><div class="mapa-bala"></div><input class="mapa-input" id="hp2" type="text"></div>
+            <div class="mapa-item"><div class="mapa-bala"></div><input class="mapa-input" id="hp3" type="text"></div>
+            <div class="mapa-item"><div class="mapa-bala"></div><input class="mapa-input" id="hp4" type="text"></div>
+            <div class="mapa-item"><div class="mapa-bala"></div><input class="mapa-input" id="hp5" type="text"></div>
+          </div>
+        </div>
+        <p class="ficha-pregunta">¿Cuál de los dos tipos de huella te resultó más difícil de identificar? ¿Por qué?</p>
+        <textarea class="ficha-textarea" id="p1-reflexion" placeholder="Escribí tu respuesta acá..."></textarea>
+      </div>
+      <div class="ficha-seccion">
+        <div class="ficha-seccion-titulo">
+          <div class="ficha-seccion-icono" style="background:#EDE7F6;">🪞</div>
+          <span style="color:#5E35B1;">Parte 2 — Mi identidad digital</span>
+        </div>
+        <p class="ficha-pregunta">Si alguien que no te conoce buscara tu nombre en internet, ¿qué encontraría? ¿Eso te representa?</p>
+        <textarea class="ficha-textarea" id="p2-representa" placeholder="Describí qué encontraría y si eso te parece una representación fiel de quién sos..."></textarea>
+        <p class="ficha-pregunta" style="margin-top:1rem;">¿Hay algo de tu identidad digital que te gustaría cambiar? ¿Qué harías?</p>
+        <textarea class="ficha-textarea" id="p2-cambiar" placeholder="Escribí tu respuesta acá..."></textarea>
+      </div>
+      <div class="ficha-seccion">
+        <div class="ficha-seccion-titulo">
+          <div class="ficha-seccion-icono" style="background:#FFEBEE;">💭</div>
+          <span style="color:#EF5350;">Parte 3 — Momento crítico</span>
+        </div>
+        <p style="font-size:0.85rem;color:var(--gris-suave);margin-bottom:0.75rem;">Elegí una de estas preguntas y escribí tu posición. No hay respuesta correcta.</p>
+        <div class="critico-pregunta">¿Es posible tener privacidad real en internet? ¿O la privacidad es una ilusión?</div>
+        <div class="critico-pregunta">¿Somos los mismos en línea que fuera de línea, o construimos personajes? ¿Está mal construir personajes?</div>
+        <div class="critico-pregunta">¿Debería existir un "derecho al olvido" en internet? ¿Quién debería decidirlo?</div>
+        <p class="ficha-pregunta">Pregunta elegida y mi posición:</p>
+        <textarea class="ficha-textarea" id="p3-critico" style="min-height:100px;" placeholder="Escribí cuál pregunta elegiste y cuál es tu posición, con los argumentos que la sostienen..."></textarea>
+      </div>
+      <div class="ficha-seccion">
+        <div class="ficha-seccion-titulo">
+          <div class="ficha-seccion-icono" style="background:#FFF8E1;">🤝</div>
+          <span style="color:#F9A825;">Parte 4 — Acuerdos del grupo</span>
+        </div>
+        <p style="font-size:0.85rem;color:var(--gris-suave);margin-bottom:1rem;">Anotá las ideas o conclusiones más importantes que surgieron en la clase.</p>
+        <ul class="acuerdos-lista">
+          <li class="acuerdo-item"><span class="acuerdo-num">1.</span><textarea class="ficha-textarea" id="ac1" style="min-height:50px;" placeholder="Primera idea..."></textarea></li>
+          <li class="acuerdo-item"><span class="acuerdo-num">2.</span><textarea class="ficha-textarea" id="ac2" style="min-height:50px;" placeholder="Segunda idea..."></textarea></li>
+          <li class="acuerdo-item"><span class="acuerdo-num">3.</span><textarea class="ficha-textarea" id="ac3" style="min-height:50px;" placeholder="Tercera idea..."></textarea></li>
+        </ul>
+        <p class="ficha-pregunta" style="margin-top:1rem;">¿Qué es lo más importante que aprendiste o que te hizo pensar hoy?</p>
+        <textarea class="ficha-textarea" id="p4-aprendizaje" placeholder="Escribí acá..."></textarea>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Navegar con Otros · Recurso web de ciudadanía digital para docentes · Uruguay · 2026</p>
+    <p style="margin-top:0.5rem;"><a href="tema-1-identidad.html">← Volver al Tema 01</a></p>
+  </footer>
+
+  <script>
+    const STORAGE_KEY = 'ficha-tema1-identidad';
+    const CAMPOS = ['campo-nombre','campo-año','campo-fecha','ha1','ha2','ha3','ha4','ha5','hp1','hp2','hp3','hp4','hp5','p1-reflexion','p2-representa','p2-cambiar','p3-critico','ac1','ac2','ac3','p4-aprendizaje'];
+    let timerGuardado;
+
+    const hoy = new Date();
+    document.getElementById('campo-fecha').placeholder = hoy.getDate().toString().padStart(2,'0') + '/' + (hoy.getMonth()+1).toString().padStart(2,'0') + '/' + hoy.getFullYear();
+
+    function cargarDatos() {
+      const datos = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+      CAMPOS.forEach(id => { const el = document.getElementById(id); if (el && datos[id]) el.value = datos[id]; });
+      if (Object.keys(datos).length > 0) {
+        mostrarEstado('guardado', '✓ Progreso cargado');
+        setTimeout(() => mostrarEstado('', '💾 Guardado automático'), 2000);
+      }
+    }
+
+    function guardarDatos() {
+      mostrarEstado('guardando', '⏳ Guardando...');
+      const datos = {};
+      CAMPOS.forEach(id => { const el = document.getElementById(id); if (el) datos[id] = el.value; });
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(datos));
+      setTimeout(() => mostrarEstado('guardado', '✓ Guardado'), 500);
+      setTimeout(() => mostrarEstado('', '💾 Guardado automático'), 2500);
+    }
+
+    function mostrarEstado(tipo, texto) {
+      const el = document.getElementById('estado-guardado');
+      el.className = 'guardado-estado' + (tipo ? ' ' + tipo : '');
+      el.textContent = texto;
+    }
+
+    CAMPOS.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener('input', () => { clearTimeout(timerGuardado); timerGuardado = setTimeout(guardarDatos, 800); });
+    });
+
+    function limpiarFicha() {
+      if (confirm('¿Querés limpiar todos los campos? Esta acción no se puede deshacer.')) {
+        CAMPOS.forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+        localStorage.removeItem(STORAGE_KEY);
+        mostrarEstado('', '💾 Sin cambios aún');
+      }
+    }
+
+    function descargarPDF() {
+      const btn = document.getElementById('btn-descargar');
+      btn.disabled = true;
+      btn.textContent = '⏳ Generando PDF...';
+
+      const fichaOriginal = document.getElementById('ficha-contenido');
+      const fichaClone = fichaOriginal.cloneNode(true);
+
+      fichaClone.querySelectorAll('input[type="text"]').forEach(input => {
+        const span = document.createElement('span');
+        span.textContent = input.value || '___________________';
+        span.style.cssText = 'border-bottom:1px solid #ccc;display:inline-block;min-width:100px;font-size:0.9rem;';
+        input.parentNode.replaceChild(span, input);
+      });
+
+      fichaClone.querySelectorAll('textarea').forEach(textarea => {
+        const div = document.createElement('div');
+        div.textContent = textarea.value || ' ';
+        div.style.cssText = 'border:1px solid #ccc;border-radius:6px;padding:0.5rem;min-height:60px;font-size:0.85rem;line-height:1.5;white-space:pre-wrap;background:#fafafa;';
+        textarea.parentNode.replaceChild(div, textarea);
+      });
+
+      const nombre = document.getElementById('campo-nombre').value || 'ficha';
+      const nombreArchivo = 'ficha-identidad-digital-' + nombre.replace(/\s+/g,'-').toLowerCase() + '.pdf';
+
+      html2pdf().set({
+        margin: [10,10,10,10],
+        filename: nombreArchivo,
+        image: { type: 'jpeg', quality: 0.95 },
+        html2canvas: { scale: 2, useCORS: true },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      }).from(fichaClone).save().then(() => {
+        btn.disabled = false;
+        btn.textContent = '⬇️ Descargar PDF';
+      });
+    }
+
+    cargarDatos();
+  </script>
+</body>
+</html>

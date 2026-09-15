@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjetas de conceptos — Bienestar digital — Navegar con Otros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    :root {
+      --color-tema: #5E35B1;
+      --color-tema-claro: #EDE7F6;
+    }
+  </style>
+</head>
+<body>
+  <nav><a href="index.html" class="nav-logo">Navegar <span>con Otros</span></a><ul class="nav-links"><li><a href="index.html#temas">Temas</a></li><li><a href="recursos.html">Recursos</a></li></ul></nav>
+  <div class="mh"><div class="mhi">
+    <div class="mm">
+      <div class="mr"><a href="index.html">Inicio</a> → <a href="tema-5-bienestar.html">Tema 05</a> → Tarjetas de conceptos</div>
+      <h1>Tarjetas de conceptos</h1>
+      <p>Hacé clic en cada tarjeta para ver la definición. Para repasar, emparejar o jugar en grupos.</p>
+      <div class="badges"><span class="badge bv">Bienestar digital</span><span class="badge bg">Ciclo básico y bachillerato</span><span class="badge ba">Repaso y cierre</span></div>
+    </div>
+    <div class="ma">
+      <button class="btn-p" onclick="window.print()">🖨️ Imprimir / PDF</button>
+      <button class="btn-m" onclick="girarTodas()">↺ Ver todas</button>
+    </div>
+  </div></div>
+  <div class="inst"><div class="inst-i">
+    <h3>¿Cómo usar estas tarjetas?</h3>
+    <div class="inst-g">
+      <div class="ii"><strong>Repaso individual</strong>Leé el término, pensá la definición y hacé clic para verificar.</div>
+      <div class="ii"><strong>Emparejar impreso</strong>Imprimí, recortá y mezclá términos con definiciones.</div>
+      <div class="ii"><strong>En clase</strong>El docente proyecta el término y los estudiantes escriben la definición.</div>
+      <div class="ii"><strong>Mezclar</strong>Usá el botón para cambiar el orden.</div>
+    </div>
+  </div></div>
+  <div class="tc">
+    <div class="controles">
+      <button class="bc" onclick="girarTodas()">Mostrar todas las definiciones</button>
+      <button class="bc" onclick="ocultarTodas()">Ocultar definiciones</button>
+      <button class="bc" onclick="mezclar()">Mezclar tarjetas</button>
+    </div>
+    <p class="ti">Hacé clic en cada tarjeta · 10 conceptos · Tema 05</p>
+    <div class="tg" id="grid"></div>
+  </div>
+  <footer><p>Navegar con Otros · Ciudadanía digital para docentes · Uruguay · 2026</p><p style="margin-top:0.5rem;"><a href="tema-5-bienestar.html">← Volver al Tema 05</a></p></footer>
+  <script>
+    const conceptos=[
+      {t:"Economía de la atención",d:"Modelo de negocio en el que la atención de los usuarios es el recurso escaso que se vende a los anunciantes. Las plataformas gratuitas compiten por capturar y retener nuestra atención el mayor tiempo posible.",c:"violeta"},
+      {t:"Diseño persuasivo",d:"Conjunto de técnicas de diseño que buscan influir en el comportamiento del usuario para que use más la aplicación: scroll infinito, notificaciones, likes, racha, autoplay.",c:"violeta"},
+      {t:"Scroll infinito",d:"Técnica de diseño que elimina el fondo de página: siempre hay más contenido disponible. Fue inventada en 2006 y su creador se arrepintió públicamente de haberla diseñado.",c:"violeta"},
+      {t:"FOMO",d:"Fear Of Missing Out: miedo a perderse algo. Sensación de ansiedad ante la posibilidad de que otros estén viviendo experiencias o teniendo conversaciones de las que uno está excluido. Las redes sociales lo intensifican.",c:"coral"},
+      {t:"Bienestar digital",d:"Estado en que la relación de una persona con la tecnología contribuye a su calidad de vida en lugar de restarle. Implica el uso consciente y la capacidad de autorregulación.",c:"verde"},
+      {t:"Autorregulación digital",d:"Capacidad de tomar decisiones conscientes sobre cuándo y cómo conectarse, en lugar de actuar de forma reactiva ante los estímulos de las plataformas.",c:"verde"},
+      {t:"Recompensa variable",d:"Técnica de diseño basada en psicología conductual: las recompensas (likes, comentarios, contenido interesante) llegan de forma impredecible, lo que genera una búsqueda compulsiva, similar al mecanismo de las máquinas tragamonedas.",c:"coral"},
+      {t:"Tiempo de pantalla",d:"Cantidad de tiempo que una persona pasa usando dispositivos digitales. Los propios sistemas operativos (iOS, Android) ofrecen herramientas para monitorearlo y limitarlo.",c:"verde"},
+      {t:"Comparación social",d:"Proceso por el cual las personas evalúan sus propias capacidades, logros y vida comparándose con otros. Las redes sociales amplifican este proceso al mostrar versiones curadas y editadas de la vida ajena.",c:"coral"},
+      {t:"Modo enfoque",d:"Función disponible en la mayoría de dispositivos que silencia notificaciones y limita el acceso a ciertas apps durante períodos determinados, para facilitar la concentración o el descanso.",c:"verde"}
+    ];
+    let mezclados=[...conceptos];
+    function render(){
+      const g=document.getElementById('grid');g.innerHTML='';
+      mezclados.forEach((c,i)=>{
+        const d=document.createElement('div');
+        d.className=`tf c${c.c[0]}`;d.id='tf'+i;
+        d.onclick=()=>d.classList.toggle('girada');
+        d.innerHTML=`<div class="tfi"><div class="tff"><div class="tt">${c.t}</div><div class="tp">Hacé clic para ver la definición</div></div><div class="tfd"><div class="td">${c.d}</div><div class="tdt">${c.t}</div></div></div>`;
+        g.appendChild(d);
+      });
+    }
+    function girarTodas(){document.querySelectorAll('.tf').forEach(t=>t.classList.add('girada'));}
+    function ocultarTodas(){document.querySelectorAll('.tf').forEach(t=>t.classList.remove('girada'));}
+    function mezclar(){mezclados=[...conceptos].sort(()=>Math.random()-0.5);render();}
+    render();
+  </script>
+</body>
+</html>

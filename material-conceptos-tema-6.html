@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjetas de conceptos — Derechos digitales — Navegar con Otros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    :root {
+      --color-tema: #EF5350;
+      --color-tema-claro: #FFEBEE;
+    }
+  </style>
+</head>
+<body>
+  <nav><a href="index.html" class="nav-logo">Navegar <span>con Otros</span></a><ul class="nav-links"><li><a href="index.html#temas">Temas</a></li><li><a href="recursos.html">Recursos</a></li></ul></nav>
+  <div class="mh"><div class="mhi">
+    <div class="mm">
+      <div class="mr"><a href="index.html">Inicio</a> → <a href="tema-6-derechos.html">Tema 06</a> → Tarjetas de conceptos</div>
+      <h1>Tarjetas de conceptos</h1>
+      <p>Hacé clic en cada tarjeta para ver la definición. Para repasar, emparejar o jugar en grupos.</p>
+      <div class="badges"><span class="badge bc">Derechos digitales</span><span class="badge bg">Ciclo básico y bachillerato</span><span class="badge ba">Repaso y cierre</span></div>
+    </div>
+    <div class="ma">
+      <button class="btn-p" onclick="window.print()">🖨️ Imprimir / PDF</button>
+      <button class="btn-m" onclick="girarTodas()">↺ Ver todas</button>
+    </div>
+  </div></div>
+  <div class="inst"><div class="inst-i">
+    <h3>¿Cómo usar estas tarjetas?</h3>
+    <div class="inst-g">
+      <div class="ii"><strong>Repaso individual</strong>Leé el término, pensá la definición y hacé clic para verificar.</div>
+      <div class="ii"><strong>Emparejar impreso</strong>Imprimí, recortá y mezclá términos con definiciones.</div>
+      <div class="ii"><strong>En clase</strong>El docente proyecta el término y los estudiantes escriben la definición.</div>
+      <div class="ii"><strong>Mezclar</strong>Usá el botón para cambiar el orden.</div>
+    </div>
+  </div></div>
+  <div class="tc">
+    <div class="controles">
+      <button class="bc2" onclick="girarTodas()">Mostrar todas las definiciones</button>
+      <button class="bc2" onclick="ocultarTodas()">Ocultar definiciones</button>
+      <button class="bc2" onclick="mezclar()">Mezclar tarjetas</button>
+    </div>
+    <p class="ti">Hacé clic en cada tarjeta · 10 conceptos · Tema 06</p>
+    <div class="tg" id="grid"></div>
+  </div>
+  <footer><p>Navegar con Otros · Ciudadanía digital para docentes · Uruguay · 2026</p><p style="margin-top:0.5rem;"><a href="tema-6-derechos.html">← Volver al Tema 06</a></p></footer>
+  <script>
+    const conceptos=[
+      {t:"Derechos digitales",d:"Los derechos humanos fundamentales aplicados a los entornos digitales: privacidad, libertad de expresión, acceso a la información y no discriminación, ejercidos en contextos tecnológicos.",c:"c"},
+      {t:"Habeas data",d:"Derecho de toda persona a acceder, rectificar, actualizar y cancelar la información que sobre ella existe en bases de datos públicas o privadas. En Uruguay lo regula la Ley N° 18.331.",c:"c"},
+      {t:"URCDP",d:"Unidad Reguladora y de Control de Datos Personales. Organismo uruguayo que controla el cumplimiento de la Ley 18.331 y recibe denuncias por uso indebido de datos personales (urcdp.gub.uy).",c:"g"},
+      {t:"Derecho al olvido",d:"Derecho a solicitar que se eliminen datos personales de bases de datos o resultados de búsqueda cuando ya no son relevantes o son perjudiciales. Reconocido parcialmente en la Ley 18.331 uruguaya.",c:"c"},
+      {t:"Ley N° 18.331",d:"Ley de Protección de Datos Personales de Uruguay (2008). Establece el habeas data y los principios que deben cumplir quienes recojan y usen datos personales.",c:"c"},
+      {t:"Ley N° 19.580",d:"Ley de Violencia Basada en Género de Uruguay (2017). Tipifica la violencia digital y mediática como forma de violencia de género, incluyendo la difusión no consentida de imágenes íntimas como delito.",c:"c"},
+      {t:"Brecha digital",d:"Desigualdad en el acceso, uso y aprovechamiento de las tecnologías digitales entre personas, grupos sociales o territorios. Es una desigualdad de derechos cuando impide el acceso a servicios esenciales.",c:"g"},
+      {t:"Discriminación algorítmica",d:"Cuando un sistema de IA reproduce o amplifica discriminaciones sociales existentes, tomando decisiones perjudiciales para ciertos grupos aunque no exista una instrucción discriminatoria explícita.",c:"v"},
+      {t:"AI Act",d:"Reglamento de Inteligencia Artificial de la Unión Europea (2024), la primera ley integral sobre IA en el mundo. Clasifica los sistemas de IA por nivel de riesgo y establece obligaciones para sus desarrolladores y usuarios.",c:"v"},
+      {t:"Libertad de expresión digital",d:"Derecho a expresar opiniones e ideas en entornos digitales sin censura ni represalia. No es absoluto: tiene límites legales como el discurso de odio, la difamación y la incitación a la violencia.",c:"g"}
+    ];
+    const cls={c:'cc',g:'cg',v:'cv'};
+    let mezclados=[...conceptos];
+    function render(){
+      const g=document.getElementById('grid');g.innerHTML='';
+      mezclados.forEach((c,i)=>{
+        const d=document.createElement('div');
+        d.className=`tf ${cls[c.c]}`;d.id='tf'+i;
+        d.onclick=()=>d.classList.toggle('girada');
+        d.innerHTML=`<div class="tfi"><div class="tff"><div class="tt">${c.t}</div><div class="tp2">Hacé clic para ver la definición</div></div><div class="tfd"><div class="td">${c.d}</div><div class="tdt">${c.t}</div></div></div>`;
+        g.appendChild(d);
+      });
+    }
+    function girarTodas(){document.querySelectorAll('.tf').forEach(t=>t.classList.add('girada'));}
+    function ocultarTodas(){document.querySelectorAll('.tf').forEach(t=>t.classList.remove('girada'));}
+    function mezclar(){mezclados=[...conceptos].sort(()=>Math.random()-0.5);render();}
+    render();
+  </script>
+</body>
+</html>

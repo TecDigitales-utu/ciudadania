@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjetas de conceptos — Identidad y huella digital — Navegar con Otros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    :root {
+      --color-tema: #00897B;
+      --color-tema-claro: #E0F2F1;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Navegar <span>con Otros</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#temas">Temas</a></li>
+      <li><a href="recursos.html">Recursos</a></li>
+      <li><a href="sobre-el-proyecto.html">Sobre el proyecto</a></li>
+    </ul>
+  </nav>
+
+  <div class="material-header">
+    <div class="material-header-inner">
+      <div class="material-meta">
+        <div class="material-ruta">
+          <a href="index.html">Inicio</a> → <a href="tema-1-identidad.html">Tema 01: Identidad y huella digital</a> → Tarjetas de conceptos
+        </div>
+        <h1>Tarjetas de conceptos</h1>
+        <p>Hacé clic en cada tarjeta para ver la definición. Servís para repasar, emparejar o jugar en grupos.</p>
+        <div class="material-badges">
+          <span class="badge badge-verde">Identidad y huella digital</span>
+          <span class="badge badge-violeta">Ciclo básico y bachillerato</span>
+          <span class="badge badge-amarillo">Repaso y cierre</span>
+        </div>
+      </div>
+      <div class="material-acciones">
+        <button class="btn-imprimir" onclick="window.print()">🖨️ Imprimir / PDF</button>
+        <button class="btn-modo" onclick="girarTodas()">↺ Mostrar todas las definiciones</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="instrucciones">
+    <div class="instrucciones-inner">
+      <h3>¿Cómo usar estas tarjetas?</h3>
+      <div class="instrucciones-grid">
+        <div class="instruccion-item"><strong>Repaso individual</strong>El estudiante ve el término, adivina la definición y hace clic para verificar.</div>
+        <div class="instruccion-item"><strong>Juego de emparejar</strong>Imprimí las tarjetas, recortalas por la línea punteada y mezclá términos y definiciones. Los grupos tienen que emparejarlos.</div>
+        <div class="instruccion-item"><strong>Juego de memoria</strong>Imprimí dos copias, recortá los términos solamente, y jugá a encontrar pares haciendo coincidir el término con su definición.</div>
+        <div class="instruccion-item"><strong>En clase</strong>El docente muestra el término proyectado y los estudiantes escriben o dicen la definición antes de verla.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tarjetas-contenedor">
+    <div class="controles">
+      <button class="btn-control" onclick="girarTodas()">Mostrar todas las definiciones</button>
+      <button class="btn-control" onclick="ocultarTodas()">Ocultar todas las definiciones</button>
+      <button class="btn-control" onclick="mezclarTarjetas()">Mezclar tarjetas</button>
+    </div>
+    <p class="tarjetas-intro">Hacé clic en cada tarjeta para ver su definición · 10 conceptos · Tema 01</p>
+
+    <div class="tarjetas-grid" id="tarjetas-grid"></div>
+  </div>
+
+  <footer>
+    <p>Navegar con Otros · Recurso web de ciudadanía digital para docentes de Educación Media · Uruguay · 2026</p>
+    <p style="margin-top:0.5rem;"><a href="tema-1-identidad.html">← Volver al Tema 01</a></p>
+  </footer>
+
+  <script>
+    const conceptos = [
+      { termino: "Identidad digital", definicion: "El conjunto de información que existe sobre una persona en entornos digitales: lo que publica, lo que otros publican sobre ella y lo que los sistemas registran de su comportamiento.", color: "violeta" },
+      { termino: "Huella digital", definicion: "El rastro que dejamos al usar dispositivos y plataformas conectadas a internet. Incluye tanto lo que publicamos conscientemente como lo que se registra sin que lo decidamos.", color: "verde" },
+      { termino: "Huella activa", definicion: "La parte de la huella digital que generamos de forma consciente: publicaciones, comentarios, likes, registros en sitios web, correos electrónicos.", color: "verde" },
+      { termino: "Huella pasiva", definicion: "La parte de la huella digital que se genera sin que lo decidamos: la dirección IP, el tiempo en una página, los productos que miramos sin comprar, la ubicación registrada por apps.", color: "verde" },
+      { termino: "Algoritmo", definicion: "Un conjunto de instrucciones que un sistema sigue para tomar decisiones. En redes sociales, los algoritmos deciden qué contenido mostrar a cada usuario según su comportamiento.", color: "violeta" },
+      { termino: "Perfilamiento", definicion: "El proceso por el cual las plataformas construyen un perfil de cada usuario a partir de su huella digital, para mostrarle contenido personalizado o vender publicidad dirigida.", color: "coral" },
+      { termino: "Derecho al olvido", definicion: "El derecho de una persona a solicitar que información sobre ella sea eliminada de internet o de bases de datos cuando ya no es relevante o cuando afecta su reputación.", color: "amarillo" },
+      { termino: "Privacidad digital", definicion: "El derecho a controlar qué información compartimos sobre nosotros mismos en entornos digitales, con quién y en qué condiciones.", color: "coral" },
+      { termino: "Datos personales", definicion: "Cualquier información que permite identificar a una persona, directa o indirectamente: nombre, foto, dirección, correo, número de teléfono, ubicación, hábitos de navegación.", color: "amarillo" },
+      { termino: "Consentimiento informado", definicion: "El principio según el cual una persona solo puede autorizar el uso de sus datos si entiende qué está autorizando, para qué y quién lo va a usar.", color: "violeta" }
+    ];
+
+    let mezclados = [...conceptos];
+
+    function renderizarTarjetas() {
+      const grid = document.getElementById('tarjetas-grid');
+      grid.innerHTML = '';
+      mezclados.forEach((c, i) => {
+        const div = document.createElement('div');
+        div.className = `tarjeta-flip concepto-${c.color}`;
+        div.id = `tarjeta-${i}`;
+        div.onclick = () => div.classList.toggle('girada');
+        div.innerHTML = `
+          <div class="tarjeta-flip-inner">
+            <div class="tarjeta-frente">
+              <div class="tarjeta-termino">${c.termino}</div>
+              <div class="tarjeta-pista">Hacé clic para ver la definición</div>
+            </div>
+            <div class="tarjeta-dorso">
+              <div class="tarjeta-definicion">${c.definicion}</div>
+              <div class="tarjeta-dorso-termino">${c.termino}</div>
+            </div>
+          </div>
+        `;
+        grid.appendChild(div);
+      });
+    }
+
+    function girarTodas() {
+      document.querySelectorAll('.tarjeta-flip').forEach(t => t.classList.add('girada'));
+    }
+
+    function ocultarTodas() {
+      document.querySelectorAll('.tarjeta-flip').forEach(t => t.classList.remove('girada'));
+    }
+
+    function mezclarTarjetas() {
+      mezclados = [...conceptos].sort(() => Math.random() - 0.5);
+      renderizarTarjetas();
+    }
+
+    renderizarTarjetas();
+  </script>
+
+</body>
+</html>

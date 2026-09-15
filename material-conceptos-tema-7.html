@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjetas de conceptos — Creación y participación — Navegar con Otros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    :root {
+      --color-tema: #00897B;
+      --color-tema-claro: #E0F2F1;
+    }
+  </style>
+</head>
+<body>
+  <nav><a href="index.html" class="nav-logo">Navegar <span>con Otros</span></a><ul class="nav-links"><li><a href="index.html#temas">Temas</a></li><li><a href="recursos.html">Recursos</a></li></ul></nav>
+  <div class="mh"><div class="mhi">
+    <div class="mm">
+      <div class="mr"><a href="index.html">Inicio</a> → <a href="tema-7-creacion.html">Tema 07</a> → Tarjetas de conceptos</div>
+      <h1>Tarjetas de conceptos</h1>
+      <p>Hacé clic en cada tarjeta para ver la definición. Para repasar, emparejar o jugar en grupos.</p>
+      <div class="badges"><span class="badge bg">Creación y participación</span><span class="badge bv">Ciclo básico y bachillerato</span><span class="badge ba">Repaso y cierre</span></div>
+    </div>
+    <div class="ma">
+      <button class="btn-p" onclick="window.print()">🖨️ Imprimir / PDF</button>
+      <button class="btn-m" onclick="girarTodas()">↺ Ver todas</button>
+    </div>
+  </div></div>
+  <div class="inst"><div class="inst-i">
+    <h3>¿Cómo usar estas tarjetas?</h3>
+    <div class="inst-g">
+      <div class="ii"><strong>Repaso individual</strong>Leé el término, pensá la definición y hacé clic para verificar.</div>
+      <div class="ii"><strong>Emparejar impreso</strong>Imprimí, recortá y mezclá términos con definiciones.</div>
+      <div class="ii"><strong>En clase</strong>El docente proyecta el término y los estudiantes escriben la definición.</div>
+      <div class="ii"><strong>Mezclar</strong>Usá el botón para cambiar el orden.</div>
+    </div>
+  </div></div>
+  <div class="tc">
+    <div class="controles">
+      <button class="bc" onclick="girarTodas()">Mostrar todas las definiciones</button>
+      <button class="bc" onclick="ocultarTodas()">Ocultar definiciones</button>
+      <button class="bc" onclick="mezclar()">Mezclar tarjetas</button>
+    </div>
+    <p class="ti">Hacé clic en cada tarjeta · 10 conceptos · Tema 07</p>
+    <div class="tg" id="grid"></div>
+  </div>
+  <footer><p>Navegar con Otros · Ciudadanía digital para docentes · Uruguay · 2026</p><p style="margin-top:0.5rem;"><a href="tema-7-creacion.html">← Volver al Tema 07</a></p></footer>
+  <script>
+    const conceptos=[
+      {t:"Derechos de autor",d:"Marco legal que protege las obras creativas (textos, imágenes, música, videos) y otorga a su autor el derecho exclusivo a decidir cómo se usan. No se necesita registrar una obra para que esté protegida.",c:"g"},
+      {t:"Creative Commons",d:"Sistema de licencias que permite a los autores compartir sus obras bajo condiciones que ellos mismos eligen: con o sin atribución obligatoria, para uso comercial o no, permitiendo o no modificaciones.",c:"g"},
+      {t:"Dominio público",d:"Conjunto de obras cuya protección de derechos de autor expiró o fue cedida voluntariamente. Pueden usarse libremente sin pedir permiso ni pagar.",c:"g"},
+      {t:"Web 2.0",d:"Modelo de internet que convirtió a los usuarios en productores de contenido, además de consumidores. Redes sociales, blogs, wikis y plataformas colaborativas son sus expresiones más características.",c:"v"},
+      {t:"Activismo digital",d:"Uso de herramientas y plataformas digitales para promover causas sociales, políticas o ambientales: peticiones en línea, campañas en redes, difusión de información, presión a instituciones.",c:"g"},
+      {t:"Código abierto",d:"Software cuyo código fuente es público y puede ser modificado y distribuido libremente. Permite la colaboración colectiva en el desarrollo tecnológico. Ejemplos: Linux, Firefox, LibreOffice.",c:"v"},
+      {t:"Conocimiento abierto",d:"Principio por el cual el conocimiento —científico, cultural, educativo— debe ser accesible y reutilizable por todos. Wikipedia, los datos abiertos del Estado y los repositorios académicos abiertos son ejemplos.",c:"v"},
+      {t:"Propiedad intelectual",d:"Conjunto de derechos que protegen las creaciones de la mente: derechos de autor (obras artísticas y literarias), patentes (inventos) y marcas registradas.",c:"c"},
+      {t:"Alfabetización mediática",d:"Capacidad de acceder, analizar, evaluar, crear y actuar usando todas las formas de comunicación. Incluye entender cómo funcionan los medios y las plataformas, y producir contenido de forma crítica y responsable.",c:"g"},
+      {t:"Participación ciudadana digital",d:"Uso de entornos y herramientas digitales para ejercer derechos y responsabilidades ciudadanas: acceder a información pública, comunicarse con instituciones, denunciar irregularidades, participar en debates públicos.",c:"v"}
+    ];
+    const cls={g:'cg',v:'cv',c:'cc'};
+    let mezclados=[...conceptos];
+    function render(){
+      const g=document.getElementById('grid');g.innerHTML='';
+      mezclados.forEach((c,i)=>{
+        const d=document.createElement('div');
+        d.className=`tf ${cls[c.c]}`;d.id='tf'+i;
+        d.onclick=()=>d.classList.toggle('girada');
+        d.innerHTML=`<div class="tfi"><div class="tff"><div class="tt">${c.t}</div><div class="tp2">Hacé clic para ver la definición</div></div><div class="tfd"><div class="td">${c.d}</div><div class="tdt">${c.t}</div></div></div>`;
+        g.appendChild(d);
+      });
+    }
+    function girarTodas(){document.querySelectorAll('.tf').forEach(t=>t.classList.add('girada'));}
+    function ocultarTodas(){document.querySelectorAll('.tf').forEach(t=>t.classList.remove('girada'));}
+    function mezclar(){mezclados=[...conceptos].sort(()=>Math.random()-0.5);render();}
+    render();
+  </script>
+</body>
+</html>

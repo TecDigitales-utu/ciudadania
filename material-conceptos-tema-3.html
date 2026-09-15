@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjetas de conceptos — Desinformación — Navegar con Otros</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <style>
+    :root {
+      --color-tema: #EF5350;
+      --color-tema-claro: #FFEBEE;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">Navegar <span>con Otros</span></a>
+    <ul class="nav-links"><li><a href="index.html#temas">Temas</a></li><li><a href="recursos.html">Recursos</a></li></ul>
+  </nav>
+  <div class="material-header">
+    <div class="material-header-inner">
+      <div class="material-meta">
+        <div class="material-ruta"><a href="index.html">Inicio</a> → <a href="tema-3-desinformacion.html">Tema 03</a> → Tarjetas de conceptos</div>
+        <h1>Tarjetas de conceptos</h1>
+        <p>Hacé clic en cada tarjeta para ver la definición. Para repasar, emparejar o jugar en grupos.</p>
+        <div class="material-badges">
+          <span class="badge badge-coral">Desinformación</span>
+          <span class="badge badge-violeta">Ciclo básico y bachillerato</span>
+          <span class="badge badge-amarillo">Repaso y cierre</span>
+        </div>
+      </div>
+      <div class="material-acciones">
+        <button class="btn-imprimir" onclick="window.print()">🖨️ Imprimir / PDF</button>
+        <button class="btn-modo" onclick="girarTodas()">↺ Ver todas</button>
+      </div>
+    </div>
+  </div>
+  <div class="instrucciones">
+    <div class="instrucciones-inner">
+      <h3>¿Cómo usar estas tarjetas?</h3>
+      <div class="instrucciones-grid">
+        <div class="instruccion-item"><strong>Repaso individual</strong>Leé el término, pensá la definición y hacé clic para verificar.</div>
+        <div class="instruccion-item"><strong>Emparejar impreso</strong>Imprimí, recortá por la línea punteada y mezclá términos con definiciones.</div>
+        <div class="instruccion-item"><strong>En clase</strong>El docente proyecta el término y los estudiantes escriben la definición antes de verla.</div>
+        <div class="instruccion-item"><strong>Mezclar</strong>Usá el botón para cambiar el orden y hacer el repaso más variado.</div>
+      </div>
+    </div>
+  </div>
+  <div class="tarjetas-contenedor">
+    <div class="controles">
+      <button class="btn-control" onclick="girarTodas()">Mostrar todas las definiciones</button>
+      <button class="btn-control" onclick="ocultarTodas()">Ocultar definiciones</button>
+      <button class="btn-control" onclick="mezclar()">Mezclar tarjetas</button>
+    </div>
+    <p class="tarjetas-intro">Hacé clic en cada tarjeta · 10 conceptos · Tema 03</p>
+    <div class="tarjetas-grid" id="grid"></div>
+  </div>
+  <footer>
+    <p>Navegar con Otros · Ciudadanía digital para docentes · Uruguay · 2026</p>
+    <p style="margin-top:0.5rem;"><a href="tema-3-desinformacion.html">← Volver al Tema 03</a></p>
+  </footer>
+  <script>
+    const conceptos=[
+      {t:"Desinformación",d:"Información falsa que se difunde con la intención deliberada de engañar o manipular a las personas.",c:"coral"},
+      {t:"Misinformación",d:"Información falsa que se comparte sin intención de engañar, pero que igualmente genera confusión o daño.",c:"naranja"},
+      {t:"Contenido engañoso",d:"Información que no es técnicamente falsa pero está presentada de forma que lleva a conclusiones incorrectas: titulares sensacionalistas, contexto omitido, datos descontextualizados.",c:"naranja"},
+      {t:"Deepfake",d:"Video, audio o imagen generado o manipulado mediante inteligencia artificial de forma que resulta difícil distinguirlo de contenido real.",c:"morado"},
+      {t:"Fact-checking",d:"Práctica de verificar la veracidad de afirmaciones, datos o noticias consultando fuentes primarias y contrastando información.",c:"verde"},
+      {t:"Sesgo de confirmación",d:"Tendencia a creer y compartir información que confirma lo que ya pensamos, ignorando o descartando la que lo contradice.",c:"violeta"},
+      {t:"Burbuja de filtro",d:"Efecto por el cual los algoritmos nos muestran contenido que coincide con nuestras preferencias, limitando la exposición a puntos de vista distintos.",c:"violeta"},
+      {t:"Búsqueda inversa de imagen",d:"Técnica que permite averiguar el origen de una imagen subiéndola a un buscador, para verificar si fue usada fuera de contexto o si es falsa.",c:"verde"},
+      {t:"Fuente primaria",d:"La fuente original de una información: el documento, la investigación, la declaración o el dato directamente, sin intermediarios.",c:"verde"},
+      {t:"Viralización",d:"Proceso por el cual un contenido se difunde masivamente y rápidamente en redes sociales, a menudo impulsado por reacciones emocionales más que por su veracidad.",c:"coral"}
+    ];
+    let mezclados=[...conceptos];
+    function render(){
+      const g=document.getElementById('grid');g.innerHTML='';
+      mezclados.forEach((c,i)=>{
+        const d=document.createElement('div');
+        d.className=`tarjeta-flip c-${c.c}`;d.id='tf-'+i;
+        d.onclick=()=>d.classList.toggle('girada');
+        d.innerHTML=`<div class="tarjeta-flip-inner"><div class="tarjeta-frente"><div class="tarjeta-termino">${c.t}</div><div class="tarjeta-pista">Hacé clic para ver la definición</div></div><div class="tarjeta-dorso"><div class="tarjeta-definicion">${c.d}</div><div class="tarjeta-dorso-termino">${c.t}</div></div></div>`;
+        g.appendChild(d);
+      });
+    }
+    function girarTodas(){document.querySelectorAll('.tarjeta-flip').forEach(t=>t.classList.add('girada'));}
+    function ocultarTodas(){document.querySelectorAll('.tarjeta-flip').forEach(t=>t.classList.remove('girada'));}
+    function mezclar(){mezclados=[...conceptos].sort(()=>Math.random()-0.5);render();}
+    render();
+  </script>
+</body>
+</html>
